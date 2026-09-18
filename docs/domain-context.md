@@ -32,14 +32,19 @@ Relic Recipe Fragment turned up. Set size is data, and three values are attested
 `transmuteRecipes.csv`, all three agreeing. `Treasure Chest` holds seven distinct
 tokens: these six sets plus Monster Trophy, which is not a set.
 
-| Set | Size | Token year | Consumed by | Level | State |
+| Set | Size | Token year | Consumed by | Level | Name in the data |
 |---|---|---|---|---|---|
-| Relic Recipe Fragment | 6 | 2019 | Orion's Belt | Relic | on `main` |
-| Stalker Token | 20 | 2023 | Stalker Bead of Skill / Focus | Relic | on `main` |
-| 50 GP Idol | 40 | 2024 | Totem of Wonder | Legendary | on `main` |
-| **50 GP Rune** | 40 | 2025 | Rune Giant Totem | Legendary | **unmerged — see below** |
-| Herald Token | 20 | 2026 | Herald's Ring of Wrath / Focus | Relic | on `main` |
-| Golem Piece | 40 | 2026 | Gear Golem Totem | Legendary | on `main` |
+| Relic Recipe Fragment | 6 | 2019 | Orion's Belt | Relic | `Relic Recipe Fragment (6 unique)` |
+| Stalker Token | 20 | 2023 | Stalker Bead of Skill / Focus | Relic | `Stalker Token (20 unique)` |
+| 50 GP Idol | 40 | 2024 | Totem of Wonder | Legendary | `50 GP Idol (40 unique)` |
+| 50 GP Rune | 40 | 2025 | Rune Giant Totem | Legendary | `50 GP Rune (40 unique)` |
+| Herald Token | 20 | 2026 | Herald's Ring of Wrath / Focus | Relic | `Herald Token (20 unique)` |
+| Golem Piece | 40 | 2026 | Gear Golem Totem | Legendary | `Golem Piece (40 unique)` |
+
+All six are on the auction project's `main` as of 2026-09-18, and all six spell the
+parenthetical the same way. That was **not** true earlier the same day — see
+*Set naming* below for what changed and why the older shape may still show up in
+anything written before then.
 
 **The 50 GP Idol is fully modeled now** — resolved 2026-09-04 (auction PRs
 #180/#181/#182) and live. It is a **40**-piece set forging the 2024 Legendary
@@ -51,17 +56,18 @@ pieces, 2019, consumed by `Orion's Belt`. It is the oldest of them and the only
 one with a set size that is neither 20 nor 40, so a schema that assumes "1 of 20
 or 1 of 40" is already wrong.
 
-**50 GP Rune is the sixth, and it is not on `main` yet.** 2025, 40 pieces,
+**50 GP Rune is the sixth, added 2026-09-18** (auction PR #201). 2025, 40 pieces,
 forging the 2025 Legendary `Rune Giant Totem`, priced off-auction at 15 / 10 /
-7.5. It lives on branch `rune-giant-totem` in `C:\claude\site`, three commits
-ahead of `main` and unmerged as of 2026-09-18. Re-check before relying on it:
+7.5.
+
+It was still on an unmerged branch when this section was first written a few hours
+earlier, which is worth remembering as a habit rather than as history: **the
+auction repo is shared and moves under you.** Anything read out of it is a fact
+about one branch at one moment. Re-check a set before relying on it:
 
 ```
-git -C C:\claude\site show main:public/data/tokenMetadata.csv | findstr "50 GP Rune"
+git -C C:\claude\site show origin/main:public/data/tokenMetadata.csv | findstr "unique"
 ```
-
-An empty result means it is still in flight. It is in the table because the set
-exists — the branch is where the *record* of it is, not where the game fact is.
 
 ### "Treasure-only" is a claim about the CHANNEL, not about auctions
 
@@ -83,20 +89,23 @@ it. They are priced off-auction or not at all.
 token whose auction augments are season **2025** rows. Keep the pull's event year
 and the token's own vintage as separate fields from the start.
 
-### Set naming is not settled on the other side yet
+### Set naming — settled 2026-09-18, and worth knowing why it needed settling
 
-`main` currently holds three different shapes for the same idea —
+Until that date `main` held **three different shapes for the same idea**:
 `Golem Piece (40 Unique)` and `Herald Token (20 Unique)` capitalised,
 `Relic Recipe Fragment (6 unique)` lower-case, and a bare `Stalker Token` with no
-parenthetical at all. The auction project's § 8 name check cannot see these,
-because they differ by more than punctuation or a trailing plural.
+parenthetical at all. PR #201 normalised all six to lower-case `(N unique)` and
+gave Stalker its missing one, which is the shape in the table above.
 
-**The same unmerged branch fixes it.** `rune-giant-totem` normalises all of them
-to lower-case `(N unique)` and gives Stalker its missing `(20 unique)`, so the six
-names become `Relic Recipe Fragment (6 unique)`, `Stalker Token (20 unique)`,
-`50 GP Idol (40 unique)`, `50 GP Rune (40 unique)`, `Herald Token (20 unique)` and
-`Golem Piece (40 unique)`. **Copy that shape, not what `main` holds today** — it is
-the one the other project is converging on, and it is the only self-consistent one.
+**The reason it survived that long is the lesson.** The auction project's § 8 name
+check compares spellings that differ only by case, whitespace, punctuation or a
+trailing plural. `Stalker Token` and `Stalker Token (20 unique)` differ by far more
+than that, so the check was blind to it — and it was blind by design, because the
+alternative rule would merge `+1 Turkey Leg` into `+1 Turkey Leg of Smiting`.
+
+**A naming convention applied by hand across six rows is not enforced by
+anything.** That is the case for deciding the shape here before entry starts, not
+after. See `inherited-practices.md` § 1.
 
 **Pick one shape here before entry starts** rather than inheriting the spread. The
 parenthetical states the *set's* size, the row describes **one** piece, and the
@@ -106,9 +115,10 @@ recipe carries the count separately — so `Quantity=40` beside a name saying
 ### This data has a downstream consumer
 
 Recording pulls is not only for deduction. Treasure-sourced tokens are
-**ingredients in auction-site recipes** — measured 2026-09-18 on `main`, **46
-recipe lines across 45 distinct transmutes, spanning 2017-2027**, consume a
-Monster Trophy or a chase piece. Monster Trophy alone is 39 of those lines. None
+**ingredients in auction-site recipes** — measured 2026-09-18 on `main` at
+`f865055`, **47 recipe lines across 46 distinct transmutes, spanning 2017-2027**,
+consume a Monster Trophy or a chase piece. Monster Trophy alone is 39 of those
+lines; the six chase sets supply the other 8. None
 carries a price-spine row, so all of them resolve off-auction or derived. Pull
 data is evidence about scarcity that the auction project's build calculator
 ultimately rests on.
