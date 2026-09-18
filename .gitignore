@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Claude Code local state — .claude/ itself is tracked so launch.json and
+# settings.json can be shared; only the per-machine files are ignored.
+.claude/settings.local.json
+
+# Source workbooks are large binaries and are not the source of truth;
+# docs/source-workbook-analysis.md records what was measured from them.
+*.xlsx
+*.xlsm

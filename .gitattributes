@@ -1,0 +1,20 @@
+# This machine's checkout has core.autocrlf = true, so git rewrites line endings
+# on anything its heuristic calls text. That is fine for prose and source, and it
+# is not fine for two things:
+#
+#   - Fixtures whose whole value is being byte-for-byte what a server sent. A
+#     single rewritten byte makes a gzipped page undecompressable. The sibling
+#     auction project learned this one the expensive way.
+#   - Data files a test pins. Line endings are part of the bytes a checksum or a
+#     round-trip test sees, and a rewrite shows up as a failure with no cause in
+#     the diff.
+#
+# Say so explicitly rather than trusting the guess.
+
+*.gz     binary
+*.xlsx   binary
+*.png    binary
+
+# CSVs are the data spine once entry exists. Pin them to LF so a round-trip
+# through a tool, an export or an editor cannot quietly change every line.
+*.csv    text eol=lf
