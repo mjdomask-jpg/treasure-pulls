@@ -39,6 +39,11 @@ branches without notice.** Any fact read out of it is a fact about one branch at
 one moment; quote the branch and date, and check
 `git -C C:\claude\site log --oneline -3 -- <path>` when two reads disagree.
 
+**Read `origin/main`, never the local `main`.** That checkout tracks whatever
+branch someone left it on, and its local `main` ref is only as fresh as the last
+`git switch` — measured 2026-09-18, it sat four PRs behind `origin/main`, which
+is exactly long enough to report a merged change as still in flight.
+
 ## Status
 
 Pre-implementation. Nothing built yet; this directory holds staged findings from
