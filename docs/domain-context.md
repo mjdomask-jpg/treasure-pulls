@@ -188,14 +188,32 @@ Rare and Uncommon tokens transmute into Trade 1 / Trade 2 trade goods. The
 conversion is tedious, so players prefer to receive goods pre-converted — the
 reason Super Condensed and Ultra Condensed auctions exist.
 
-**New in 2026: a "Condensed" option for Rare and Uncommon treasure**, converting
-drops to trade goods at source. Not present in the 2024 sample workbook.
+**New in 2026: a "Condensed" option**, and the 2026 workbook is now in hand
+(inspected 2026-09-18). It is not present in 2024 or 2025 at all.
 
-**Settled: model this from day one.** Condensed vs non-condensed is a **key
-decision point at entry** — the player picks it first and the rest of the form
-changes accordingly. A pull is therefore recorded either as Rare/Uncommon counts
-or as converted trade goods, and the two representations must reconcile for
-deduction to work. A sample of condensed treasure data is still to come.
+**What condensed is.** The company **pre-converts the standard-pack Uncommon and
+Rare tokens** into the equivalent trade goods, so a condensed pull contains no
+pack Rares or Uncommons. Everything else still arrives: treasure-box-only Rares,
+chase pieces, trade goods, Monster Trophies, and anything above Rare.
+
+**It is a property of a submission, not of a player and not of a pull.** The 2026
+event sheets carry a `Condensed (Y/N)` column and instruct: *"Please add separate
+lines for split treasure."* Players follow it — across the four 2026 events with
+both treatments, every repeated player name is exactly one `Y` row and one `N`
+row. So one player, one event, two submissions is **normal**, not a duplicate.
+
+**The two representations do not reconcile per player, and should not be made
+to.** An earlier draft of this section said they must. What actually reconciles
+is the *rate*: condensed and non-condensed submissions at the same event are two
+samples of the same treasure, and the conversion is a published expected yield
+rather than a per-player exchange. Nothing needs to add up inside one row.
+
+**The sharp edge is that `Rare` is not one thing.** Condensed lines are mostly
+zero for Rare — but not always, because treasure-box-only Rares survive
+condensing. The workbook's `Condensed Total` row hard-zeroes the column anyway,
+which hides 33 real pulls at Tower of Blood alone and drops them from the year.
+The new model distinguishes pack-sourced from treasure-box-only tokens so the
+rule can be checked instead of asserted. See `data-model.md` § *Condensed*.
 
 ## Naming
 

@@ -1,10 +1,14 @@
 # Legacy workbook analysis
 
-Source: `2024 Treasure Pull Records.xlsx` — the current Google Sheets workflow,
-one workbook per year. Inspected 2026-08-19 (openpyxl). All figures below are
-measured from the file, not estimated.
+Source: the current Google Sheets workflow, one workbook per year.
+`2024 Treasure Pull Records.xlsx` inspected 2026-08-19; the **2025 and 2026**
+workbooks inspected 2026-09-18 (openpyxl throughout). All figures are measured
+from the files, not estimated.
 
-## Shape
+**The three workbooks are three different formats**, not three years of one — see
+*The later workbooks* below. Everything from here to that section describes 2024.
+
+## Shape (2024)
 
 **28 sheets.**
 
@@ -88,12 +92,89 @@ Named in the design discussion, all confirmed by the file:
 - **Free-text player names** as the identity key.
 - **A new workbook every year**, so cross-year comparison has no home at all.
 
+## The later workbooks
+
+Inspected 2026-09-18. The format is not stable across years:
+
+| | 2024 | 2025 | 2026 |
+|---|---|---|---|
+| Sheets | 28 | 29 | 22 |
+| Event sheets | 11 | 12 | 6 |
+| Columns per event sheet | 50 | 34 | 53 |
+| Event naming | `V20`–`V26` | V-numbers **and** named adventures | named adventures only |
+| `Condensed (Y/N)` column | — | — | **yes** |
+| Trade goods | two totals | two totals | **11 itemised**, abbreviations in row 1 |
+| `rawPersonalStats` | 11,948 rows | **`#REF!`** | **`#REF!`** |
+
+### 4. The per-person long format is gone
+
+`rawPersonalStats` contains nothing but `#REF!` in both 2025 and 2026. The only
+surviving long format is `Transposed for Pivot`, which has no person dimension —
+so **neither year has per-player data at all**, only per-event totals. 2024's
+`Personal totals` and `rawPersonalStats` have no counterpart in either.
+
+### 5. The 2025 pivot is missing 40% of the year
+
+`Transposed for Pivot` carries 9 event names against 12 event sheets. Three are
+typo'd variants of real sheets (`v30`→`V30`, `Runehem Ravaged`→`Runeheim
+Ravaged`, `Patron Run`→`April Patron Run`), one (`v31`, 27 rows) has no sheet at
+all, and `Origins` is split across `Origins` (22 rows) and `Origns` (5).
+
+Five events are simply absent:
+
+| Missing event | pulls |
+|---|---|
+| Grunnel Holiday Pt 3 | 4,891 |
+| Runeheim Reforged | 4,676 |
+| Ravens Eye | 4,606 |
+| Runeheim Revenged | 4,369 |
+| Gamehole Con | 1,836 |
+| **total** | **20,378 of 50,471 — 40%** |
+
+This is defect 1 again, five times over, in a single year.
+
+### 6. The 2026 pivot reads the condensed totals only
+
+Of the 44 tokens the pivot carries per event, the **condensed-only** figure
+matches 42/44, 43/44, 44/44 and 43/44 for the four events that have both
+treatments. The non-condensed population is dropped from the year's analysis.
+
+### 7. The `Condensed Total` row hard-zeroes Rare and Uncommon
+
+Reconciling `Tower of Blood (Jan)`'s own total row against the 55 player rows it
+summarises, exactly two columns disagree: `Rare` (row says 0, players say 29) and
+`Uncommon` (0 against 4). Its components therefore sum to 1,541 against its own
+`Total Pulls` of 1,574 — **33 pulls in the data and in no breakdown**, and via
+defect 6 they leave the year entirely.
+
+Condensed treasure genuinely excludes standard-pack Rare and Uncommon; what it
+does not exclude is treasure-box-only Rares. One column cannot say both, so the
+total row asserts the rule and the data quietly disagrees.
+
+### 8. Mistitled summary tabs, again
+
+`Tower of Blood Summary - Non-Co` and `Tower of Blood Summary - Conden` both
+carry `Grunnel Holiday Pt 3` in A1 — a **2025** event name, inherited by
+duplicating last year's tab. Three 2026 summary tabs are named `Sheet14`,
+`Sheet15`, `Sheet16`. 2025 carries a `Copy of Grunnel Holiday Pt 3 Su` tab.
+
+### 9. The `Trade Good Distribution sheet` never existed
+
+Row 1 of every 2024 event sheet reads *"Help track the trade good rate on the
+Trade Good Distribution sheet!"*. **No such sheet exists in any of the three
+workbooks.** The 2026 format solves that problem a different way, by itemising
+11 trade goods into their own columns — and the dangling instruction is simply
+gone from the 2025 and 2026 row 1.
+
 ## What the new site inherits
 
 - The `tokenCategories` mapping, minus typos, minus the assumption that its
-  buckets are canonical (see `domain-context.md`).
-- The distinction between high-level counts and the detailed per-token breakdown
-  — `Transposed for Pivot` carries a `Total Type` column of `High Level` vs
-  detail, and `rawPersonalStats` a `Type` of `Normal` (1,732) vs `Special`
-  (10,216). Both distinctions need explicit modeling rather than a column
-  convention.
+  buckets are canonical (see `domain-context.md`). Note the 2026 sheet's
+  `Category` column has absorbed two more axes — it now emits `Trade 1` and
+  `Trade 2` alongside the analysis buckets.
+- **Not** the high-level/detail distinction. `Transposed for Pivot`'s
+  `Total Type` and `rawPersonalStats`'s `Type` record which part of the wide
+  sheet a number came from and nothing else, and the totals reconcile exactly
+  from the itemised columns, so there is no residue to model. Measured and
+  written up in `data-model.md`; this supersedes an earlier claim here that both
+  distinctions needed explicit modeling.
