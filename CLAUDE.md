@@ -15,6 +15,10 @@ not publish.
   structure, the community's analysis buckets — is in `docs/domain-context.md`.
 - **The legacy workbook** it replaces is analyzed in
   `docs/source-workbook-analysis.md`.
+- **The stack, and the alternatives rejected** — Cloudflare Pages + Pages
+  Functions + D1, what carries over from the auction project's build and what
+  deliberately does not, and the consequences the write endpoint has to be
+  designed against — is in `docs/stack.md`.
 - **Engineering practice inherited from the auction project** — name hygiene,
   where to validate, row-level provenance, how to pool disagreeing reporters, and
   which of its patterns deliberately do *not* transfer — is in
@@ -38,4 +42,8 @@ one moment; quote the branch and date, and check
 ## Status
 
 Pre-implementation. Nothing built yet; this directory holds staged findings from
-the design discussion of 2026-08-19.
+the design discussion of 2026-08-19, plus the stack decision of 2026-09-18.
+
+Next up, in dependency order: the data model, then seed vocabularies as CSVs,
+then the name-hygiene validator (which needs no UI and no database), then the
+entry form.
