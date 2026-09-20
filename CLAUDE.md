@@ -47,8 +47,13 @@ is exactly long enough to report a merged change as still in flight.
 ## Status
 
 Pre-implementation. Nothing built yet; this directory holds staged findings from
-the design discussion of 2026-08-19, plus the stack decision of 2026-09-18.
+the design discussion of 2026-08-19, the stack decision of 2026-09-18, and the
+data model settled 2026-09-19.
 
-Next up, in dependency order: the data model, then seed vocabularies as CSVs,
-then the name-hygiene validator (which needs no UI and no database), then the
-entry form.
+**`docs/data-model.md` is current** and supersedes both handoff documents, whose
+open questions are all answered. Read it before the handoffs, which survive only
+as the record of how it was arrived at.
+
+Next up, in dependency order: seed vocabularies as CSVs (the 2027 catalog, chase
+variants, group memberships, and both conversion tables), then the name-hygiene
+validator (which needs no UI and no database), then the entry form.

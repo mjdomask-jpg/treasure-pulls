@@ -203,10 +203,22 @@ both treatments, every repeated player name is exactly one `Y` row and one `N`
 row. So one player, one event, two submissions is **normal**, not a duplicate.
 
 **The two representations do not reconcile per player, and should not be made
-to.** An earlier draft of this section said they must. What actually reconciles
-is the *rate*: condensed and non-condensed submissions at the same event are two
-samples of the same treasure, and the conversion is a published expected yield
-rather than a per-player exchange. Nothing needs to add up inside one row.
+to.** Nothing needs to add up inside one row.
+
+**They are two samples of the same treasure *pool*, but not of the same
+observation process** — and conflating those is a 2.7× error on most of the 2026
+corpus. One max-treasure run samples the pool 27 times and yields 27 items
+non-condensed or **10** items condensed, because the standard-set Rares and
+Uncommons have been converted into trade goods before shipping. So a rate
+reconciles only after the condensed denominator is corrected by `max_pulls /
+pack_size` — 27/10 in 2026, 30/10 in 2027.
+
+Measured 2026-09-19, the correction is recovered from the data itself: eight
+tokens the conversion does not touch sit at ratios of 0.91–1.19 once it is
+applied. And the conversion is a *community hypothesis about* expected yield, not
+a published figure — the company publishes nothing about the condensed mix. It
+now has strong support: predicted and observed trade goods per pack agree to 0.2%
+across 1,780 items. See `data-model.md` § 2 and § 3.
 
 **The sharp edge is that `Rare` is not one thing.** Condensed lines are mostly
 zero for Rare — but not always, because treasure-box-only Rares survive
