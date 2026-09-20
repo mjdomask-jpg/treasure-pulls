@@ -50,10 +50,16 @@ Pre-implementation. Nothing built yet; this directory holds staged findings from
 the design discussion of 2026-08-19, the stack decision of 2026-09-18, and the
 data model settled 2026-09-19.
 
-**`docs/data-model.md` is current** and supersedes both handoff documents, whose
-open questions are all answered. Read it before the handoffs, which survive only
-as the record of how it was arrived at.
+**Start at `docs/handoff-2026-09-20.md`**, then `docs/data-model.md`, which is
+current and is the authority. The earlier handoffs and the owner's review and
+answer documents survive only as the record of how it was arrived at.
 
-Next up, in dependency order: seed vocabularies as CSVs (the 2027 catalog, chase
-variants, group memberships, and both conversion tables), then the name-hygiene
-validator (which needs no UI and no database), then the entry form.
+The conversion vocabularies are seeded in `data/seed/` and checked by
+`node scripts/check_conversion.mjs` — no dependencies, no build. Next up, in
+dependency order: `token_alias` and group memberships, then the name-hygiene
+validator (which needs no UI and no database), then `package.json` and CI, then
+the entry form.
+
+**`data/seed/token_catalog_2027.csv` is deliberately incomplete** — the season's
+chase sets are not public until after January 2027. Re-run
+`node scripts/fetch_catalog.mjs 2027` then.
