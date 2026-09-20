@@ -1,0 +1,11 @@
+event_year,trade_rung,source_rarity,points_per_token,points_required
+2026,1,Common,1,25
+2026,1,Uncommon,3,25
+2026,1,Rare,6,25
+2026,2,Uncommon,1,25
+2026,2,Rare,1,25
+2027,1,Common,1,25
+2027,1,Uncommon,3,25
+2027,1,Rare,6,25
+2027,2,Uncommon,1,25
+2027,2,Rare,1,25

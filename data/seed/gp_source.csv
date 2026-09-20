@@ -1,0 +1,7 @@
+event_year,source_rarity,token_count,gp_each,gp_per_set,note
+2026,Common,1,50,50,
+2026,Uncommon,2,125,250,mean of 100 and 150
+2026,Rare,2,500,1000,"individual values vary (600/400, 550/450); the set total is always 1000"
+2027,Common,1,50,50,
+2027,Uncommon,2,125,250,mean of 100 and 150
+2027,Rare,2,500,1000,"individual values vary (600/400, 550/450); the set total is always 1000"
