@@ -1,0 +1,7 @@
+metric,value,note
+non_condensed_items,3405,sum of all leaf token columns; rollup and percentage columns excluded
+condensed_items,4991,same
+non_condensed_rare,1364,the generic Rare column
+non_condensed_uncommon,1210,the generic Uncommon column
+non_condensed_rows,66,
+condensed_rows,107,
