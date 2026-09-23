@@ -8,6 +8,11 @@ frame. **The workbooks are evidence about failure modes, not a source of
 requirements.** Where a number below is measured it says so, with the file and
 date; everything else is a decision.
 
+**Amended 2026-09-23** with the owner's answers to § 10's open questions: `team`
+is dropped, chase sets are entered as set counts with placeholders for 2027, and
+tokendb's rarity labels now have a mapping (§ 4, *`rarity`*). Open work lives in
+`docs/backlog.md`.
+
 Game facts come from the `td-domain` skill; treasure-recording facts from
 `domain-context.md`; the validation posture from `inherited-practices.md`. Scope
 is the **2027 season**. Historical backfill is a long-term goal, out of scope for
@@ -281,19 +286,12 @@ and `Origns` are one event as two series; `V30` and `v30` differ only in case;
 `Runeheim Ravaged` became `Runehem Ravaged`; and `v31` carries 27 rows for an
 event that has no sheet at all.
 
-### `player` and `team`
+### `player`
 
 ```sql
 CREATE TABLE player (
   player_id    INTEGER PRIMARY KEY,
   display_name TEXT    NOT NULL,        -- as the person spells it
-  fold_key     TEXT    NOT NULL UNIQUE,
-  first_seen   TEXT    NOT NULL
-);
-
-CREATE TABLE team (
-  team_id      INTEGER PRIMARY KEY,
-  display_name TEXT    NOT NULL,
   fold_key     TEXT    NOT NULL UNIQUE,
   first_seen   TEXT    NOT NULL
 );
@@ -306,12 +304,18 @@ names that are 84 people**, with five pairs differing only in case — `Hacky` /
 hard fold there are **zero** further collisions, so the case fold catches all of
 them and leaves nothing to arbitrate.
 
-**`is_group` is gone; `team` replaces it.** Guilds batch-enter routinely, and the
-old flag put one person's name on a whole guild's loot. A team is a real entity
-players already think in — *"people are used to looking at their stats on a
-group/team level"* — and the list is short enough to pick from. Membership is
-deliberately **not** modelled: rosters vary run to run, a guild may buy out
-unsold tickets, and nothing here needs to know who was in the party.
+**There is no `team`, and no `is_group` flag either** (owner, 2026-09-23). The
+2026-09-19 draft added a `team` table for guilds that batch-enter; it was dropped
+because the purpose of the data is the pool, and the pool needs only the totals.
+A team pick-list was extra entry work and extra maintenance for per-team stats
+the deduction never reads. A guildmaster entering a whole party's loot is one
+submission under their own name, and that is correct for every pool question.
+
+What stays is **submission provenance**, which costs the player nothing: the
+Function records who submitted and when. Corrections need it to point at the
+submission they fix, and it is how a double entry — a guildmaster and a member
+both entering the same loot — can be spotted after the fact. That risk existed
+with teams too; `team` never prevented it.
 
 ### `token`
 
@@ -323,7 +327,8 @@ CREATE TABLE token (
   external_slug      TEXT    UNIQUE,            -- tokendb slug; the shared vocabulary key
   resolution         TEXT    NOT NULL CHECK (resolution IN ('specific','group')),
   group_id           INTEGER REFERENCES token(token_id),
-  rarity             TEXT,                      -- a rung of the canonical ladder
+  rarity             TEXT,                      -- a canonical rung, or off-ladder Paragon/Safehold; see below
+  source_rarity      TEXT,                      -- tokendb's label, verbatim, for provenance
   trade_rung         INTEGER CHECK (trade_rung BETWEEN 1 AND 5),
   gp_value           INTEGER,                   -- 1000 / 5000 / 25000 for bars
   token_year         INTEGER,                   -- the token's OWN vintage
@@ -331,7 +336,7 @@ CREATE TABLE token (
   bundle_of_token_id INTEGER REFERENCES token(token_id),
   bundle_size        INTEGER,
   set_size           INTEGER,                   -- chase set: 6, 20 or 40
-  grants_draws       INTEGER,                   -- 10 for '10x Pull', 3 for '3x Pull'
+  grants_draws       INTEGER,                   -- 10 for '10x Pull'; 3 for '3x Pull', which no longer drops
   status             TEXT    NOT NULL CHECK (status IN ('catalog','proposed')),
   CHECK (group_id IS NULL OR resolution = 'specific'),
   CHECK ((bundle_of_token_id IS NULL) = (bundle_size IS NULL))
@@ -353,8 +358,9 @@ handles everything the sheet fudged:
 |---|---|---|
 | `Rare (2027)` | the 40 standard-set Rares | 40 options is a chore nobody wants |
 | `Uncommon (2027)` | the 40 standard-set Uncommons | same |
-| `Golem Chaser` | 40 variants | same |
-| `Herald's Chaser` | 20 variants | same |
+| `Golem Chaser (set of 40)` | 40 pieces in 2026 | chase set — entered as a set count only |
+| `Herald's Chaser (set of 20)` | 20 pieces in 2026 | same |
+| `Mystery Chase Set (40)`, `Mystery Chase Set (20)` | none yet | 2027 placeholders — see below |
 | `Cloak or Gloves of the Order` | 2 tokens | *"the important bit is how often they show up in total"* |
 | `Relic (year unknown)` | — | the pool of previous-year Relics is broad and the sample small |
 | `Legendary (year unknown)` | — | same |
@@ -363,17 +369,69 @@ handles everything the sheet fudged:
 pick from 140 options. What the schema does is decline to *forbid* a specific
 answer, at a cost of one CSV and zero entry burden.
 
-That matters most for chase variants. The company has stated an *intention* that
-the 40 and 20 variants be uniform — which is exactly the class of unpublished
-claim this project exists to test, and intended-uniform differs from is-uniform by
-manufacturing and packing variance. The consequence is not academic: set
-completion is governed by the scarcest variant, and the auction project already
-prices variants individually. If even a few percent of reporters itemise,
-uniformity becomes checkable; if none do, nothing is lost.
+**Chase sets go further: players record a set count, never a piece** (owner,
+2026-09-23) — *"3 Golem Chaser"*, exactly as the workbooks did. The form offers no
+per-piece option, so **chase set members are not seeded at all**; a chase group
+needs only its `set_size`. The 2026 membership is recorded for reference: the 40
+Golem pieces are tokendb `Treasure Chest Only` + `Quest` with no classification,
+and the 20 Herald pieces are `Treasure Chest Only` + `Rare` and are the
+ingredients of Herald's Ring of Wrath / Focus. (The other two `Treasure Chest
+Only` Rares are Cloak and Gloves of the Order, which are their own group.)
+
+This gives up a test the earlier draft kept open. The company has stated an
+*intention* that the 40 and 20 variants be uniform, which is exactly the kind of
+unpublished claim this project exists to test, and set completion is governed by
+the scarcest variant. `resolution='specific'` still allows per-piece rows, so the
+test can come back without a schema change; it is parked in the backlog.
+
+**2027's chase sets are not public until after January**, so they are seeded now
+as `Mystery Chase Set (40)` and `Mystery Chase Set (20)`, with `set_size` and no
+members. When the sets are revealed each placeholder is **renamed in place** and
+its old name kept as a `token_alias`, so entries made before the reveal stay
+attached to the right set. If 2027 does not have exactly one 40-piece set and one
+20-piece set, that is a row added or a size changed, not a schema change.
+
+This also retires the risk `handoff-2026-09-20.md` warned about. It feared chase
+rates computed over empty member lists before January. With set counts, a chase
+rate is `set count ÷ draws` and never reads the member list.
 
 **Resolution levels are disjoint, never overlapping.** A group row is a residual —
 *"and how many other Rares?"* — so `items` is the sum of all rows regardless of
 grain, and there is no `Total Other` to reconcile.
+
+#### `rarity` — mapping tokendb's labels (owner, 2026-09-23)
+
+tokendb's rarity field mixes rarity rungs with labels for families of tokens. Its
+value is kept verbatim in `source_rarity`, and `rarity` holds the canonical rung
+from the `td-domain` skill. The five `Transmuted-*` rungs the fetcher already
+normalises (`Transmuted-Enhanced (3 pt)` → `Enhanced` and its siblings) are
+unchanged. The rest, counted from `token_catalog_2026.csv` and `_2027.csv`:
+
+| tokendb label | 2026 | 2027 | Canonical `rarity` | In the form |
+|---|---|---|---|---|
+| `Transmuted-Arcanum Relic`, `Transmuted-Grand Arcanum` | 1 + 1 | 0 | `Arcanum` | Not in 2027. Arcanum appears every 3–4 years and is next expected around 2029–30. The 2026 workbook's `Arcanum Sets` column was one of these two tokens and had 5 drops across three events. |
+| `Premium` | 1 | 1 | `Ultra Rare` (≡ 1k / 2k Bonus, as the auction site maps it) | Yes |
+| `Paragon` | 2 | 1 | `Paragon` (off-ladder) | Can be entered but gets no dedicated field. It drops sporadically. |
+| `Reserve` | 1 | 0 | none. This is the GP bar family, not a rarity. The 100,000 GP Mythic Ore Bar is **Trade 5**, `gp_value` 100000. | Can be entered but gets no dedicated field. No one has ever reported one. |
+| `Special` | 5 | 4 | none | Only `10x Treasure Chips`. The Golden Ticket, Ring Con Thank You, the single Treasure Chip and `3x Treasure Chips` do not drop. |
+| `Safehold` | 2 | 0 | `Safehold` (off-ladder) | Not offered. It does not drop. |
+| `Quest` | 50 | 0 | split, see below | |
+
+**`Quest` is three unrelated populations**, not a rarity:
+
+- **40 Golem chase pieces** → the `Golem Chaser (set of 40)` set count.
+- **6 Monster Trophies** (classification `Monster Trophy`) → `Monster Trophy`.
+- **4 `Participation` items** (Nil Crystal and three others) → they drop
+  occasionally and are counted as an ordinary Rare or Uncommon, not tracked on
+  their own.
+
+**Buckets for off-ladder values.** Buckets are still computed and never stored
+(§ 8), but the rule needs one entry the ladder cannot supply: **Paragon counts in
+"Ultra Rare or Better"** (owner). `Arcanum` sits above Relic on the ladder, so it
+lands there anyway.
+
+"Not offered" means only that no dedicated entry exists for the token. A surprise
+drop is still captured as `status='proposed'` and is never rejected.
 
 #### `in_standard_set` — the flag the condensed rule needs
 
@@ -450,7 +508,6 @@ CREATE TABLE submission (
   event_id      INTEGER NOT NULL REFERENCES event(event_id),
   mix_id        INTEGER NOT NULL REFERENCES mix(mix_id),
   player_id     INTEGER NOT NULL REFERENCES player(player_id),  -- the reporter
-  team_id       INTEGER REFERENCES team(team_id),               -- whose loot, if not theirs
   seat_runs     INTEGER,        -- seats covered; checked, never enforced
   intent        TEXT    NOT NULL CHECK (intent IN ('new_loot','correction')),
   corrects      INTEGER REFERENCES submission(submission_id),
@@ -477,10 +534,6 @@ CREATE TABLE pull (
 run, not a person: one human may buy all ten tickets and run ten copies of the
 synergy tokens to reach the top breakpoint. Optional, and validated only when
 present.
-
-**Team and personal submissions are disjoint.** A given event's loot goes to one
-reporter, so per-player stats are the rows with `team_id IS NULL` and per-team
-stats group by `team_id`, with no double counting and no overlap to reconcile.
 
 **Both second-submission shapes are supported, and they are different.** Players
 routinely enter a second row rather than doing arithmetic on the first:
@@ -630,7 +683,7 @@ NOTE naming the remedy; a thing that is wrong by construction is an ERROR.
 | V3 | standard `items` falls between `base_pulls × seat_runs` and `max_pulls × seat_runs`, plus any `grants_draws` | NOTE, only when `seat_runs` given |
 | V4 | `pack_substitute items ≈ Σ seat_runs + (persons − 1)` — one good per seat-run plus a thank-you per extra person on the shipment | NOTE, **deliberately loose** |
 | V5 | a 10x Pull in a condensed submission has a matching standard submission | NOTE, prompted at entry |
-| V6 | soft fold (case / whitespace / punctuation / plural) over `player`, `team`, `event`, `token` | ERROR |
+| V6 | soft fold (case / whitespace / punctuation / plural) over `player`, `event`, `token` | ERROR |
 | V7 | per-rarity `trade_conversion` + `gp_source` counts sum to `standard_set.set_size`, for rarities that have rows at all | ERROR |
 | V8 | a submission's mix is offered at that event's venue | NOTE |
 | V9 | `token_catalog_<year>.csv`, grouped by `converts_to` × rarity, reproduces `trade_conversion` | ERROR |
@@ -698,11 +751,11 @@ in the model.
 | conversion counts differ per year | **measured** — 2027's table mispredicts 2026 |
 | breakpoint bonuses draw from the same pool | **measured** (flat by entitlement) + owner |
 | Dwarven Steel / Minotaur Hide substitution | **open finding**, re-test in 2027 |
-| 1,000 GP Bar 32% shortfall | **open finding**, nobody tracks it |
+| 1,000 GP Bar 32% shortfall | **open finding**, nobody tracks it; tracked in 2027 (owner) |
 | condensed = 10 per max-treasure run, virtual only | owner |
 | 10x Pull grants 10 standard draws | owner |
 | pack substitute is a separate flat pool, 1/100 Ultra Rare | owner; **mix composition unknown** |
-| chase variants are uniform | **company intention only** — unverified, and the reason variant grain stays available |
+| chase variants are uniform | **company intention only**, unverified. Untestable while entry is by set count; parked in the backlog |
 
 The pack-substitute stream is the cleanest thing in the project to deduce: one
 flat pool, one item per draw, and a stated 1/100 Ultra Rare that is the **only
@@ -720,24 +773,24 @@ site produces, not an input it needs, and the two hypotheses are far enough apar
 
 ## 10. What is not yet decided
 
-1. **The chase variant lists are blocked until after January 2027**, when the
-   season's sets are revealed. The size of the gap is measurable: 2026 carries
-   **68 `Treasure Chest Only` tokens** — 22 Rare and 46 `Quest` (Monster
-   Trophies and chase pieces) — and 2027 currently carries **none**. That is
-   late relative to the form, so the catalog must accept a chase *group* whose
-   members do not exist yet, which `resolution` already allows and
-   `status='proposed'` covers when they land.
-2. **Rarity values needing a mapping decision.** tokendb uses `Quest` for
-   Monster Trophies and chase pieces, which is not a rung of the canonical
-   ladder, plus `Special` (the Golden Ticket, and the `3x`/`10x Treasure
-   Chips`), `Premium` and `Paragon`. The fetcher already normalises
-   `Transmuted-Enhanced (3 pt)` → `Enhanced` and its four siblings; these four
-   are left as tokendb spells them, pending a decision.
-3. **Team naming.** A short pick-list, per the owner — but the fold and the
-   seed list still need authoring.
-4. **`Woodies` and `Arcanum Sets`.** Two 2026 column names that are slang and a
-   set-not-a-token respectively. Neither carries volume in the four events
-   measured; both need a canonical spelling before entry starts.
+**Nothing in the model.** The four questions that were open here were all
+answered by the owner on 2026-09-23:
+
+1. **The 2027 chase sets.** These are now the `Mystery Chase Set` placeholders,
+   entered as set counts (§ 4, *`resolution`*). The one unknown left is the
+   *shape* of 2027's sets, which will be known in January.
+2. **tokendb rarity labels.** These are mapped in § 4, *`rarity`*. The earlier
+   count of "four" labels was an undercount. The 2026 catalog has eight labels
+   off the canonical ladder, and two of them (`Transmuted-Arcanum Relic` and
+   `Transmuted-Grand Arcanum`) were a gap in the fetcher's normalisation.
+3. **Team naming.** Dropped along with `team` (§ 4, *`player`*).
+4. **`Woodies` and `Arcanum Sets`.** `Woodies` is dropped: it had zero drops in
+   all six 2026 event sheets. `Arcanum Sets` is `Arcanum` (§ 4, *`rarity`*). The
+   earlier note that neither column carried volume was wrong for `Arcanum Sets`,
+   which had 5 drops: 1 at Tower of Blood, 2 at Mists of Madness, 2 at Order of
+   the Dawn.
+
+Everything still to do is in `docs/backlog.md`.
 
 *(The Common conversion counts were open here until 2026-09-19 and are now
 sourced from tokendb — see § 2. They do not enter the estimate, since Commons are

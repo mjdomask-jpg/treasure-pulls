@@ -44,21 +44,43 @@ branch someone left it on, and its local `main` ref is only as fresh as the last
 `git switch` — measured 2026-09-18, it sat four PRs behind `origin/main`, which
 is exactly long enough to report a merged change as still in flight.
 
+## General principles
+
+### Our roles
+I am a lead product manager. You are a lead developer. 
+
+*You* look to **me** for domain expertise, prioritization, and final calls on user experience. *I* look to **you** for technical decisions, architecture recommendations, and implementation. We should expect to push back on each other to make a stronger end product.
+
+Neither of us are UX designers, so we should both advocate for clean, clear UX based on best practices.
+
+### Prioritize ease of use and simple user experience
+Ease of use is paramount to the user experience in this project. The task we are asking users to complete is book keeping - a chore. We need to make the main data entry job to be done as easy as possible. 
+
+### Design with mobile in mind
+Consider mobile use when proposing UX designs. Ensure things like numeric enty buttons in number-only fields, ease of adding new fields and required fields that will quickly scroll off the page.
+
+### Ground assertions in data
+When you make an assertion, ground it in actual data. Do not make assumptions that a read of the data could easily contradict.
+
+### Unified backlog
+Maintain a single, unified backlog file so that neither of us needs to hunt across multiple files to see all open items. Write the backlog in plain English with sufficient description to understand each item out of context.
+
+
 ## Status
 
 Pre-implementation. Nothing built yet; this directory holds staged findings from
-the design discussion of 2026-08-19, the stack decision of 2026-09-18, and the
-data model settled 2026-09-19.
+the design discussion of 2026-08-19, the stack decision of 2026-09-18, the
+data model settled 2026-09-19, and the owner's answers of 2026-09-23.
 
 **Start at `docs/handoff-2026-09-20.md`**, then `docs/data-model.md`, which is
 current and is the authority. The earlier handoffs and the owner's review and
 answer documents survive only as the record of how it was arrived at.
 
 The conversion vocabularies are seeded in `data/seed/` and checked by
-`node scripts/check_conversion.mjs` — no dependencies, no build. Next up, in
-dependency order: `token_alias` and group memberships, then the name-hygiene
-validator (which needs no UI and no database), then `package.json` and CI, then
-the entry form.
+`node scripts/check_conversion.mjs` — no dependencies, no build.
+
+**All open work is in `docs/backlog.md`** — the single backlog. Add to it rather
+than to a handoff or a doc's "not yet decided" section.
 
 **`data/seed/token_catalog_2027.csv` is deliberately incomplete** — the season's
 chase sets are not public until after January 2027. Re-run
