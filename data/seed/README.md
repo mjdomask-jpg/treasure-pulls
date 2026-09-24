@@ -119,14 +119,16 @@ token tokendb does not have stops the fetch.
 
 ## `token_group.csv`, `token_group_member.csv`
 
-A group is a token that stands for "one of these", so a player can enter "12
-Rares" without picking from 40 names. Each group names **a rule for finding
-its members** instead of listing them: `standard_set`, `classification`,
-`listed` or `none`. Only the listed ones need rows in
-`token_group_member.csv`, which today is two rows for Cloak or Gloves of the
-Order. `scripts/check_groups.mjs` resolves every rule against the catalogs and
-fails if a standard-set group is not exactly 40, a listed member is missing,
-or any token lands in two groups. See `data-model.md` § 4, *`resolution`*.
+A group is a stack the player counts: "12 Rares", "3 Golem Chaser". Players
+never see a group's members. Each group names **a rule for finding its
+members** instead of listing them: `classification`, `listed` or `none`. Most
+groups, Rare and Uncommon included, are `none`: count only, no members. The
+two that have members, Monster Trophy and Cloak or Gloves of the Order, have
+them so that the form's search box can leave those names out. Only `listed`
+groups need rows in `token_group_member.csv`, which today is two rows.
+`scripts/check_groups.mjs` fails if a listed member is missing, any token
+lands in two groups, or a set size appears outside a chase set. See
+`data-model.md` § 4, *`resolution`*.
 
 ## Conventions that look wrong and are not
 
