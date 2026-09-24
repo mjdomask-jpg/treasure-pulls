@@ -967,6 +967,28 @@ and `Monster Bit` / `Monster Bits`. It misses `Origins` / `Origns`,
 because the rule that would catch those also merges `+1 Turkey Leg` into
 `+1 Turkey Leg of Smiting`.
 
+**V6 is implemented for the seed data** as `scripts/check_names.mjs` (2026-09-24).
+It gathers every name from every file that holds one: catalogs, trade goods,
+groups, group members, aliases, bonus tiers, conversion counts, events and the
+E2E fixture. Tokens, events and players are separate namespaces. It reports:
+
+| # | Finding | Severity |
+|---|---|---|
+| N1 | a curly apostrophe (`inherited-practices.md` § 2) | ERROR |
+| N2 | two spellings equal under the soft fold (V6a) | ERROR |
+| N3 | a reference (an alias target, group member, bonus-tier or conversion row) that is not a canonical name exactly | ERROR |
+| N4 | two names equal under the hard fold that resolve to *different* things (V6b) | NOTE |
+
+N4 stays quiet about two aliases of the same token (`Monster Bit` / `Monster
+Bits`), since that is intended. A pair a human has reviewed and found to be two
+different things goes in `data/seed/name_distinct.csv`, so the note does not
+come back on every run. This is `inherited-practices.md` § 5: a note that can
+never be cleared teaches people to ignore notes.
+
+As of 2026-09-24 it runs clean over 517 token spellings and 12 events: no errors
+and no notes. **Players have no names yet.** They arrive with the D1 export
+(`stack.md`), and adding that file is one line in the script's source list.
+
 ---
 
 ## 8. Everything computed stays computed

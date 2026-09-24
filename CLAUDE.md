@@ -68,20 +68,18 @@ Maintain a single, unified backlog file so that neither of us needs to hunt acro
 
 ## Status
 
-Pre-implementation. Nothing built yet; this directory holds staged findings from
-the design discussion of 2026-08-19, the stack decision of 2026-09-18, the
-data model settled 2026-09-19, and the owner's answers of 2026-09-23.
+The data model is settled, and all the reference data the entry form needs is
+seeded in `data/seed/` and checked by five scripts in `scripts/`, which need no
+dependencies and no build. No `package.json`, CI, database or UI exists yet.
 
-**Start at `docs/handoff-2026-09-20.md`**, then `docs/data-model.md`, which is
+**Start at `docs/handoff-2026-09-24.md`**, then `docs/data-model.md`, which is
 current and is the authority. The earlier handoffs and the owner's review and
 answer documents survive only as the record of how it was arrived at.
-
-The conversion vocabularies are seeded in `data/seed/` and checked by
-`node scripts/check_conversion.mjs` — no dependencies, no build.
 
 **All open work is in `docs/backlog.md`** — the single backlog. Add to it rather
 than to a handoff or a doc's "not yet decided" section.
 
 **`data/seed/token_catalog_2027.csv` is deliberately incomplete** — the season's
 chase sets are not public until after January 2027. Re-run
-`node scripts/fetch_catalog.mjs 2027` then.
+`node scripts/fetch_catalog.mjs 2027` then, and see the handoff for what else
+that re-fetch touches.
