@@ -15,11 +15,9 @@
 //   F3  within a section, no item appears twice and positions run 1..n
 //   F4  every mix offered in a year that has events has at least one box
 
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import { join } from 'node:path';
 import { parseCsv } from './csv.mjs';
-
-const SEED = join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'seed');
+import { SEED } from './paths.mjs';
 
 const boxes = parseCsv(join(SEED, 'form_box.csv'));
 const groups = new Map(parseCsv(join(SEED, 'token_group.csv')).map((g) => [g.name, g]));

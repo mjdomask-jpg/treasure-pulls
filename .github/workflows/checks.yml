@@ -1,7 +1,9 @@
 name: Checks
 
 # Runs every data check (scripts/check_*.mjs) on each pull request into main,
-# and again on each push to main so main's own status is visible. The checks
+# and again on each push to main so main's own status is visible. Then runs
+# checks.test.mjs, which proves each check still catches the breaks aimed at
+# it; it runs even when the data checks fail, so one run shows both. The checks
 # need no install: they run on bare Node 24 with no dependencies. When the form
 # brings dependencies, add `cache: npm` to setup-node and an `npm ci` step.
 on:
@@ -27,3 +29,5 @@ jobs:
         with:
           node-version: 24
       - run: npm run check
+      - run: npm test
+        if: ${{ !cancelled() }}

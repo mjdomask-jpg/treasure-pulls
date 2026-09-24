@@ -24,14 +24,10 @@
 // export (docs/stack.md); add that file here when it exists.
 
 import { readdirSync, existsSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { dirname, join, relative } from 'node:path';
+import { join, relative } from 'node:path';
 import { parseCsv } from './csv.mjs';
+import { ROOT, SEED, FIXTURES } from './paths.mjs';
 import { soft } from './fold.mjs';
-
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const SEED = join(ROOT, 'data', 'seed');
-const FIXTURES = join(ROOT, 'scripts', 'fixtures');
 
 const hard = (s) => soft(s).replace(/[^a-z0-9]/g, '').replace(/(es|s)$/, '');
 

@@ -9,13 +9,9 @@
 // merely self-consistent, they are the numbers that predicted the measured data.
 // See docs/data-model.md section 2.
 
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import { join } from 'node:path';
 import { parseCsv } from './csv.mjs';
-
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const SEED = join(ROOT, 'data', 'seed');
-const FIXTURES = join(ROOT, 'scripts', 'fixtures');
+import { SEED, FIXTURES } from './paths.mjs';
 
 const num = (v) => (v === '' || v === undefined ? null : Number(v));
 

@@ -21,11 +21,10 @@
 //   G4  set_size appears only on count-only groups (chase sets), as a number
 
 import { readdirSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import { join } from 'node:path';
 import { parseCsv } from './csv.mjs';
+import { SEED } from './paths.mjs';
 
-const SEED = join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'seed');
 const RULES = new Set(['classification', 'listed', 'none']);
 
 const allTokens = readdirSync(SEED)

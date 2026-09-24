@@ -206,7 +206,9 @@ data so that a rule change is a one-row edit here, not a code change. See
 ## Checking
 
 `npm run check` runs every `scripts/check_*.mjs`, all of them even when one
-fails, and GitHub Actions runs it on every pull request into `main`.
+fails. `npm test` breaks a scratch copy of this directory one way per rule and
+asserts that each check catches it, so a rule that stops firing turns CI red.
+GitHub Actions runs both on every pull request into `main`.
 
 `scripts/check_conversion.mjs` does two things, and both should pass before this
 data is trusted:

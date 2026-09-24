@@ -11,12 +11,11 @@
 //       event_year; the mail event has none, since it spans the year
 //   E4  no two events in a year share a name under the soft fold
 
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import { join } from 'node:path';
 import { parseCsv } from './csv.mjs';
+import { SEED } from './paths.mjs';
 import { soft } from './fold.mjs';
 
-const SEED = join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'seed');
 const VENUES = new Set(['in_person', 'virtual', 'mail']);
 
 const events = parseCsv(join(SEED, 'event.csv'));
