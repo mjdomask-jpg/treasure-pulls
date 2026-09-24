@@ -13,6 +13,9 @@ is dropped, chase sets are entered as set counts with placeholders for 2027, and
 tokendb's rarity labels now have a mapping (§ 4, *`rarity`*). Open work lives in
 `docs/backlog.md`.
 
+**Amended 2026-09-24** (owner): `seat_runs` is removed, and **no check ever stops
+a submission** (§ 7).
+
 Game facts come from the `td-domain` skill; treasure-recording facts from
 `domain-context.md`; the validation posture from `inherited-practices.md`. Scope
 is the **2027 season**. Historical backfill is a long-term goal, out of scope for
@@ -212,8 +215,9 @@ counting tokens, while standard rows count draws.
 In exchange, an invariant a spreadsheet could never check: **condensed items come
 in whole packs.** Measured, **9 of 107 condensed rows fail it** (sums of 7, 32,
 47, 55, 57, 69, 72, 113, 129), five of them at the first event that offered the
-option. A live form check — *"condensed treasure comes in packs of 10 and you've
-entered 57 — missing three?"* — catches an 8% error rate at the keyboard.
+option. A live form hint — *"condensed treasure comes in packs of 10 and you've
+entered 57 — missing three?"* — catches an 8% error rate at the keyboard. It is a
+hint the player can dismiss, never a gate (§ 7).
 
 ---
 
@@ -508,7 +512,6 @@ CREATE TABLE submission (
   event_id      INTEGER NOT NULL REFERENCES event(event_id),
   mix_id        INTEGER NOT NULL REFERENCES mix(mix_id),
   player_id     INTEGER NOT NULL REFERENCES player(player_id),  -- the reporter
-  seat_runs     INTEGER,        -- seats covered; checked, never enforced
   intent        TEXT    NOT NULL CHECK (intent IN ('new_loot','correction')),
   corrects      INTEGER REFERENCES submission(submission_id),
   submitted_at  TEXT    NOT NULL,
@@ -530,10 +533,23 @@ CREATE TABLE pull (
 );
 ```
 
-**`seat_runs`, not `person_runs`.** The thing that earns treasure is a seat in a
-run, not a person: one human may buy all ten tickets and run ten copies of the
-synergy tokens to reach the top breakpoint. Optional, and validated only when
-present.
+**There is no seat count** (owner, 2026-09-24). The 2026-09-19 draft had an
+optional `seat_runs`: how many seats (tickets) a submission covered. It existed
+only to support two plausibility checks, and it was removed for these reasons:
+
+- **The estimate never reads it.** Draws come from the items (§ 3), and
+  entitlement is not needed.
+- **The check it supported was nearly empty.** Each seat earns 3 to 30 draws in
+  2027, so a 10-seat submission passes with anywhere from 30 to 300 items.
+- **Where it would matter, the items already say.** A pack-substitute shipment
+  holds one good per seat, plus a thank-you for each extra person on a combined
+  shipment, so its item count already tracks its seat count closely.
+- **It is one more field on a phone**, asking for something the player has no
+  reason to understand. That is the same reasoning that removed `team`.
+
+The fact that motivated it is still true and still matters for reading the data:
+what earns treasure is a *seat* in a run, not a person. One human may buy all ten
+tickets, so a single submission can legitimately hold ten seats' worth of loot.
 
 **Both second-submission shapes are supported, and they are different.** Players
 routinely enter a second row rather than doing arithmetic on the first:
@@ -673,20 +689,66 @@ feeding Trade 2, exactly as § 6's rules say.
 
 ## 7. Validation
 
+### No check ever stops a submission
+
+**This is a rule, not a default** (owner, 2026-09-24). Recording loot is a chore
+done by a large, imperfect population, often on a phone. A submission refused
+over an unexpected quantity is lost for good, and it is lost from exactly the
+people whose data looks unusual. Imperfect data can be flagged and weighed later.
+Data that was never submitted cannot be.
+
+**The form requires four things and nothing else:**
+
+1. an event
+2. the treatment: standard, condensed or pack substitute
+3. the reporter's name
+4. at least one item
+
+Once those are filled in, the submit button works. Every other check takes one of
+three forms, and none of them is a refusal:
+
+| Form | What the player sees | Checks |
+|---|---|---|
+| **Hint** | One line they can dismiss; submitting still works | V1, V5 |
+| **Silent snap** | The existing spelling is used instead of what they typed | V6a |
+| **Maintainer flag** | Nothing | V2, V6b, V8, and anything added later |
+
+A check is shown to the player **only if it catches a mistake that only the
+player can fix, and that would otherwise distort the estimate.** V1 fails on 9 of
+107 condensed rows in the 2026 workbook, and only the player knows what was in
+the pack. V5 is rare (one 10x Pull in all of 2026), but left alone it would mix
+standard draws into a condensed submission (§ 5), and only the player knows which
+ten items came from the chip. Everything else goes to maintainers.
+
+"ERROR" in the table below is a severity **for the repository's own checks**:
+seed data, catalogs and exports, run in CI. It never describes what the form does
+to a player. The one thing the server may refuse is a request that did not come
+through the form at all — a script posting junk, or traffic hitting the rate
+limit (`stack.md`). That is abuse protection, not a judgement on the data.
+
+### The checks
+
 Per `inherited-practices.md` § 5, a check that cannot be *proved* wrong reports a
 NOTE naming the remedy; a thing that is wrong by construction is an ERROR.
 
-| # | Check | Severity |
-|---|---|---|
-| V1 | condensed `items` is a whole number of packs, over the aggregate per (subject, event) — not per submission, since corrections are deltas | NOTE with remedy |
-| V2 | a condensed submission contains no `in_standard_set` token | NOTE |
-| V3 | standard `items` falls between `base_pulls × seat_runs` and `max_pulls × seat_runs`, plus any `grants_draws` | NOTE, only when `seat_runs` given |
-| V4 | `pack_substitute items ≈ Σ seat_runs + (persons − 1)` — one good per seat-run plus a thank-you per extra person on the shipment | NOTE, **deliberately loose** |
-| V5 | a 10x Pull in a condensed submission has a matching standard submission | NOTE, prompted at entry |
-| V6 | soft fold (case / whitespace / punctuation / plural) over `player`, `event`, `token` | ERROR |
-| V7 | per-rarity `trade_conversion` + `gp_source` counts sum to `standard_set.set_size`, for rarities that have rows at all | ERROR |
-| V8 | a submission's mix is offered at that event's venue | NOTE |
-| V9 | `token_catalog_<year>.csv`, grouped by `converts_to` × rarity, reproduces `trade_conversion` | ERROR |
+| # | Check | Severity | Where it shows |
+|---|---|---|---|
+| V1 | condensed `items` is a whole number of packs, over the aggregate per (subject, event) — not per submission, since corrections are deltas | NOTE with remedy | hint |
+| V2 | a condensed submission contains no `in_standard_set` token | NOTE | maintainer flag |
+| V3 | *removed 2026-09-24 along with `seat_runs`* | — | — |
+| V4 | *removed 2026-09-24 along with `seat_runs`* | — | — |
+| V5 | a 10x Pull in a condensed submission has a matching standard submission | NOTE, prompted at entry | hint |
+| V6a | a name that differs from an existing one only in case or whitespace, over `player`, `event`, `token` | ERROR in CI | silent snap to the existing name; `submitted_as` keeps what was typed |
+| V6b | a name that differs only in punctuation or a trailing plural | NOTE for a human | maintainer flag, **never auto-merged** |
+| V7 | per-rarity `trade_conversion` + `gp_source` counts sum to `standard_set.set_size`, for rarities that have rows at all | ERROR | CI only |
+| V8 | a submission's mix is offered at that event's venue | NOTE | maintainer flag |
+| V9 | `token_catalog_<year>.csv`, grouped by `converts_to` × rarity, reproduces `trade_conversion` | ERROR | CI only |
+
+**V6 is split in two to match `inherited-practices.md` § 1.** The earlier table
+made punctuation and plural differences an ERROR, which contradicted that section.
+A case or whitespace difference is the same name by construction, so it is safe
+to snap. A punctuation or plural difference usually is the same name, but not
+always, so a human decides.
 
 **V7 and V9 are implemented** — `scripts/check_conversion.mjs`, which also runs
 the § 2 prediction end to end out of the committed CSVs and reproduces the
@@ -761,8 +823,10 @@ The pack-substitute stream is the cleanest thing in the project to deduce: one
 flat pool, one item per draw, and a stated 1/100 Ultra Rare that is the **only
 published rate in the entire domain**. If the method reproduces that 1%, every
 unpublished rate the site produces earns credibility by association — which is
-why it is in V1 rather than after it. It also yields `seat_runs` directly, the
-one number the standard mix cannot supply.
+why it is in V1 rather than after it. Because it holds one good per seat (plus a
+thank-you for each extra person on a combined shipment), it also gives a close
+seat count. That is the one number the standard mix cannot supply, and it comes
+without asking anyone for it.
 
 Its **mix composition is unknown** — nobody knows whether it is flat over the
 eight Trade 1 goods or over Trade 1 and Trade 2 together. That is a finding the

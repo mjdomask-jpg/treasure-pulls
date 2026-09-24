@@ -4,7 +4,7 @@ This is the single list of open work for the project. Each item should make sens
 without reading anything else, and points at the document that has the detail.
 Items are removed when they are done, and git history keeps the record.
 
-Last groomed **2026-09-23**.
+Last groomed **2026-09-24**.
 
 ---
 
@@ -68,7 +68,16 @@ once they do.
    items) or **enterable from a searchable list, with no dedicated field**
    (Paragon, the 100,000 GP bar, anything unexpected). It must work
    well on a phone. It must never use the phrase "total pulls" (see
-   `data-model.md` § 3). There is no team field.
+   `data-model.md` § 3). There is no team field and no seat-count field.
+
+   **No check may stop a submission.** The form requires an event, the
+   treatment (standard, condensed or pack substitute), the reporter's name and
+   at least one item, and nothing else. Only two checks are ever shown to the
+   player, both as one-line hints they can dismiss: condensed treasure not coming
+   to a multiple of 10, and a 10x Treasure Chip inside a condensed entry. A name
+   that differs from an existing one only in capital letters or spacing is
+   quietly replaced with the existing spelling. Everything else is flagged for
+   maintainers and is invisible to the player. Detail is in `data-model.md` § 7.
 
 ## Waiting on outside events
 
