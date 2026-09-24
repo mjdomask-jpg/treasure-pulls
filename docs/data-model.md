@@ -397,6 +397,7 @@ handles everything the sheet fudged:
 | `Herald's Chaser (set of 20)` | 20 pieces in 2026 | same |
 | `Mystery Chase Set (40)`, `Mystery Chase Set (20)` | none yet | 2027 placeholders — see below |
 | `Cloak or Gloves of the Order` | 2 tokens | *"the important bit is how often they show up in total"* |
+| `Monster Trophy` | every token tokendb classifies as one (6 in 2026) | players count trophies; the form labels it **Monster Trophy (Monster Bit)** (owner, 2026-09-24) |
 | `Relic (year unknown)` | — | the pool of previous-year Relics is broad and the sample small |
 | `Legendary (year unknown)` | — | same |
 
@@ -433,6 +434,30 @@ rate is `set count ÷ draws` and never reads the member list.
 **Resolution levels are disjoint, never overlapping.** A group row is a residual —
 *"and how many other Rares?"* — so `items` is the sum of all rows regardless of
 grain, and there is no `Total Other` to reconcile.
+
+**Seeded 2026-09-24** in `data/seed/token_group.csv` and checked by
+`scripts/check_groups.mjs`. Each group says how its members are found, rather
+than listing them, so a catalog re-fetch cannot leave a hand-kept list stale:
+
+| `members` | Meaning | Groups |
+|---|---|---|
+| `standard_set` | that year's `in_standard_set` tokens of the group's rarity, which must number exactly what `standard_set.csv` says | `Rare (2027)`, `Uncommon (2027)` |
+| `classification` | every catalog token tokendb classifies under the group's name | `Monster Trophy` |
+| `listed` | the rows in `token_group_member.csv` | `Cloak or Gloves of the Order` |
+| `none` | no members; players only ever enter a count | the chase sets, the Mystery placeholders, `Relic` / `Legendary (year unknown)` |
+
+**No token belongs to two groups**, because `group_id` is a single parent: a pull
+of a specific token rolls up to exactly one group. The check enforces it. As
+seeded, 88 tokens have a parent: 40 + 40 + 2 + 6.
+
+`set_size` appears only on the chase sets and their placeholders, where it means
+the number of pieces needed to complete the set. For the Rare and Uncommon
+groups, the 40 comes from `standard_set.csv` and is not written twice.
+
+**`Monster Trophy` has no members for 2027 yet.** Like the chase sets, the
+season's trophies are not public until after January. That does not matter for
+entry, because players enter a count, but the January re-fetch will fill it in
+automatically.
 
 #### `rarity` — mapping tokendb's labels (owner, 2026-09-23)
 
@@ -608,8 +633,8 @@ skill, the auction project and tokendb's classification, so the workbook
 spelling becomes the alias.
 
 Four aliases point at groups (`Monster Trophy`, the two chase sets, `Cloak or
-Gloves of the Order`), which are not seeded yet. Until they are, the check
-accepts exactly those four group names and nothing else, so a typo still fails.
+Gloves of the Order`). The check resolves them against `token_group.csv`, so a
+misspelled group name fails like any other.
 
 **Not aliased, deliberately.** Prior-year tokens (`Mark of the 2nd Tenet`,
 `Stalker Tokens`), because history is out of scope. Tier and bucket names

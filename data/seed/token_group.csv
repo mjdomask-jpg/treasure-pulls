@@ -1,0 +1,11 @@
+name,rarity,token_year,set_size,members,note
+Rare (2027),Rare,2027,,standard_set,the 40 standard-set Rares; players enter a count
+Uncommon (2027),Uncommon,2027,,standard_set,the 40 standard-set Uncommons; players enter a count
+Golem Chaser (set of 40),,2026,40,none,chase set; entered as a count of pieces
+Herald's Chaser (set of 20),,2026,20,none,chase set; entered as a count of pieces
+Mystery Chase Set (40),,2027,40,none,placeholder until the 2027 sets are revealed after January; rename in place and keep this name as an alias
+Mystery Chase Set (20),,2027,20,none,placeholder until the 2027 sets are revealed after January; rename in place and keep this name as an alias
+Cloak or Gloves of the Order,Rare,2026,,listed,owner: the important bit is how often they show up in total
+Monster Trophy,Monster Trophy,,,classification,every token tokendb classifies Monster Trophy; the form labels it Monster Trophy (Monster Bit)
+Relic (year unknown),Relic,,,none,a previous-year Relic whose year was not recorded
+Legendary (year unknown),Legendary,,,none,a previous-year Legendary whose year was not recorded

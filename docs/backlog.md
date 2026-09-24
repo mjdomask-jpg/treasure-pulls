@@ -13,21 +13,7 @@ Last groomed **2026-09-24**.
 Nothing is being built until the owner says so. This is the order to build in
 once they do.
 
-1. **Seed the groups players pick from.** "Rare (2027)" and "Uncommon (2027)"
-   stand for the 40 standard-set tokens of each rarity, so nobody has to pick
-   from 40 names. "Cloak or Gloves of the Order" is a group of two. Chase sets
-   are groups too, but they are entered as a count of sets and need only a set
-   size, with no member list. 2027's chase sets are not public yet, so they
-   are seeded as placeholders named `Mystery Chase Set (40)` and
-   `Mystery Chase Set (20)` (see *Waiting on outside events* below). Detail is in
-   `data-model.md` § 4, under *`resolution`*.
-
-   The groups go in `data/seed/token_group.csv`. Once that file exists, delete
-   the `PENDING_GROUPS` list in `scripts/check_aliases.mjs`. It is a stand-in
-   that lets four aliases point at groups before the groups exist: `Monster
-   Trophy`, the two chase sets, and Cloak or Gloves of the Order.
-
-2. **Seed the 2027 event list.** The events are published at
+1. **Seed the 2027 event list.** The events are published at
    truedungeon.com/2027-events-info (read 2026-09-24). Each one needs a name,
    a start date and a venue. **An in-person convention is one event however
    many games it runs**, because every game at a convention shares one
@@ -48,20 +34,22 @@ once they do.
    line. Use the headings, and add the other spellings as aliases. The End of
    Year Adventure gets renamed in place once it has a title.
 
-3. **Build the name-hygiene validator.** This is a check that catches two
+2. **Build the name-hygiene validator.** This is a check that catches two
    spellings of the same player, event or token, such as `Hacky` and `hacky`,
    before they become two records. It needs no user interface and no database,
    and it has real data to run against. Detail is in `inherited-practices.md`
    § 1 and in check V6 of `data-model.md` § 7.
 
-4. **Add `package.json` and continuous integration.** At the moment the
-   conversion check (`check_conversion.mjs`) and the alias check
-   (`check_aliases.mjs`) only run when a person remembers to run them. `stack.md`
+3. **Add `package.json` and continuous integration.** At the moment the
+   conversion check (`check_conversion.mjs`), the alias check
+   (`check_aliases.mjs`) and the group check (`check_groups.mjs`) only run
+   when a person remembers to run them. `stack.md`
    commits to running the `.mjs` validators automatically on every change. That
    automation is what turns the check from a convention into a gate.
 
-5. **Design and build the entry form.** Every enterable token is either a
-   **dedicated field** (Rare, Uncommon, the chase sets, Monster Trophy, 10x
+4. **Design and build the entry form.** Every enterable token is either a
+   **dedicated field** (Rare, Uncommon, the chase sets, Monster Trophy —
+   labelled "Monster Trophy (Monster Bit)" — 10x
    Treasure Chips, Cloak or Gloves, the trade goods, the named Ultra Rare-or-better
    items) or **enterable from a searchable list, with no dedicated field**
    (Paragon, the 100,000 GP bar, anything unexpected). It must work
@@ -99,15 +87,6 @@ once they do.
    quietly replaced with the existing spelling. Everything else is flagged for
    maintainers and is invisible to the player. Detail is in `data-model.md` § 7.
 
-## Waiting on the owner
-
-- **What the form calls a Monster Trophy.** The canonical name is now
-  `Monster Trophy`, matching the td-domain skill, the auction site and tokendb.
-  The community workbooks have always called it `Monster Bit`, and that name
-  now works as a search alias. The open question is what the form's own field
-  label says: "Monster Trophy", "Monster Bit", or both, such as "Monster
-  Trophy (Monster Bit)".
-
 ## Waiting on outside events
 
 - **Origins 2027.** The company has not decided whether it will attend. Add
@@ -116,7 +95,8 @@ once they do.
 - **Re-fetch the 2027 token catalog after January 2027.** 2027's chase sets and
   treasure-only Rares are not published until then, so
   `data/seed/token_catalog_2027.csv` is missing them. Run
-  `node scripts/fetch_catalog.mjs 2027` and then re-run the checks. For any
+  `node scripts/fetch_catalog.mjs 2027` and then re-run the checks. The
+  Monster Trophy group picks up 2027's trophies from the re-fetch by itself. For any
   *new* year (2028 onward), first add that year's three rows to
   `data/seed/bonus_tier.csv`: the 1k, 2k and 8k Bonus tokens, taken from the
   auction site's display names. Without them the 2k Bonus token is labelled an
