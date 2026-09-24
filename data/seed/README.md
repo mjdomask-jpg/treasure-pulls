@@ -97,6 +97,8 @@ until 2026-09-23, which is why this check exists.
 | `standard_set.csv` | `data-model-review.md` — "a fixed set of 40 rare, 40 uncommon, and 40 common tokens" |
 | `mix.csv`, `mix_year.csv` | owner answers of 2026-09-19, throughout |
 | `token_alias.csv` | per row, in its own `source` column: the three workbooks, the auction project's origin/main, the owner answer docs, or the `td-domain` skill's trade-good codes |
+| `token_group.csv` | `data-model.md` § 4, *`resolution`*, where each group is decided; the Monster Trophy label is the owner's, 2026-09-24 |
+| `token_group_member.csv` | per row, in its own `source` column: `token_catalog_2026.csv` and the 2026 workbook |
 | `trade_good.csv` | the trade ladder in the `td-domain` skill. The 100,000 GP Mythic Ore Bar (Trade 5) was added 2026-09-24 from tokendb's classification `Trade 5`, confirmed by the owner. No treasure pull has ever reported one, but it must be possible to record it |
 | `bonus_tier.csv` | per row: the auction project's display names on origin/main (commit given in each row), confirmed by the owner 2026-09-24 |
 
@@ -114,6 +116,17 @@ Premium` on the 1k and 2k tokens, and copies the tier into the catalog's
 `bonus_tier` column. **Add the new year's three rows before fetching that
 year**; the auction project's display names are the source. A row naming a
 token tokendb does not have stops the fetch.
+
+## `token_group.csv`, `token_group_member.csv`
+
+A group is a token that stands for "one of these", so a player can enter "12
+Rares" without picking from 40 names. Each group names **a rule for finding
+its members** instead of listing them: `standard_set`, `classification`,
+`listed` or `none`. Only the listed ones need rows in
+`token_group_member.csv`, which today is two rows for Cloak or Gloves of the
+Order. `scripts/check_groups.mjs` resolves every rule against the catalogs and
+fails if a standard-set group is not exactly 40, a listed member is missing,
+or any token lands in two groups. See `data-model.md` § 4, *`resolution`*.
 
 ## Conventions that look wrong and are not
 
