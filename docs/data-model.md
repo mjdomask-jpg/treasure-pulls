@@ -15,7 +15,9 @@ tokendb's rarity labels now have a mapping (§ 4, *`rarity`*). Open work lives i
 
 **Amended 2026-09-24** (owner): `seat_runs` is removed, **no check ever stops a
 submission** (§ 7), and **one submission holds all three treatments**, so the mix
-is recorded on each line (§ 4, *`submission` and `pull`*).
+is recorded on each line (§ 4, *`submission` and `pull`*). Events carry a
+`venue`, and in-person events show only the Standard section (§ 4, *`event_year`
+and the mixes*).
 
 Game facts come from the `td-domain` skill; treasure-recording facts from
 `domain-context.md`; the validation posture from `inherited-practices.md`. Scope
@@ -252,9 +254,23 @@ CREATE TABLE mix_year (
 
 Both NULL means one item per draw. The 2027 change from 27 to 30 is a data edit.
 
-**`venue` is advisory, not a constraint.** Condensed and pack-substitute are
-virtual-only today and the owner has said that could change; a rule change should
-not make the form reject true data. Enforced as NOTE-level V8, never an ERROR.
+**`venue` decides which sections the form shows** (owner, 2026-09-24). A mix is
+offered at an event when its `venue` is `any` or matches the event's `venue`. In
+2027 that means:
+
+| Event venue | Sections offered |
+|---|---|
+| `virtual` | Standard, Condensed packs, Pack substitutes |
+| `in_person` | Standard only |
+| `mail` (the 10x redemption event) | Standard only |
+
+The owner has said the rule could change. If it does, it is a one-row data edit
+in `mix_year`, not a code change. This hides sections; it does not refuse
+anything, so it does not break § 7's rule that no check stops a submission. The
+cost is that a player at an in-person event who somehow did get condensed
+treasure has nowhere to enter it until that row is edited. The 2026 workbook
+supports accepting that cost: all 8 Gen Con rows are non-condensed. V8 stays as
+a maintainer flag for anything that reaches the server some other way.
 
 ### `event`
 
@@ -264,8 +280,7 @@ CREATE TABLE event (
   event_year INTEGER NOT NULL REFERENCES event_year(event_year),
   name       TEXT    NOT NULL,   -- 'Tower of Blood', 'Gen Con'
   serial     TEXT,               -- 'VTD31' — virtual events have always had one
-  kind       TEXT    NOT NULL CHECK (kind IN
-               ('convention','virtual','special','redemption')),
+  venue      TEXT    NOT NULL CHECK (venue IN ('in_person','virtual','mail')),
   start_date TEXT,
   fold_key   TEXT    NOT NULL,
   UNIQUE (event_year, fold_key)
@@ -280,8 +295,19 @@ else.
 stopped printing the serial. Both are recorded, and neither is derived from the
 other.
 
-`kind='redemption'` holds one synthetic event per year, *"10x Pull redeemed by
-mail"* — see § 5.
+**`venue` replaces the earlier `kind`** (`convention` / `virtual` / `special` /
+`redemption`). `kind` mixed two questions together: where the event was played,
+and what sort of event it was. Only the first one matters to the pool. `special`
+said nothing about venue. It could have been a virtual year-end adventure or a
+Patron run, and the form needs to know which sections to show.
+
+`venue='mail'` holds one synthetic event per year, *"10x Pull redeemed by mail"*
+— see § 5.
+
+**An in-person convention is one event, however many games it runs** (owner).
+Gen Con 2027 lists three or four adventures, but all of them draw from the same
+treasure pool, so the player picks `Gen Con` and never a game. Virtual events
+run one adventure each, so for them the distinction does not come up.
 
 The date belongs in a column because the workbook keeps putting the month in the
 name and then losing it. One 2026 event appears as `Mists of Madness (Feb)`,
@@ -609,7 +635,7 @@ and the form records them separately.**
    at a later event, or by mail. The ten items are loot from **the redemption**,
    not from the event the chip came from. They are entered wherever the player
    redeemed: under that later event if in person, or under the year's
-   `kind='redemption'` event (*"10x Pull redeemed by mail"*) if by mail.
+   `venue='mail'` event (*"10x Pull redeemed by mail"*) if by mail.
 
 **The ten redeemed draws always come from the standard pool** (owner), even when
 the chip came out of a condensed pack, and even when the player is also taking
