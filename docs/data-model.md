@@ -410,6 +410,7 @@ handles everything the sheet fudged:
 | `Herald's Chaser (set of 20)` | 20 pieces in 2026 | same |
 | `Mystery Chase Set (40)`, `Mystery Chase Set (20)` | none yet | 2027 placeholders — see below |
 | `Cloak or Gloves of the Order` | 2 tokens | *"the important bit is how often they show up in total"* |
+| `Mystery Treasure Chest Rare` | none yet | 2027 placeholder for the year's treasure-chest-only Rares, Cloak or Gloves' successor (owner, 2026-09-24) — see *Which count boxes each section shows* |
 | `Monster Trophy` | every token tokendb classifies as one (6 in 2026) | players count trophies; the form labels it **Monster Trophy (Monster Bit)** (owner, 2026-09-24) |
 | `Relic (year unknown)` | — | the pool of previous-year Relics is broad and the sample small |
 | `Legendary (year unknown)` | — | same |
@@ -463,7 +464,7 @@ than listing them, so a catalog re-fetch cannot leave a hand-kept list stale:
 |---|---|---|
 | `classification` | every catalog token tokendb classifies under the group's name | `Monster Trophy` |
 | `listed` | the rows in `token_group_member.csv` | `Cloak or Gloves of the Order` |
-| `none` | no members; players only ever enter a count | `Rare (2027)`, `Uncommon (2027)`, the chase sets, the Mystery placeholders, `Relic` / `Legendary (year unknown)` |
+| `none` | no members; players only ever enter a count | `Rare (2027)`, `Uncommon (2027)`, the chase sets, the three Mystery placeholders, `Relic` / `Legendary (year unknown)` |
 
 **Rare and Uncommon have no members** (owner, 2026-09-24). The first seeding
 derived the 40 standard-set tokens of each as members. That list had no job:
@@ -493,6 +494,106 @@ Trophy and Cloak or Gloves exist for this reason.
 season's trophies are not public until after January. That does not matter for
 entry, because players enter a count, but the January re-fetch will fill it in
 automatically.
+
+#### Which count boxes each section shows (owner, 2026-09-24)
+
+Each form section opens with a short list of count boxes. Everything else is
+reached through "add another item". **The lists differ by section**, because
+the treatments yield different things, and **they are chosen by measurement**:
+an item gets a box when a large share of the previous year's submissions under
+that treatment listed it.
+
+Measured across all six 2026 event sheets: 81 standard submissions and 107
+condensed. *Share* is the share of submissions listing at least one.
+
+**Standard falls off a cliff after the sixth item.**
+
+| Item | Share |
+|---|---|
+| Rare, Uncommon | 99% |
+| Monster Bit | 95% |
+| Golem Chaser, Herald's Chaser | 84%, 79% |
+| Cloak / Gloves of the Order | 51% |
+| *then* 1,000 GP Bar, 10x Trade Good, Ultra Rare, Exalted, Enhanced | 15–17% |
+| Omni Orb, then each trade good | 14% and below |
+
+**Condensed has no cliff until about 20%.**
+
+| Item | Share |
+|---|---|
+| Monster Bit, both chase sets | 90–97% |
+| Mystic Silk, Darkwood Plank, Philosopher's Stone | 76–81% |
+| Cloak / Gloves of the Order | 69% |
+| Alchemist's Parchment, 1,000 GP Bar, Alchemist's Ink | 53–58% |
+| Aragonite, Oil of Enchantment, Elven Bismuth, Enchanter's Munition | 35–43% |
+| Enhanced, Exalted, Drake's Draught, 10x Trade Good | 29–32% |
+| Dwarven Steel, Minotaur Hide | 27% |
+| Ultra Rare, Non-Year Relic, Golden Fleece | 20–26% |
+| *then* Wish Ring, and everything else | 9% and below |
+
+A condensed submission is wide: the median lists 12 distinct items, against 6
+for standard. So every item left out of Condensed costs more. Searches a player
+would need per submission, by the boxes offered:
+
+| Section | Boxes | Searches per submission (mean) | Needing none |
+|---|---|---|---|
+| Standard: Rare, Uncommon, trophy, chase sets | 5 | 2.6 | 16% |
+| Standard: + Cloak / Gloves | **6** | **2.1** | 21% |
+| Condensed: trophy, chase sets, Trade 1 | 11 | 4.8 | 3% |
+| Condensed: + Cloak / Gloves + Trade 2 and the 1,000 GP bar | **16** | **2.4** | 8% |
+| Condensed: everything at 20% or more | 21 | 1.0 | 40% |
+
+**Decided** (bold rows above):
+
+| Section | Boxes |
+|---|---|
+| Standard | Rare, Uncommon, Monster Trophy, both chase sets, the treasure-chest-only Rare (6) |
+| Condensed packs | Monster Trophy, both chase sets, the treasure-chest-only Rare, the eight Trade 1 goods, the three Trade 2 goods and the 1,000 GP Gold Bar (16) |
+| Pack substitutes | the eight Trade 1 goods (8) — **the owner's hypothesis, unmeasured**: the 2026 workbook has no pack-substitute column or flag, so there is nothing to count |
+
+- **The trade ladder stays whole.** Dwarven Steel and Minotaur Hide (27%) fall
+  below all three Trade 2 goods, but that figure is the substitution finding
+  (§ 2) rather than a settled rate. A grid missing two Trade 1 goods would read
+  as an error. The twelve goods are laid out as a compact two-column grid,
+  labelled with the codes the 2026 sheet taught players (`AI`, `AP`, `DP`…).
+- **The 10x Treasure Chip gets no box.** It appeared on 1 of 188 submissions.
+  **Nor does any named Ultra Rare-or-better item.** None exceeds 16% in
+  Standard, and in Condensed they sit in the 20–32% band below.
+- **The search is the middle tier.** Opened before anything is typed, it
+  suggests that section's next most common items, one tap each. In 2026 terms
+  that is Enhanced, Exalted, Drake's Draught, a 10x trade good, Ultra Rare,
+  a previous-year Relic and Golden Fleece for Condensed, and the 1,000 GP bar,
+  a 10x trade good, Ultra Rare, Exalted and Enhanced for Standard. Several of
+  those are rarities, not tokens (the 2026 sheet put every Ultra Rare in one
+  column), so a suggestion may open the search filtered to a rarity. That is
+  form-design detail.
+- **The treasure-chest-only Rare box is a placeholder in 2027.** Cloak and
+  Gloves of the Order were 2026 tokens. Their successors are not known until
+  after January, so the box is `Mystery Treasure Chest Rare`, a count-only
+  group renamed in place at the reveal exactly like the chase sets.
+- **Caveat:** the 2026 sheet could record only what it had a column for (42 item
+  columns). Items outside them are invisible here, which bears only on what the
+  search must find, not on which items get boxes.
+
+**The list is data, not code**, so next year's can be re-derived from this
+year's submissions without touching the form. It is **fixed for a season**: the
+layout must not reorder itself under players as data arrives.
+
+```sql
+CREATE TABLE form_box (
+  event_year INTEGER NOT NULL REFERENCES event_year(event_year),
+  mix_id     INTEGER NOT NULL REFERENCES mix(mix_id),
+  position   INTEGER NOT NULL,   -- 1..n, top to bottom
+  token_id   INTEGER NOT NULL REFERENCES token(token_id),  -- a group or a trade good
+  PRIMARY KEY (event_year, mix_id, position),
+  UNIQUE (event_year, mix_id, token_id)
+);
+```
+
+Seeded in `data/seed/form_box.csv` and checked by `scripts/check_form_boxes.mjs`
+(F1–F4): every item is a group or trade good of the right year, every mix is
+offered that year, positions run 1..n with no repeats, and every section an
+event can show has boxes.
 
 #### `rarity` — mapping tokendb's labels (owner, 2026-09-23)
 

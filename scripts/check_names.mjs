@@ -49,6 +49,7 @@ const SOURCES = [
   [join(SEED, 'token_group_member.csv'), 'member', 'token', 'ref'],
   [join(SEED, 'bonus_tier.csv'), 'name', 'token', 'ref'],
   [join(SEED, 'trade_conversion.csv'), 'good', 'token', 'ref'],
+  [join(SEED, 'form_box.csv'), 'item', 'token', 'ref'],
   [join(FIXTURES, '2026_trade_good_items.csv'), 'good', 'token', 'ref'],
 ];
 

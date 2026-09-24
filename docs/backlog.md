@@ -14,19 +14,35 @@ Nothing is being built until the owner says so. This is the order to build in
 once they do.
 
 1. **Add `package.json` and continuous integration.** At the moment the
-   five checks in `scripts/` only run when a person remembers to run them:
+   six checks in `scripts/` only run when a person remembers to run them:
    `check_conversion.mjs`, `check_aliases.mjs`, `check_groups.mjs`,
-   `check_events.mjs` and `check_names.mjs`. `stack.md`
+   `check_events.mjs`, `check_names.mjs` and `check_form_boxes.mjs`. `stack.md`
    commits to running the `.mjs` validators automatically on every change. That
    automation is what turns the check from a convention into a gate.
 
-2. **Design and build the entry form.** Every enterable token is either a
-   **dedicated field** (Rare, Uncommon, the chase sets, Monster Trophy —
-   labelled "Monster Trophy (Monster Bit)" — 10x
-   Treasure Chips, Cloak or Gloves, the trade goods, the named Ultra Rare-or-better
-   items) or **enterable from a searchable list, with no dedicated field**
-   (Paragon, the 100,000 GP bar, anything unexpected). Every dedicated field is
-   a count: players sort their loot into stacks and type how many are in each.
+2. **Design and build the entry form.** Each section opens with **a short
+   list of count boxes that differs by section**, chosen by how often 2026
+   submissions under that treatment listed each item (owner, 2026-09-24):
+
+   - **Standard (6):** Rare, Uncommon, Monster Trophy (labelled "Monster Trophy
+     (Monster Bit)"), the two chase sets, and the treasure-chest-only Rare.
+   - **Condensed packs (16):** Monster Trophy, the two chase sets, the
+     treasure-chest-only Rare, and all of Trade 1 and Trade 2 including the
+     1,000 GP bar, laid out as a compact two-column grid labelled with the
+     trade-good codes (AI, AP, DP…).
+   - **Pack substitutes (8):** the Trade 1 goods. This one is the owner's
+     hypothesis, because 2026 recorded no pack substitutes to measure.
+
+   The lists are data, in `data/seed/form_box.csv`, not code. Everything else,
+   including the 10x Treasure Chip (1 of 188 submissions in 2026) and every
+   named Ultra Rare-or-better item, is **entered from an "add another item"
+   search**. When the search opens, before anything is typed, it suggests that
+   section's next most common items as one tap each. Several of those are
+   rarities rather than tokens (Ultra Rare, Enhanced, Exalted, a previous-year
+   Relic), so how a rarity suggestion leads to a named token is still to design.
+   The measurements and the reasoning are in `data-model.md` § 4, *Which count
+   boxes each section shows*. Every box is a count: players sort their loot
+   into stacks and type how many are in each.
    The search leaves out anything that already has a count box, meaning
    standard-set tokens and the members of Monster Trophy and Cloak or Gloves,
    so typing "shirt" doesn't list five standard-set shirts. It must work
@@ -85,6 +101,18 @@ once they do.
   Rename each one in place and keep the old name as an alias, so entries made
   before the reveal stay attached to the right set. If 2027 does not have exactly
   one 40-piece set and one 20-piece set, add or resize the placeholders.
+- **Rename the Mystery Treasure Chest Rare placeholder once 2027's
+  treasure-chest-only Rares are revealed.** It stands in for whatever succeeds
+  2026's Cloak or Gloves of the Order. Rename it in place in
+  `data/seed/token_group.csv` and keep the old name as an alias. Then switch
+  its `members` from `none` to `listed` and add the revealed tokens to
+  `token_group_member.csv`, so the search leaves them out, as it does Cloak and
+  Gloves.
+- **Re-derive the 2028 count boxes from 2027's submissions** before the 2028
+  season opens. Measure the share of submissions that list each item, per
+  treatment, the way `data-model.md` § 4 did for 2026. Put pack substitutes on
+  measured ground for the first time, and add the 2028 rows to
+  `data/seed/form_box.csv`.
 
 ## Findings to re-test with 2027 data
 
