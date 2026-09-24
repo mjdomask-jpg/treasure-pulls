@@ -121,7 +121,11 @@ once they do.
 - **Re-fetch the 2027 token catalog after January 2027.** 2027's chase sets and
   treasure-only Rares are not published until then, so
   `data/seed/token_catalog_2027.csv` is missing them. Run
-  `node scripts/fetch_catalog.mjs 2027` and then re-run the checks.
+  `node scripts/fetch_catalog.mjs 2027` and then re-run the checks. For any
+  *new* year (2028 onward), first add that year's three rows to
+  `data/seed/bonus_tier.csv`: the 1k, 2k and 8k Bonus tokens, taken from the
+  auction site's display names. Without them the 2k Bonus token is labelled an
+  ordinary Ultra Rare instead of Premium.
 - **Rename the Mystery chase set placeholders once the 2027 sets are revealed.**
   Rename each one in place and keep the old name as an alias, so entries made
   before the reveal stay attached to the right set. If 2027 does not have exactly
