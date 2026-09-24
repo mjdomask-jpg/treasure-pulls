@@ -52,7 +52,11 @@ once they do.
    labelled "Monster Trophy (Monster Bit)" — 10x
    Treasure Chips, Cloak or Gloves, the trade goods, the named Ultra Rare-or-better
    items) or **enterable from a searchable list, with no dedicated field**
-   (Paragon, the 100,000 GP bar, anything unexpected). It must work
+   (Paragon, the 100,000 GP bar, anything unexpected). Every dedicated field is
+   a count: players sort their loot into stacks and type how many are in each.
+   The search leaves out anything that already has a count box, meaning
+   standard-set tokens and the members of Monster Trophy and Cloak or Gloves,
+   so typing "shirt" doesn't list five standard-set shirts. It must work
    well on a phone. It must never use the phrase "total pulls" (see
    `data-model.md` § 3). There is no team field and no seat-count field.
 

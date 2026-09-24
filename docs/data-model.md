@@ -391,8 +391,8 @@ handles everything the sheet fudged:
 
 | Group | Members | Why a group |
 |---|---|---|
-| `Rare (2027)` | the 40 standard-set Rares | 40 options is a chore nobody wants |
-| `Uncommon (2027)` | the 40 standard-set Uncommons | same |
+| `Rare (2027)` | none — count only | players stack their standard-set Rares and count the stack |
+| `Uncommon (2027)` | none — count only | same |
 | `Golem Chaser (set of 40)` | 40 pieces in 2026 | chase set — entered as a set count only |
 | `Herald's Chaser (set of 20)` | 20 pieces in 2026 | same |
 | `Mystery Chase Set (40)`, `Mystery Chase Set (20)` | none yet | 2027 placeholders — see below |
@@ -401,9 +401,16 @@ handles everything the sheet fudged:
 | `Relic (year unknown)` | — | the pool of previous-year Relics is broad and the sample small |
 | `Legendary (year unknown)` | — | same |
 
-**The form defaults to the group in every one of these cases.** Nobody is asked to
-pick from 140 options. What the schema does is decline to *forbid* a specific
-answer, at a cost of one CSV and zero entry burden.
+**Every one of these is entered as a count** (owner, 2026-09-24). Players sort
+their loot into stacks and count each stack. Nobody picks an individual Rare,
+Uncommon, chase piece or trophy, and **no player ever sees a group's members.**
+Where a group has members, their one job at entry is to keep those names *out* of
+the form's search box (see *What the search leaves out*, below).
+
+The schema still does not *forbid* a row for a specific token. A player who
+types a name the form does not offer is captured as a surprise token
+(`status='proposed'`), never rejected, and a maintainer can fold it into the
+right count.
 
 **Chase sets go further: players record a set count, never a piece** (owner,
 2026-09-23) — *"3 Golem Chaser"*, exactly as the workbooks did. The form offers no
@@ -441,18 +448,33 @@ than listing them, so a catalog re-fetch cannot leave a hand-kept list stale:
 
 | `members` | Meaning | Groups |
 |---|---|---|
-| `standard_set` | that year's `in_standard_set` tokens of the group's rarity, which must number exactly what `standard_set.csv` says | `Rare (2027)`, `Uncommon (2027)` |
 | `classification` | every catalog token tokendb classifies under the group's name | `Monster Trophy` |
 | `listed` | the rows in `token_group_member.csv` | `Cloak or Gloves of the Order` |
-| `none` | no members; players only ever enter a count | the chase sets, the Mystery placeholders, `Relic` / `Legendary (year unknown)` |
+| `none` | no members; players only ever enter a count | `Rare (2027)`, `Uncommon (2027)`, the chase sets, the Mystery placeholders, `Relic` / `Legendary (year unknown)` |
+
+**Rare and Uncommon have no members** (owner, 2026-09-24). The first seeding
+derived the 40 standard-set tokens of each as members. That list had no job:
+
+- which tokens condensing converts away is the `in_standard_set` flag on each
+  catalog row, not group membership;
+- that there are exactly 40 of each is already checked twice, by V7 and V9;
+- keeping those names out of the search box can use the same flag.
+
+So the groups are now exactly what players see: a named stack with a count.
 
 **No token belongs to two groups**, because `group_id` is a single parent: a pull
 of a specific token rolls up to exactly one group. The check enforces it. As
-seeded, 88 tokens have a parent: 40 + 40 + 2 + 6.
+seeded, 8 tokens have a parent: Cloak and Gloves of the Order, and 2026's six
+Monster Trophies.
 
 `set_size` appears only on the chase sets and their placeholders, where it means
-the number of pieces needed to complete the set. For the Rare and Uncommon
-groups, the 40 comes from `standard_set.csv` and is not written twice.
+the number of pieces needed to complete the set.
+
+**What the search leaves out.** The form's "add another item" search is for the
+unusual drop, so it does not offer anything that already has a count box:
+standard-set tokens (`in_standard_set = 1`) and the members of any group. A
+player who types "shirt" sees no standard-set shirts. The members of Monster
+Trophy and Cloak or Gloves exist for this reason.
 
 **`Monster Trophy` has no members for 2027 yet.** Like the chase sets, the
 season's trophies are not public until after January. That does not matter for
