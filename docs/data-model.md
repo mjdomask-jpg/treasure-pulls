@@ -13,8 +13,9 @@ is dropped, chase sets are entered as set counts with placeholders for 2027, and
 tokendb's rarity labels now have a mapping (§ 4, *`rarity`*). Open work lives in
 `docs/backlog.md`.
 
-**Amended 2026-09-24** (owner): `seat_runs` is removed, and **no check ever stops
-a submission** (§ 7).
+**Amended 2026-09-24** (owner): `seat_runs` is removed, **no check ever stops a
+submission** (§ 7), and **one submission holds all three treatments**, so the mix
+is recorded on each line (§ 4, *`submission` and `pull`*).
 
 Game facts come from the `td-domain` skill; treasure-recording facts from
 `domain-context.md`; the validation posture from `inherited-practices.md`. Scope
@@ -439,7 +440,7 @@ drop is still captured as `status='proposed'` and is never rejected.
 
 #### `in_standard_set` — the flag the condensed rule needs
 
-Marks the 40/40/40 blind-pack tokens, the ones a condensed submission has had
+Marks the 40/40/40 blind-pack tokens, the ones condensed treasure has had
 converted away. Named this rather than `pool`, which now collides with *the
 treasure pool* — the thing being deduced — and with `mix`.
 
@@ -510,7 +511,6 @@ stable and acceptable to its owner.
 CREATE TABLE submission (
   submission_id INTEGER PRIMARY KEY,
   event_id      INTEGER NOT NULL REFERENCES event(event_id),
-  mix_id        INTEGER NOT NULL REFERENCES mix(mix_id),
   player_id     INTEGER NOT NULL REFERENCES player(player_id),  -- the reporter
   intent        TEXT    NOT NULL CHECK (intent IN ('new_loot','correction')),
   corrects      INTEGER REFERENCES submission(submission_id),
@@ -524,6 +524,7 @@ CREATE TABLE submission (
 CREATE TABLE pull (
   pull_id       INTEGER PRIMARY KEY,
   submission_id INTEGER NOT NULL REFERENCES submission(submission_id),
+  mix_id        INTEGER NOT NULL REFERENCES mix(mix_id),   -- per line: one submission holds all three
   token_id      INTEGER NOT NULL REFERENCES token(token_id),
   quantity      INTEGER NOT NULL CHECK (quantity <> 0),
   token_year    INTEGER,
@@ -554,8 +555,8 @@ tickets, so a single submission can legitimately hold ten seats' worth of loot.
 **Both second-submission shapes are supported, and they are different.** Players
 routinely enter a second row rather than doing arithmetic on the first:
 
-- **new loot** — a separate shipment, a guild member's split delivery, the other
-  treatment. A new submission, positive quantities. Adds to `items`, so it adds
+- **new loot** — a separate shipment or a guild member's split delivery. A new
+  submission, positive quantities. Adds to `items`, so it adds
   to `draws`. Correct.
 - **correction** — the first row was wrong. `intent='correction'`, `corrects` set,
   **signed deltas**, negative allowed. Nobody is made to do math; the aggregate
@@ -572,9 +573,21 @@ uniqueness fight each other. Uniqueness over *live* rows is enforced in the
 Function and re-checked by the validator over the export, per
 `inherited-practices.md` § 3.
 
-`event_id` and `mix_id` live on `submission` only: a pull cannot disagree with its
-own submission about where it came from. That removes
-`inherited-practices.md` § 11's *row keyed to the wrong parent* by construction.
+**One submission holds all three treatments** (owner, 2026-09-24). A player's
+loot from one event is routinely mixed. They may have a few condensed packs from
+runs where they hit max treasure, standard treasure from other runs, and pack
+substitutes on top. They should enter all of it in one go, not fill the form in
+three times. So **`mix_id` is on each `pull` line, not on `submission`.** The
+treatment is a property of the item — which pool it was drawn from — and the
+event and the reporter are properties of the submission.
+
+`event_id` stays on `submission` only: a pull cannot disagree with its own
+submission about which event it came from. That removes
+`inherited-practices.md` § 11's *row keyed to the wrong parent* for the event.
+The treatment has no single parent to be wrong about, so it belongs on the row.
+
+Nothing downstream needs a submission-level treatment. `draws` (§ 3) is computed
+per mix by summing lines, and every mix-specific check below reads the lines.
 
 `source` / `agreement` / `note` are § 4, copied from `order-composition.csv`.
 `agreement` carries strings like `CONFIRMED by 18 of 19`, so a disagreement is
@@ -586,14 +599,15 @@ resolution rule: quantity-weighted mode, **ties flagged, never broken**.
 ## 5. The 10x Pull, and the boundary it crosses
 
 A 10x Pull grants **10 more draws from the standard pool — even when the chip came
-out of a condensed pack.** So a condensed submission can otherwise end up holding
+out of a condensed pack.** So the condensed lines can otherwise end up holding
 standard-mix items, including the pack Rares and Uncommons that define the mix by
 their absence. That would corrupt § 2 directly.
 
-The rule: **a 10x Pull redemption is its own `standard` submission.** When the form
-sees a 10x Pull inside a condensed entry it prompts for the ten bonus pulls as a
-separate line — the same convention the 2026 sheet already used for split
-treasure.
+The rule: **the ten items a 10x Pull grants are entered as `standard` lines**, even
+when the chip itself came out of a condensed pack. Now that one submission holds
+every treatment, this means entering them in the standard part of the same form,
+not starting a second submission. When the form sees a 10x Pull among condensed
+items, it hints that the ten bonus items belong under standard.
 
 There is a time shift too. The sequence is: play, receive treasure (by mail if
 virtual, immediately if in person), possibly get a 10x Pull, then redeem it — in
@@ -700,11 +714,12 @@ Data that was never submitted cannot be.
 **The form requires four things and nothing else:**
 
 1. an event
-2. the treatment: standard, condensed or pack substitute
-3. the reporter's name
-4. at least one item
+2. the reporter's name
+3. at least one item
 
-Once those are filled in, the submit button works. Every other check takes one of
+Each item's treatment (standard, condensed or pack substitute) comes from the
+part of the form it was entered in, so it is never a separate question. Once
+those three are filled in, the submit button works. Every other check takes one of
 three forms, and none of them is a refusal:
 
 | Form | What the player sees | Checks |
@@ -717,7 +732,7 @@ A check is shown to the player **only if it catches a mistake that only the
 player can fix, and that would otherwise distort the estimate.** V1 fails on 9 of
 107 condensed rows in the 2026 workbook, and only the player knows what was in
 the pack. V5 is rare (one 10x Pull in all of 2026), but left alone it would mix
-standard draws into a condensed submission (§ 5), and only the player knows which
+standard draws into the condensed lines (§ 5), and only the player knows which
 ten items came from the chip. Everything else goes to maintainers.
 
 "ERROR" in the table below is a severity **for the repository's own checks**:
@@ -733,15 +748,15 @@ NOTE naming the remedy; a thing that is wrong by construction is an ERROR.
 
 | # | Check | Severity | Where it shows |
 |---|---|---|---|
-| V1 | condensed `items` is a whole number of packs, over the aggregate per (subject, event) — not per submission, since corrections are deltas | NOTE with remedy | hint |
-| V2 | a condensed submission contains no `in_standard_set` token | NOTE | maintainer flag |
+| V1 | condensed `items` is a whole number of packs, summed over condensed lines per (subject, event) — not per submission, since corrections are deltas | NOTE with remedy | hint |
+| V2 | no `in_standard_set` token is entered as condensed | NOTE | maintainer flag |
 | V3 | *removed 2026-09-24 along with `seat_runs`* | — | — |
 | V4 | *removed 2026-09-24 along with `seat_runs`* | — | — |
-| V5 | a 10x Pull in a condensed submission has a matching standard submission | NOTE, prompted at entry | hint |
+| V5 | a 10x Pull entered as condensed has ten matching standard items at the same event | NOTE, prompted at entry | hint |
 | V6a | a name that differs from an existing one only in case or whitespace, over `player`, `event`, `token` | ERROR in CI | silent snap to the existing name; `submitted_as` keeps what was typed |
 | V6b | a name that differs only in punctuation or a trailing plural | NOTE for a human | maintainer flag, **never auto-merged** |
 | V7 | per-rarity `trade_conversion` + `gp_source` counts sum to `standard_set.set_size`, for rarities that have rows at all | ERROR | CI only |
-| V8 | a submission's mix is offered at that event's venue | NOTE | maintainer flag |
+| V8 | each line's mix is offered at that event's venue | NOTE | maintainer flag |
 | V9 | `token_catalog_<year>.csv`, grouped by `converts_to` × rarity, reproduces `trade_conversion` | ERROR | CI only |
 
 **V6 is split in two to match `inherited-practices.md` § 1.** The earlier table

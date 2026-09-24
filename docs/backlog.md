@@ -70,9 +70,19 @@ once they do.
    well on a phone. It must never use the phrase "total pulls" (see
    `data-model.md` § 3). There is no team field and no seat-count field.
 
+   **One submission covers everything from one event, across all three
+   treatments.** A player may have a few condensed packs from runs where they
+   hit max treasure, standard treasure from their other runs, and pack
+   substitutes on top. They enter all of it in one go, and each item records
+   which treatment it came from. *Proposed layout, awaiting the owner's call:*
+   the form opens by asking "What did you get?" with three tick-boxes
+   (Standard, Condensed packs, Pack substitutes). It then shows only the
+   sections that were ticked, so most players never scroll past sections that
+   don't apply to them.
+
    **No check may stop a submission.** The form requires an event, the
-   treatment (standard, condensed or pack substitute), the reporter's name and
-   at least one item, and nothing else. Only two checks are ever shown to the
+   reporter's name and at least one item, and nothing else. Each item's
+   treatment comes from the section it was entered in. Only two checks are ever shown to the
    player, both as one-line hints they can dismiss: condensed treasure not coming
    to a multiple of 10, and a 10x Treasure Chip inside a condensed entry. A name
    that differs from an existing one only in capital letters or spacing is
