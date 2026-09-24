@@ -1,0 +1,27 @@
+alias,name,source,note
+10x Pull,10x Treasure Chips,"2024, 2025, 2026 workbooks",
+3x Pull,3x Treasure Chips,2024 workbook,no longer drops; kept so old data resolves
+"1,000 GP Bar","1,000 GP Gold Bar","2024, 2025, 2026 workbooks",
+1k Bar,"1,000 GP Gold Bar",td-domain skill,code printed on the piece
+"5,000 GP Bar","5,000 GP Mithral Bar","2024, 2025, 2026 workbooks",
+"25,000 GP Bar","25,000 GP Eldritch Ore Bar","2024, 2025, 2026 workbooks",
+Enhchanter's Munition,Enchanter's Munition,owner answer docs 2026-09-19,typo in both documents
+AI,Alchemist's Ink,td-domain skill,code printed on the piece
+DS,Dwarven Steel,td-domain skill,code printed on the piece
+MS,Mystic Silk,td-domain skill,code printed on the piece
+EM,Enchanter's Munition,td-domain skill,code printed on the piece
+MH,Minotaur Hide,td-domain skill,code printed on the piece
+AP,Alchemist's Parchment,td-domain skill,code printed on the piece
+PS,Philosopher's Stone,td-domain skill,code printed on the piece
+DP,Darkwood Plank,td-domain skill,code printed on the piece
+OE,Oil of Enchantment,td-domain skill,code printed on the piece
+EB,Elven Bismuth,td-domain skill,code printed on the piece
+AG,Aragonite,td-domain skill,code printed on the piece; the auction project also uses AG for Adventurer's Guild codes, which are not treasure
+Monster Bit,Monster Trophy,2026 workbook,the workbook's name for the group
+Monster Bits,Monster Trophy,"2024, 2025 workbooks",
+Monster Trophies,Monster Trophy,auction project origin/main 917b0e7,
+Golem Piece (40 unique),Golem Chaser (set of 40),auction project origin/main 917b0e7,cross-project; no fold can see it
+Herald Token (20 unique),Herald's Chaser (set of 20),auction project origin/main 917b0e7,cross-project; no fold can see it
+Cloak / Gloves of the Order,Cloak or Gloves of the Order,2026 workbook,
+Earcuff of Greater Glory (EGG),Earcuff of Greater Glory,2026 workbook,
+EGG,Earcuff of Greater Glory,2026 workbook,the abbreviation in the workbook's column header

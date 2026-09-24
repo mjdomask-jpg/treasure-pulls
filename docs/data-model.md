@@ -589,6 +589,35 @@ those are the same token.** The mapping is hand-authored, once, and `tokendb`
 slugs in `token.external_slug` are the canonical key on both sides — confirmed
 stable and acceptable to its owner.
 
+**Seeded 2026-09-24 in `data/seed/token_alias.csv`** and checked by
+`scripts/check_aliases.mjs`. There are 26 aliases, from three kinds of source:
+
+- **Workbook spellings** that players already know: `1,000 GP Bar`, `10x Pull`,
+  `Monster Bit`, `Cloak / Gloves of the Order`, and so on.
+- **The auction project's names**, the pair no fold can see.
+- **The trade-good codes printed on the physical pieces** (`DS`, `AG`, `1k Bar`
+  and the rest, from the `td-domain` skill).
+
+Aliases do a second job in V1: **they are search synonyms for the form's "add
+another item" box.** A player who types `DS` or `EGG` finds the right token.
+That, more than history, is why the codes are in the table.
+
+**The canonical name is `Monster Trophy`, not `Monster Bit`.** `Monster Bit` is
+the workbooks' name for it. `Monster Trophy` is the name used by the td-domain
+skill, the auction project and tokendb's classification, so the workbook
+spelling becomes the alias.
+
+Four aliases point at groups (`Monster Trophy`, the two chase sets, `Cloak or
+Gloves of the Order`), which are not seeded yet. Until they are, the check
+accepts exactly those four group names and nothing else, so a typo still fails.
+
+**Not aliased, deliberately.** Prior-year tokens (`Mark of the 2nd Tenet`,
+`Stalker Tokens`), because history is out of scope. Tier and bucket names
+(`Rare`, `Legendary`, `Non-Year Relic`), because those are groups or display
+labels. Subtotals (`Total Other`, `Trade 1`). And case-only variants such as
+`Golem Chaser (Set of 40)`, which the form already snaps (§ 7, V6a); the check
+refuses those as noise.
+
 ### `submission` and `pull`
 
 ```sql
