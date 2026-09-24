@@ -13,20 +13,14 @@ Last groomed **2026-09-24**.
 Nothing is being built until the owner says so. This is the order to build in
 once they do.
 
-1. **Build the name-hygiene validator.** This is a check that catches two
-   spellings of the same player, event or token, such as `Hacky` and `hacky`,
-   before they become two records. It needs no user interface and no database,
-   and it has real data to run against. Detail is in `inherited-practices.md`
-   § 1 and in check V6 of `data-model.md` § 7.
-
-2. **Add `package.json` and continuous integration.** At the moment the
-   conversion check (`check_conversion.mjs`), the alias check
-   (`check_aliases.mjs`), the group check (`check_groups.mjs`) and the event
-   check (`check_events.mjs`) only run when a person remembers to run them. `stack.md`
+1. **Add `package.json` and continuous integration.** At the moment the
+   five checks in `scripts/` only run when a person remembers to run them:
+   `check_conversion.mjs`, `check_aliases.mjs`, `check_groups.mjs`,
+   `check_events.mjs` and `check_names.mjs`. `stack.md`
    commits to running the `.mjs` validators automatically on every change. That
    automation is what turns the check from a convention into a gate.
 
-3. **Design and build the entry form.** Every enterable token is either a
+2. **Design and build the entry form.** Every enterable token is either a
    **dedicated field** (Rare, Uncommon, the chase sets, Monster Trophy —
    labelled "Monster Trophy (Monster Bit)" — 10x
    Treasure Chips, Cloak or Gloves, the trade goods, the named Ultra Rare-or-better

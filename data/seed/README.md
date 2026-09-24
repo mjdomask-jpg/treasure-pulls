@@ -100,6 +100,7 @@ until 2026-09-23, which is why this check exists.
 | `event.csv` | per row: truedungeon.com/2027-events-info, read 2026-09-24; the mail event is `data-model.md` § 5 |
 | `token_group.csv` | `data-model.md` § 4, *`resolution`*, where each group is decided; the Monster Trophy label is the owner's, 2026-09-24 |
 | `token_group_member.csv` | per row, in its own `source` column: `token_catalog_2026.csv` and the 2026 workbook |
+| `name_distinct.csv` | human review; empty until a hard-fold near-miss is judged to be two different things |
 | `trade_good.csv` | the trade ladder in the `td-domain` skill. The 100,000 GP Mythic Ore Bar (Trade 5) was added 2026-09-24 from tokendb's classification `Trade 5`, confirmed by the owner. No treasure pull has ever reported one, but it must be possible to record it |
 | `bonus_tier.csv` | per row: the auction project's display names on origin/main (commit given in each row), confirmed by the owner 2026-09-24 |
 
@@ -140,6 +141,16 @@ groups need rows in `token_group_member.csv`, which today is two rows.
 `scripts/check_groups.mjs` fails if a listed member is missing, any token
 lands in two groups, or a set size appears outside a chase set. See
 `data-model.md` § 4, *`resolution`*.
+
+## `name_distinct.csv`
+
+Pairs of names that differ only in punctuation or a trailing plural, which a
+human has reviewed and found to be **two different things**. An example of such
+a pair is `+1 Turkey Leg` and `+1 Turkey Leg of Smiting`. `scripts/check_names.mjs`
+reports near-miss pairs as notes (N4), and a pair listed here stops being
+reported. Columns: `namespace` (`token`, `event` or `player`), `a`, `b`,
+`reviewed_by`, `note`. It is empty today because the current data has no such
+pairs.
 
 ## Conventions that look wrong and are not
 
