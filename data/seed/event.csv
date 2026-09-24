@@ -1,0 +1,13 @@
+event_year,name,serial,venue,start_date,source,note
+2027,Elders in the Dark,,virtual,2027-01-08,truedungeon.com/2027-events-info read 2026-09-24,
+2027,Dead Evil,,virtual,2027-01-23,truedungeon.com/2027-events-info read 2026-09-24,Patron only
+2027,A Muse for Madness,,virtual,2027-02-19,truedungeon.com/2027-events-info read 2026-09-24,
+2027,Miskatonic Gauntlet,,virtual,2027-03-12,truedungeon.com/2027-events-info read 2026-09-24,
+2027,Eldritch Ward Asunder,,virtual,2027-04-09,truedungeon.com/2027-events-info read 2026-09-24,the page's ticket line spells it Eldritch World Asunder; the heading is used
+2027,Agony in Elder Ink,,virtual,2027-05-14,truedungeon.com/2027-events-info read 2026-09-24,
+2027,The Grimoire Gambit,,virtual,2027-06-25,truedungeon.com/2027-events-info read 2026-09-24,the page's ticket line spells it The Grimoire Gauntlet; the heading is used
+2027,Gen Con,,in_person,2027-08-05,truedungeon.com/2027-events-info read 2026-09-24,one event for every game run there; all share one treasure pool
+2027,Dark Archive,,virtual,2027-09-18,truedungeon.com/2027-events-info read 2026-09-24,Patron only
+2027,Gamehole Con,,in_person,2027-10-14,truedungeon.com/2027-events-info read 2026-09-24,one event for every game run there; all share one treasure pool
+2027,End of Year Adventure,,virtual,2027-12-03,truedungeon.com/2027-events-info read 2026-09-24,placeholder title; rename in place when the company announces it
+2027,10x Pull redeemed by mail,,mail,,data-model.md section 5,synthetic; the ten draws from a 10x Treasure Chip redeemed by mail

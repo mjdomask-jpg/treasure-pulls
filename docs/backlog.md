@@ -13,41 +13,20 @@ Last groomed **2026-09-24**.
 Nothing is being built until the owner says so. This is the order to build in
 once they do.
 
-1. **Seed the 2027 event list.** The events are published at
-   truedungeon.com/2027-events-info (read 2026-09-24). Each one needs a name,
-   a start date and a venue. **An in-person convention is one event however
-   many games it runs**, because every game at a convention shares one
-   treasure pool.
-   - **Virtual:** Elders in the Dark (Jan 8), Dead Evil (Jan 23, Patron only),
-     A Muse for Madness (Feb 19), Miskatonic Gauntlet (Mar 12), Eldritch Ward
-     Asunder (Apr 9), Agony in Elder Ink (May 14), The Grimoire Gambit (Jun 25),
-     Dark Archive (Sep 18, Patron only), and an End of Year Adventure (Dec 3,
-     title to come). Patron-only events are ordinary virtual events for this
-     purpose: players take standard or condensed treasure by preference.
-   - **In person:** Gen Con (Aug 5), Gamehole Con (Oct 14). Origins is
-     undecided for 2027.
-   - **Mail:** "10x Pull redeemed by mail", the one synthetic event per year.
-
-   The page spells two names inconsistently. It gives "Eldritch Ward Asunder"
-   as the heading but "Eldritch World Asunder" in the ticket line, and "The
-   Grimoire Gambit" as the heading but "The Grimoire Gauntlet" in the ticket
-   line. Use the headings, and add the other spellings as aliases. The End of
-   Year Adventure gets renamed in place once it has a title.
-
-2. **Build the name-hygiene validator.** This is a check that catches two
+1. **Build the name-hygiene validator.** This is a check that catches two
    spellings of the same player, event or token, such as `Hacky` and `hacky`,
    before they become two records. It needs no user interface and no database,
    and it has real data to run against. Detail is in `inherited-practices.md`
    § 1 and in check V6 of `data-model.md` § 7.
 
-3. **Add `package.json` and continuous integration.** At the moment the
+2. **Add `package.json` and continuous integration.** At the moment the
    conversion check (`check_conversion.mjs`), the alias check
-   (`check_aliases.mjs`) and the group check (`check_groups.mjs`) only run
-   when a person remembers to run them. `stack.md`
+   (`check_aliases.mjs`), the group check (`check_groups.mjs`) and the event
+   check (`check_events.mjs`) only run when a person remembers to run them. `stack.md`
    commits to running the `.mjs` validators automatically on every change. That
    automation is what turns the check from a convention into a gate.
 
-4. **Design and build the entry form.** Every enterable token is either a
+3. **Design and build the entry form.** Every enterable token is either a
    **dedicated field** (Rare, Uncommon, the chase sets, Monster Trophy —
    labelled "Monster Trophy (Monster Bit)" — 10x
    Treasure Chips, Cloak or Gloves, the trade goods, the named Ultra Rare-or-better
@@ -93,8 +72,11 @@ once they do.
 
 ## Waiting on outside events
 
-- **Origins 2027.** The company has not decided whether it will attend. Add
-  it as an in-person event if it is announced.
+- **Origins 2027.** The company has not decided whether it will attend. If it
+  is announced, add it to `data/seed/event.csv` as an in-person event.
+- **Rename the End of Year Adventure** in `data/seed/event.csv` once the
+  company announces its title (the event is December 3–5, 2027). Rename the
+  row in place.
 
 - **Re-fetch the 2027 token catalog after January 2027.** 2027's chase sets and
   treasure-only Rares are not published until then, so
