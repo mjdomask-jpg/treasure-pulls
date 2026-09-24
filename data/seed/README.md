@@ -33,7 +33,7 @@ ERROR, not a silent skip. The names below are the **canonical** spellings from t
 | `1,000 GP Gold Bar` | `1,000 GP Bar` | 2026 workbook column header |
 | `Philosopher's Stone` | — | consistent everywhere |
 
-Those belong in `token_alias` when the catalog is written.
+They are in `token_alias.csv`.
 
 ## Provenance
 
@@ -96,6 +96,7 @@ until 2026-09-23, which is why this check exists.
 | `gp_source.csv` | same |
 | `standard_set.csv` | `data-model-review.md` — "a fixed set of 40 rare, 40 uncommon, and 40 common tokens" |
 | `mix.csv`, `mix_year.csv` | owner answers of 2026-09-19, throughout |
+| `token_alias.csv` | per row, in its own `source` column: the three workbooks, the auction project's origin/main, the owner answer docs, or the `td-domain` skill's trade-good codes |
 | `trade_good.csv` | the trade ladder in the `td-domain` skill. The 100,000 GP Mythic Ore Bar (Trade 5) was added 2026-09-24 from tokendb's classification `Trade 5`, confirmed by the owner. No treasure pull has ever reported one, but it must be possible to record it |
 | `bonus_tier.csv` | per row: the auction project's display names on origin/main (commit given in each row), confirmed by the owner 2026-09-24 |
 
