@@ -13,12 +13,12 @@ Last groomed **2026-09-24**.
 Nothing is being built until the owner says so. This is the order to build in
 once they do.
 
-1. **Add `package.json` and continuous integration.** At the moment the
-   six checks in `scripts/` only run when a person remembers to run them:
-   `check_conversion.mjs`, `check_aliases.mjs`, `check_groups.mjs`,
-   `check_events.mjs`, `check_names.mjs` and `check_form_boxes.mjs`. `stack.md`
-   commits to running the `.mjs` validators automatically on every change. That
-   automation is what turns the check from a convention into a gate.
+1. **Make the Checks workflow required before merging into `main`.** Since
+   2026-09-24, `.github/workflows/checks.yml` runs every `scripts/check_*.mjs`
+   on each pull request (`npm run check`), but a red run does not yet stop the
+   merge button. Turning that on is a GitHub repository setting (branch
+   protection on `main`, requiring the `checks` status). That is what finally
+   turns the checks from a convention into a gate, as `stack.md` intends.
 
 2. **Design and build the entry form.** Each section opens with **a short
    list of count boxes that differs by section**, chosen by how often 2026
@@ -79,6 +79,16 @@ once they do.
    that differs from an existing one only in capital letters or spacing is
    quietly replaced with the existing spelling. Everything else is flagged for
    maintainers and is invisible to the player. Detail is in `data-model.md` § 7.
+
+3. **Commit a test that proves each check still catches what it is for.**
+   Every rule in every `scripts/check_*.mjs` was proven once, by hand: plant a
+   deliberately bad row, watch the check fail, restore the file. Nothing
+   repeats that. If an edit later breaks a rule so that it never fires, CI
+   stays green and says nothing. The auction project guards against this with
+   a `*.test.mjs` per validator, which feeds each rule a bad row and asserts that
+   it fails. Doing the same here means each check reading its seed directory from
+   a path it can be pointed at, so the test can use a scratch copy and never
+   touch `data/seed/`.
 
 ## Waiting on outside events
 

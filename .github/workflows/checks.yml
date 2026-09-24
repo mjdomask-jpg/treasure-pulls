@@ -1,0 +1,29 @@
+name: Checks
+
+# Runs every data check (scripts/check_*.mjs) on each pull request into main,
+# and again on each push to main so main's own status is visible. The checks
+# need no install: they run on bare Node 24 with no dependencies. When the form
+# brings dependencies, add `cache: npm` to setup-node and an `npm ci` step.
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+# One run per branch; a new push cancels the superseded run.
+concurrency:
+  group: checks-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - run: npm run check

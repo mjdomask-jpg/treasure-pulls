@@ -100,6 +100,7 @@ until 2026-09-23, which is why this check exists.
 | `event.csv` | per row: truedungeon.com/2027-events-info, read 2026-09-24; the mail event is `data-model.md` § 5 |
 | `token_group.csv` | `data-model.md` § 4, *`resolution`*, where each group is decided; the Monster Trophy label is the owner's, 2026-09-24 |
 | `token_group_member.csv` | per row, in its own `source` column: `token_catalog_2026.csv` and the 2026 workbook |
+| `form_box.csv` | the 2026 workbook, measured 2026-09-24 (`data-model.md` § 4, *Which count boxes each section shows*); the pack-substitute rows are the owner's hypothesis |
 | `name_distinct.csv` | human review; empty until a hard-fold near-miss is judged to be two different things |
 | `trade_good.csv` | the trade ladder in the `td-domain` skill. The 100,000 GP Mythic Ore Bar (Trade 5) was added 2026-09-24 from tokendb's classification `Trade 5`, confirmed by the owner. No treasure pull has ever reported one, but it must be possible to record it |
 | `bonus_tier.csv` | per row: the auction project's display names on origin/main (commit given in each row), confirmed by the owner 2026-09-24 |
@@ -203,6 +204,9 @@ data so that a rule change is a one-row edit here, not a code change. See
 `data-model.md` § 4, *`event_year` and the mixes*.
 
 ## Checking
+
+`npm run check` runs every `scripts/check_*.mjs`, all of them even when one
+fails, and GitHub Actions runs it on every pull request into `main`.
 
 `scripts/check_conversion.mjs` does two things, and both should pass before this
 data is trusted:

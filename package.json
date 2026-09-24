@@ -1,0 +1,13 @@
+{
+  "name": "treasure-pulls",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "check": "node scripts/run_checks.mjs",
+    "fetch:catalog": "node scripts/fetch_catalog.mjs"
+  }
+}
