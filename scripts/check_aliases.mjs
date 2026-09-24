@@ -16,10 +16,9 @@ import { readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { parseCsv } from './csv.mjs';
+import { soft } from './fold.mjs';
 
 const SEED = join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'seed');
-
-const soft = (s) => s.toLowerCase().replace(/[’‘`]/g, "'").replace(/\s+/g, ' ').trim();
 
 const canonical = new Set();
 for (const f of readdirSync(SEED).filter((f) => /^token_catalog_\d{4}\.csv$/.test(f))) {

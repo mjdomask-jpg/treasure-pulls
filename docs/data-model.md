@@ -309,6 +309,19 @@ Gen Con 2027 lists three or four adventures, but all of them draw from the same
 treasure pool, so the player picks `Gen Con` and never a game. Virtual events
 run one adventure each, so for them the distinction does not come up.
 
+**Seeded 2026-09-24** in `data/seed/event.csv`, from the company's published
+2027 list, and checked by `scripts/check_events.mjs`. 2027 has 9 virtual events
+(two of them Patron only), Gen Con and Gamehole Con in person, and the mail
+redemption event: 12 in all. Origins is undecided for 2027 and is not seeded.
+The VTD serials are blank because the company no longer prints them. The End of
+Year Adventure is a placeholder title, to be renamed in place when announced.
+
+**Events have no alias table.** Players pick an event from a list and never type
+one, so there is nothing for an alias to match. The company's page spells two
+events two ways ("Eldritch Ward/World Asunder", "The Grimoire Gambit/Gauntlet").
+The heading spelling is used, and the variant is kept in the seed's `note`
+column.
+
 **Patron-only events are `virtual`.** Players there take standard or condensed
 treasure, whichever they prefer (owner), exactly as at any other virtual event,
 so they show the same sections.
