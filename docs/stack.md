@@ -108,8 +108,12 @@ these come with it:
   typing but not an import, a replayed request or a script.
 - **Validate where the data lands.** The Function re-checks the vocabulary the form
   offered. Per § 3 this is **not an allow-list** — a genuinely new event or token
-  passes with a note; what is rejected is a value differing from an existing one
-  only in case or whitespace.
+  passes with a note. A value differing from an existing one only in case or
+  whitespace is **snapped to the existing spelling, not rejected**; the typed form
+  is kept in `submitted_as`. **No data check ever refuses a submission**
+  (`data-model.md` § 7, owner 2026-09-24). What the Function may refuse is abuse,
+  such as rate-limited traffic or a request that is malformed and did not come
+  from the form.
 - **An admin-side revert**, since there is no delete and no login to gate one.
 
 ## Deliberately still open

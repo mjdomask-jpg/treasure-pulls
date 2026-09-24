@@ -13,6 +13,12 @@ is dropped, chase sets are entered as set counts with placeholders for 2027, and
 tokendb's rarity labels now have a mapping (§ 4, *`rarity`*). Open work lives in
 `docs/backlog.md`.
 
+**Amended 2026-09-24** (owner): `seat_runs` is removed, **no check ever stops a
+submission** (§ 7), and **one submission holds all three treatments**, so the mix
+is recorded on each line (§ 4, *`submission` and `pull`*). Events carry a
+`venue`, and in-person events show only the Standard section (§ 4, *`event_year`
+and the mixes*).
+
 Game facts come from the `td-domain` skill; treasure-recording facts from
 `domain-context.md`; the validation posture from `inherited-practices.md`. Scope
 is the **2027 season**. Historical backfill is a long-term goal, out of scope for
@@ -212,8 +218,9 @@ counting tokens, while standard rows count draws.
 In exchange, an invariant a spreadsheet could never check: **condensed items come
 in whole packs.** Measured, **9 of 107 condensed rows fail it** (sums of 7, 32,
 47, 55, 57, 69, 72, 113, 129), five of them at the first event that offered the
-option. A live form check — *"condensed treasure comes in packs of 10 and you've
-entered 57 — missing three?"* — catches an 8% error rate at the keyboard.
+option. A live form hint — *"condensed treasure comes in packs of 10 and you've
+entered 57 — missing three?"* — catches an 8% error rate at the keyboard. It is a
+hint the player can dismiss, never a gate (§ 7).
 
 ---
 
@@ -247,9 +254,23 @@ CREATE TABLE mix_year (
 
 Both NULL means one item per draw. The 2027 change from 27 to 30 is a data edit.
 
-**`venue` is advisory, not a constraint.** Condensed and pack-substitute are
-virtual-only today and the owner has said that could change; a rule change should
-not make the form reject true data. Enforced as NOTE-level V8, never an ERROR.
+**`venue` decides which sections the form shows** (owner, 2026-09-24). A mix is
+offered at an event when its `venue` is `any` or matches the event's `venue`. In
+2027 that means:
+
+| Event venue | Sections offered |
+|---|---|
+| `virtual` | Standard, Condensed packs, Pack substitutes |
+| `in_person` | Standard only |
+| `mail` (the 10x redemption event) | Standard only |
+
+The owner has said the rule could change. If it does, it is a one-row data edit
+in `mix_year`, not a code change. This hides sections; it does not refuse
+anything, so it does not break § 7's rule that no check stops a submission. The
+cost is that a player at an in-person event who somehow did get condensed
+treasure has nowhere to enter it until that row is edited. The 2026 workbook
+supports accepting that cost: all 8 Gen Con rows are non-condensed. V8 stays as
+a maintainer flag for anything that reaches the server some other way.
 
 ### `event`
 
@@ -259,8 +280,7 @@ CREATE TABLE event (
   event_year INTEGER NOT NULL REFERENCES event_year(event_year),
   name       TEXT    NOT NULL,   -- 'Tower of Blood', 'Gen Con'
   serial     TEXT,               -- 'VTD31' — virtual events have always had one
-  kind       TEXT    NOT NULL CHECK (kind IN
-               ('convention','virtual','special','redemption')),
+  venue      TEXT    NOT NULL CHECK (venue IN ('in_person','virtual','mail')),
   start_date TEXT,
   fold_key   TEXT    NOT NULL,
   UNIQUE (event_year, fold_key)
@@ -275,8 +295,23 @@ else.
 stopped printing the serial. Both are recorded, and neither is derived from the
 other.
 
-`kind='redemption'` holds one synthetic event per year, *"10x Pull redeemed by
-mail"* — see § 5.
+**`venue` replaces the earlier `kind`** (`convention` / `virtual` / `special` /
+`redemption`). `kind` mixed two questions together: where the event was played,
+and what sort of event it was. Only the first one matters to the pool. `special`
+said nothing about venue. It could have been a virtual year-end adventure or a
+Patron run, and the form needs to know which sections to show.
+
+`venue='mail'` holds one synthetic event per year, *"10x Pull redeemed by mail"*
+— see § 5.
+
+**An in-person convention is one event, however many games it runs** (owner).
+Gen Con 2027 lists three or four adventures, but all of them draw from the same
+treasure pool, so the player picks `Gen Con` and never a game. Virtual events
+run one adventure each, so for them the distinction does not come up.
+
+**Patron-only events are `virtual`.** Players there take standard or condensed
+treasure, whichever they prefer (owner), exactly as at any other virtual event,
+so they show the same sections.
 
 The date belongs in a column because the workbook keeps putting the month in the
 name and then losing it. One 2026 event appears as `Mists of Madness (Feb)`,
@@ -421,9 +456,16 @@ unchanged. The rest, counted from `token_catalog_2026.csv` and `_2027.csv`:
 
 - **40 Golem chase pieces** → the `Golem Chaser (set of 40)` set count.
 - **6 Monster Trophies** (classification `Monster Trophy`) → `Monster Trophy`.
-- **4 `Participation` items** (Nil Crystal and three others) → they drop
-  occasionally and are counted as an ordinary Rare or Uncommon, not tracked on
-  their own.
+- **4 `Participation` items** (Nil Crystal and three others). The current
+  year's Participation tokens are not meant to drop in treasure (owner,
+  2026-09-24), but mistakes happen. One that turns up in treasure is counted as
+  an ordinary Rare or Uncommon, not tracked on its own.
+
+**The Participation token every virtual player gets as free swag is not
+treasure.** It comes packaged separately from the treasure, so the player can
+tell the two apart. The form carries a one-line reminder not to include it,
+because each swag token entered would add one false Rare or Uncommon per player
+per event.
 
 **Buckets for off-ladder values.** Buckets are still computed and never stored
 (§ 8), but the rule needs one entry the ladder cannot supply: **Paragon counts in
@@ -435,7 +477,7 @@ drop is still captured as `status='proposed'` and is never rejected.
 
 #### `in_standard_set` — the flag the condensed rule needs
 
-Marks the 40/40/40 blind-pack tokens, the ones a condensed submission has had
+Marks the 40/40/40 blind-pack tokens, the ones condensed treasure has had
 converted away. Named this rather than `pool`, which now collides with *the
 treasure pool* — the thing being deduced — and with `mix`.
 
@@ -506,9 +548,7 @@ stable and acceptable to its owner.
 CREATE TABLE submission (
   submission_id INTEGER PRIMARY KEY,
   event_id      INTEGER NOT NULL REFERENCES event(event_id),
-  mix_id        INTEGER NOT NULL REFERENCES mix(mix_id),
   player_id     INTEGER NOT NULL REFERENCES player(player_id),  -- the reporter
-  seat_runs     INTEGER,        -- seats covered; checked, never enforced
   intent        TEXT    NOT NULL CHECK (intent IN ('new_loot','correction')),
   corrects      INTEGER REFERENCES submission(submission_id),
   submitted_at  TEXT    NOT NULL,
@@ -521,6 +561,7 @@ CREATE TABLE submission (
 CREATE TABLE pull (
   pull_id       INTEGER PRIMARY KEY,
   submission_id INTEGER NOT NULL REFERENCES submission(submission_id),
+  mix_id        INTEGER NOT NULL REFERENCES mix(mix_id),   -- per line: one submission holds all three
   token_id      INTEGER NOT NULL REFERENCES token(token_id),
   quantity      INTEGER NOT NULL CHECK (quantity <> 0),
   token_year    INTEGER,
@@ -530,16 +571,29 @@ CREATE TABLE pull (
 );
 ```
 
-**`seat_runs`, not `person_runs`.** The thing that earns treasure is a seat in a
-run, not a person: one human may buy all ten tickets and run ten copies of the
-synergy tokens to reach the top breakpoint. Optional, and validated only when
-present.
+**There is no seat count** (owner, 2026-09-24). The 2026-09-19 draft had an
+optional `seat_runs`: how many seats (tickets) a submission covered. It existed
+only to support two plausibility checks, and it was removed for these reasons:
+
+- **The estimate never reads it.** Draws come from the items (§ 3), and
+  entitlement is not needed.
+- **The check it supported was nearly empty.** Each seat earns 3 to 30 draws in
+  2027, so a 10-seat submission passes with anywhere from 30 to 300 items.
+- **Where it would matter, the items already say.** A pack-substitute shipment
+  holds one good per seat, plus a thank-you for each extra person on a combined
+  shipment, so its item count already tracks its seat count closely.
+- **It is one more field on a phone**, asking for something the player has no
+  reason to understand. That is the same reasoning that removed `team`.
+
+The fact that motivated it is still true and still matters for reading the data:
+what earns treasure is a *seat* in a run, not a person. One human may buy all ten
+tickets, so a single submission can legitimately hold ten seats' worth of loot.
 
 **Both second-submission shapes are supported, and they are different.** Players
 routinely enter a second row rather than doing arithmetic on the first:
 
-- **new loot** — a separate shipment, a guild member's split delivery, the other
-  treatment. A new submission, positive quantities. Adds to `items`, so it adds
+- **new loot** — a separate shipment or a guild member's split delivery. A new
+  submission, positive quantities. Adds to `items`, so it adds
   to `draws`. Correct.
 - **correction** — the first row was wrong. `intent='correction'`, `corrects` set,
   **signed deltas**, negative allowed. Nobody is made to do math; the aggregate
@@ -556,9 +610,21 @@ uniqueness fight each other. Uniqueness over *live* rows is enforced in the
 Function and re-checked by the validator over the export, per
 `inherited-practices.md` § 3.
 
-`event_id` and `mix_id` live on `submission` only: a pull cannot disagree with its
-own submission about where it came from. That removes
-`inherited-practices.md` § 11's *row keyed to the wrong parent* by construction.
+**One submission holds all three treatments** (owner, 2026-09-24). A player's
+loot from one event is routinely mixed. They may have a few condensed packs from
+runs where they hit max treasure, standard treasure from other runs, and pack
+substitutes on top. They should enter all of it in one go, not fill the form in
+three times. So **`mix_id` is on each `pull` line, not on `submission`.** The
+treatment is a property of the item — which pool it was drawn from — and the
+event and the reporter are properties of the submission.
+
+`event_id` stays on `submission` only: a pull cannot disagree with its own
+submission about which event it came from. That removes
+`inherited-practices.md` § 11's *row keyed to the wrong parent* for the event.
+The treatment has no single parent to be wrong about, so it belongs on the row.
+
+Nothing downstream needs a submission-level treatment. `draws` (§ 3) is computed
+per mix by summing lines, and every mix-specific check below reads the lines.
 
 `source` / `agreement` / `note` are § 4, copied from `order-composition.csv`.
 `agreement` carries strings like `CONFIRMED by 18 of 19`, so a disagreement is
@@ -569,22 +635,31 @@ resolution rule: quantity-weighted mode, **ties flagged, never broken**.
 
 ## 5. The 10x Pull, and the boundary it crosses
 
-A 10x Pull grants **10 more draws from the standard pool — even when the chip came
-out of a condensed pack.** So a condensed submission can otherwise end up holding
-standard-mix items, including the pack Rares and Uncommons that define the mix by
-their absence. That would corrupt § 2 directly.
+**The 10x Pull (`10x Treasure Chips`) is two separate events in a player's year,
+and the form records them separately.**
 
-The rule: **a 10x Pull redemption is its own `standard` submission.** When the form
-sees a 10x Pull inside a condensed entry it prompts for the ten bonus pulls as a
-separate line — the same convention the 2026 sheet already used for split
-treasure.
+1. **Receiving the chip.** It is one physical token that comes out of treasure,
+   condensed or not. It is entered like any other item, in whichever treatment
+   it arrived in. It counts as one item and one draw of that pool, the same as a
+   Rare would.
+2. **Redeeming it, at a later date**, for 10 more draws. This happens in person
+   at a later event, or by mail. The ten items are loot from **the redemption**,
+   not from the event the chip came from. They are entered wherever the player
+   redeemed: under that later event if in person, or under the year's
+   `venue='mail'` event (*"10x Pull redeemed by mail"*) if by mail.
 
-There is a time shift too. The sequence is: play, receive treasure (by mail if
-virtual, immediately if in person), possibly get a 10x Pull, then redeem it — in
-person at the next event, or by mail. Redemption in person attaches to that event
-and `items = draws` holds there. Redemption by mail attaches to the year's
-`kind='redemption'` event. **It is always the current year's pool and can only be
-redeemed in the current year**, so no cross-year bookkeeping is needed.
+**The ten redeemed draws always come from the standard pool** (owner), even when
+the chip came out of a condensed pack, and even when the player is also taking
+condensed treasure at the event where they redeem. That is the one way this goes
+wrong. If the ten items are entered as condensed, they add pack Rares and
+Uncommons to a mix defined by their absence, which corrupts § 2 directly. So the
+**Standard section of the form carries a line of help text** saying that items
+from redeeming a 10x chip belong there. This is static text, not a check: at
+entry time there is nothing to match, because the redemption usually has not
+happened yet.
+
+**It is always the current year's pool and can only be redeemed in the current
+year**, so no cross-year bookkeeping is needed.
 
 `10x Pull` appears **once in all of 2026**, so this is cheap to get right now and
 never cheaper.
@@ -673,20 +748,70 @@ feeding Trade 2, exactly as § 6's rules say.
 
 ## 7. Validation
 
+### No check ever stops a submission
+
+**This is a rule, not a default** (owner, 2026-09-24). Recording loot is a chore
+done by a large, imperfect population, often on a phone. A submission refused
+over an unexpected quantity is lost for good, and it is lost from exactly the
+people whose data looks unusual. Imperfect data can be flagged and weighed later.
+Data that was never submitted cannot be.
+
+**The form requires three things and nothing else:**
+
+1. an event
+2. the reporter's name
+3. at least one item
+
+Each item's treatment (standard, condensed or pack substitute) comes from the
+part of the form it was entered in, so it is never a separate question. Once
+those three are filled in, the submit button works. Every other check takes one of
+three forms, and none of them is a refusal:
+
+| Form | What the player sees | Checks |
+|---|---|---|
+| **Hint** | One line they can dismiss; submitting still works | V1 |
+| **Silent snap** | The existing spelling is used instead of what they typed | V6a |
+| **Maintainer flag** | Nothing | V2, V6b, V8, and anything added later |
+
+A check is shown to the player **only if it catches a mistake that only the
+player can fix, and that would otherwise distort the estimate.** V1 fails on 9 of
+107 condensed rows in the 2026 workbook, and only the player knows what was in
+the pack. Everything else goes to maintainers.
+
+Separately from the checks, the form carries two lines of **static help text**
+(both from the owner): the Standard section says that items from redeeming a 10x
+chip belong there (§ 5), and the form reminds players not to include their free
+Participation token, which comes packaged separately (§ 4, *`rarity`*).
+
+"ERROR" in the table below is a severity **for the repository's own checks**:
+seed data, catalogs and exports, run in CI. It never describes what the form does
+to a player. The one thing the server may refuse is a request that did not come
+through the form at all — a script posting junk, or traffic hitting the rate
+limit (`stack.md`). That is abuse protection, not a judgement on the data.
+
+### The checks
+
 Per `inherited-practices.md` § 5, a check that cannot be *proved* wrong reports a
 NOTE naming the remedy; a thing that is wrong by construction is an ERROR.
 
-| # | Check | Severity |
-|---|---|---|
-| V1 | condensed `items` is a whole number of packs, over the aggregate per (subject, event) — not per submission, since corrections are deltas | NOTE with remedy |
-| V2 | a condensed submission contains no `in_standard_set` token | NOTE |
-| V3 | standard `items` falls between `base_pulls × seat_runs` and `max_pulls × seat_runs`, plus any `grants_draws` | NOTE, only when `seat_runs` given |
-| V4 | `pack_substitute items ≈ Σ seat_runs + (persons − 1)` — one good per seat-run plus a thank-you per extra person on the shipment | NOTE, **deliberately loose** |
-| V5 | a 10x Pull in a condensed submission has a matching standard submission | NOTE, prompted at entry |
-| V6 | soft fold (case / whitespace / punctuation / plural) over `player`, `event`, `token` | ERROR |
-| V7 | per-rarity `trade_conversion` + `gp_source` counts sum to `standard_set.set_size`, for rarities that have rows at all | ERROR |
-| V8 | a submission's mix is offered at that event's venue | NOTE |
-| V9 | `token_catalog_<year>.csv`, grouped by `converts_to` × rarity, reproduces `trade_conversion` | ERROR |
+| # | Check | Severity | Where it shows |
+|---|---|---|---|
+| V1 | condensed `items` is a whole number of packs, summed over condensed lines per (subject, event) — not per submission, since corrections are deltas | NOTE with remedy | hint |
+| V2 | no `in_standard_set` token is entered as condensed | NOTE | maintainer flag |
+| V3 | *removed 2026-09-24 along with `seat_runs`* | — | — |
+| V4 | *removed 2026-09-24 along with `seat_runs`* | — | — |
+| V5 | *removed 2026-09-24: the 10x chip is redeemed later, so at entry there is nothing to match (§ 5). Redeemed items wrongly entered as condensed are caught by V2* | — | — |
+| V6a | a name that differs from an existing one only in case or whitespace, over `player`, `event`, `token` | ERROR in CI | silent snap to the existing name; `submitted_as` keeps what was typed |
+| V6b | a name that differs only in punctuation or a trailing plural | NOTE for a human | maintainer flag, **never auto-merged** |
+| V7 | per-rarity `trade_conversion` + `gp_source` counts sum to `standard_set.set_size`, for rarities that have rows at all | ERROR | CI only |
+| V8 | each line's mix is offered at that event's venue | NOTE | maintainer flag |
+| V9 | `token_catalog_<year>.csv`, grouped by `converts_to` × rarity, reproduces `trade_conversion` | ERROR | CI only |
+
+**V6 is split in two to match `inherited-practices.md` § 1.** The earlier table
+made punctuation and plural differences an ERROR, which contradicted that section.
+A case or whitespace difference is the same name by construction, so it is safe
+to snap. A punctuation or plural difference usually is the same name, but not
+always, so a human decides.
 
 **V7 and V9 are implemented** — `scripts/check_conversion.mjs`, which also runs
 the § 2 prediction end to end out of the committed CSVs and reproduces the
@@ -761,8 +886,10 @@ The pack-substitute stream is the cleanest thing in the project to deduce: one
 flat pool, one item per draw, and a stated 1/100 Ultra Rare that is the **only
 published rate in the entire domain**. If the method reproduces that 1%, every
 unpublished rate the site produces earns credibility by association — which is
-why it is in V1 rather than after it. It also yields `seat_runs` directly, the
-one number the standard mix cannot supply.
+why it is in V1 rather than after it. Because it holds one good per seat (plus a
+thank-you for each extra person on a combined shipment), it also gives a close
+seat count. That is the one number the standard mix cannot supply, and it comes
+without asking anyone for it.
 
 Its **mix composition is unknown** — nobody knows whether it is flat over the
 eight Trade 1 goods or over Trade 1 and Trade 2 together. That is a finding the
