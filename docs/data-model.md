@@ -456,21 +456,31 @@ unchanged. The rest, counted from `token_catalog_2026.csv` and `_2027.csv`:
 
 - **40 Golem chase pieces** → the `Golem Chaser (set of 40)` set count.
 - **6 Monster Trophies** (classification `Monster Trophy`) → `Monster Trophy`.
-- **4 `Participation` items** (Nil Crystal and three others). The current
-  year's Participation tokens are not meant to drop in treasure (owner,
-  2026-09-24), but mistakes happen. One that turns up in treasure is counted as
-  an ordinary Rare or Uncommon, not tracked on its own.
+- **4 mini-game tokens** (Melonbrant Concentrate, Mirthwood Bliss Blossom, Nil
+  Crystal, Pemberton Pain Extract). These are participation rewards from a series
+  of mini-games at one special 2026 event (owner, 2026-09-24). They are not
+  treasure and will not recur in 2027, so **the form ignores them**. If one ever
+  turns up in treasure anyway, it is captured like any surprise token
+  (`status='proposed'`), never rejected.
 
-In the catalog, chase pieces and Participation items carry **no `rarity`**, and
+  *(An earlier version of this section, from 2026-09-23, said these "drop
+  occasionally and count as an ordinary Rare or Uncommon". That answer was about
+  the per-event swag tokens below, and it was attached to these four by mistake.)*
+
+In the catalog, chase pieces and the mini-game tokens carry **no `rarity`**, and
 neither do `Reserve` and `Special` tokens. The fetcher refuses any tokendb label
 it has no mapping for, so a new label cannot slip through as a "rarity" the way
 the two Arcanum labels did.
 
 **The Participation token every virtual player gets as free swag is not
-treasure.** It comes packaged separately from the treasure, so the player can
-tell the two apart. The form carries a one-line reminder not to include it,
-because each swag token entered would add one false Rare or Uncommon per player
-per event.
+treasure.** tokendb lists these under the source `Participation`: 22 in 2026 and
+13 in 2027, nearly all of them Rare. They come packaged separately from the
+treasure, so the player can tell the two apart. The form carries a one-line
+reminder not to include them, because each one entered would add a false Rare
+per player per event. The current year's swag tokens are not meant to drop in
+treasure (owner, 2026-09-24), but mistakes happen. One that does turn up is
+counted as the ordinary Rare it already is in the catalog, not tracked on its
+own.
 
 **Buckets for off-ladder values.** Buckets are still computed and never stored
 (§ 8), but the rule needs one entry the ladder cannot supply: **Paragon counts in

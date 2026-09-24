@@ -59,9 +59,9 @@ const CANONICAL = new Set([
 ]);
 
 // `Quest` is three unrelated populations: Monster Trophies, chase pieces, and
-// Participation items. Only the first has a canonical value; chase pieces are
-// entered as a set count and Participation items as an ordinary Rare/Uncommon,
-// so neither needs a rarity of its own.
+// (2026 only) mini-game participation tokens. Only the first has a canonical
+// value; chase pieces are entered as a set count and the mini-game tokens are
+// not treasure, so neither needs a rarity of its own.
 function canonicalRarity(t) {
   if (t.rarity === 'Quest') {
     return t.classification.split('|').includes('Monster Trophy') ? 'Monster Trophy' : '';

@@ -77,13 +77,13 @@ after January 2027. 2026 has 68 of them, which is the size of what is missing.
 | `Transmuted-Arcanum Relic`, `Transmuted-Grand Arcanum` | `Arcanum` |
 | `Premium` | `Ultra Rare` |
 | `Quest` with classification `Monster Trophy` | `Monster Trophy` |
-| `Quest` otherwise (chase pieces, Participation items) | *empty* |
+| `Quest` otherwise (chase pieces, and four 2026 mini-game tokens) | *empty* |
 | `Reserve` (the GP bar family), `Special` (Golden Ticket, Treasure Chips) | *empty* |
 | anything else | passed through, and must be on the canonical ladder or be `Safehold`, `Patron`, `Paragon` or `Monster Trophy` |
 
 **An empty `rarity` is deliberate**, not a gap. It marks a token that has no
-rarity: chase pieces are entered as a set count, Participation items as an
-ordinary Rare or Uncommon, GP bars by their trade rung.
+rarity: chase pieces are entered as a set count, the mini-game tokens are not
+treasure at all, and GP bars are known by their trade rung.
 
 **A tokendb label the fetcher does not know stops the run** and names the
 tokens. It does not pass through. Two Arcanum labels slipped through silently
