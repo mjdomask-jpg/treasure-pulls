@@ -598,23 +598,31 @@ resolution rule: quantity-weighted mode, **ties flagged, never broken**.
 
 ## 5. The 10x Pull, and the boundary it crosses
 
-A 10x Pull grants **10 more draws from the standard pool — even when the chip came
-out of a condensed pack.** So the condensed lines can otherwise end up holding
-standard-mix items, including the pack Rares and Uncommons that define the mix by
-their absence. That would corrupt § 2 directly.
+**The 10x Pull (`10x Treasure Chips`) is two separate events in a player's year,
+and the form records them separately.**
 
-The rule: **the ten items a 10x Pull grants are entered as `standard` lines**, even
-when the chip itself came out of a condensed pack. Now that one submission holds
-every treatment, this means entering them in the standard part of the same form,
-not starting a second submission. When the form sees a 10x Pull among condensed
-items, it hints that the ten bonus items belong under standard.
+1. **Receiving the chip.** It is one physical token that comes out of treasure,
+   condensed or not. It is entered like any other item, in whichever treatment
+   it arrived in. It counts as one item and one draw of that pool, the same as a
+   Rare would.
+2. **Redeeming it, at a later date**, for 10 more draws. This happens in person
+   at a later event, or by mail. The ten items are loot from **the redemption**,
+   not from the event the chip came from. They are entered wherever the player
+   redeemed: under that later event if in person, or under the year's
+   `kind='redemption'` event (*"10x Pull redeemed by mail"*) if by mail.
 
-There is a time shift too. The sequence is: play, receive treasure (by mail if
-virtual, immediately if in person), possibly get a 10x Pull, then redeem it — in
-person at the next event, or by mail. Redemption in person attaches to that event
-and `items = draws` holds there. Redemption by mail attaches to the year's
-`kind='redemption'` event. **It is always the current year's pool and can only be
-redeemed in the current year**, so no cross-year bookkeeping is needed.
+**The ten redeemed draws always come from the standard pool** (owner), even when
+the chip came out of a condensed pack, and even when the player is also taking
+condensed treasure at the event where they redeem. That is the one way this goes
+wrong. If the ten items are entered as condensed, they add pack Rares and
+Uncommons to a mix defined by their absence, which corrupts § 2 directly. So the
+**Standard section of the form carries a line of help text** saying that items
+from redeeming a 10x chip belong there. This is static text, not a check: at
+entry time there is nothing to match, because the redemption usually has not
+happened yet.
+
+**It is always the current year's pool and can only be redeemed in the current
+year**, so no cross-year bookkeeping is needed.
 
 `10x Pull` appears **once in all of 2026**, so this is cheap to get right now and
 never cheaper.
@@ -711,7 +719,7 @@ over an unexpected quantity is lost for good, and it is lost from exactly the
 people whose data looks unusual. Imperfect data can be flagged and weighed later.
 Data that was never submitted cannot be.
 
-**The form requires four things and nothing else:**
+**The form requires three things and nothing else:**
 
 1. an event
 2. the reporter's name
@@ -724,16 +732,15 @@ three forms, and none of them is a refusal:
 
 | Form | What the player sees | Checks |
 |---|---|---|
-| **Hint** | One line they can dismiss; submitting still works | V1, V5 |
+| **Hint** | One line they can dismiss; submitting still works | V1 |
 | **Silent snap** | The existing spelling is used instead of what they typed | V6a |
 | **Maintainer flag** | Nothing | V2, V6b, V8, and anything added later |
 
 A check is shown to the player **only if it catches a mistake that only the
 player can fix, and that would otherwise distort the estimate.** V1 fails on 9 of
 107 condensed rows in the 2026 workbook, and only the player knows what was in
-the pack. V5 is rare (one 10x Pull in all of 2026), but left alone it would mix
-standard draws into the condensed lines (§ 5), and only the player knows which
-ten items came from the chip. Everything else goes to maintainers.
+the pack. Everything else goes to maintainers. (Separately from the checks, the
+Standard section carries static help text about 10x chip redemptions; see § 5.)
 
 "ERROR" in the table below is a severity **for the repository's own checks**:
 seed data, catalogs and exports, run in CI. It never describes what the form does
@@ -752,7 +759,7 @@ NOTE naming the remedy; a thing that is wrong by construction is an ERROR.
 | V2 | no `in_standard_set` token is entered as condensed | NOTE | maintainer flag |
 | V3 | *removed 2026-09-24 along with `seat_runs`* | — | — |
 | V4 | *removed 2026-09-24 along with `seat_runs`* | — | — |
-| V5 | a 10x Pull entered as condensed has ten matching standard items at the same event | NOTE, prompted at entry | hint |
+| V5 | *removed 2026-09-24: the 10x chip is redeemed later, so at entry there is nothing to match (§ 5). Redeemed items wrongly entered as condensed are caught by V2* | — | — |
 | V6a | a name that differs from an existing one only in case or whitespace, over `player`, `event`, `token` | ERROR in CI | silent snap to the existing name; `submitted_as` keeps what was typed |
 | V6b | a name that differs only in punctuation or a trailing plural | NOTE for a human | maintainer flag, **never auto-merged** |
 | V7 | per-rarity `trade_conversion` + `gp_source` counts sum to `standard_set.set_size`, for rarities that have rows at all | ERROR | CI only |

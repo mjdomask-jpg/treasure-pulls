@@ -82,9 +82,13 @@ once they do.
 
    **No check may stop a submission.** The form requires an event, the
    reporter's name and at least one item, and nothing else. Each item's
-   treatment comes from the section it was entered in. Only two checks are ever shown to the
-   player, both as one-line hints they can dismiss: condensed treasure not coming
-   to a multiple of 10, and a 10x Treasure Chip inside a condensed entry. A name
+   treatment comes from the section it was entered in. Only one check is ever
+   shown to the player, as a one-line hint they can dismiss: condensed treasure
+   not coming to a multiple of 10. The Standard section also carries a line of
+   help text: items from redeeming a 10x Treasure Chip belong there, even if the
+   chip came from a condensed pack. The chip itself is an ordinary item,
+   entered wherever it was received; its ten pulls come later and are entered
+   under the event where it was redeemed, or under "10x Pull redeemed by mail". A name
    that differs from an existing one only in capital letters or spacing is
    quietly replaced with the existing spelling. Everything else is flagged for
    maintainers and is invisible to the player. Detail is in `data-model.md` § 7.
