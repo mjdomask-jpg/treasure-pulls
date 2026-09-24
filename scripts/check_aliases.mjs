@@ -13,12 +13,10 @@
 // See docs/data-model.md section 4, *token_alias*.
 
 import { readdirSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import { join } from 'node:path';
 import { parseCsv } from './csv.mjs';
+import { SEED } from './paths.mjs';
 import { soft } from './fold.mjs';
-
-const SEED = join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'seed');
 
 const canonical = new Set();
 for (const f of readdirSync(SEED).filter((f) => /^token_catalog_\d{4}\.csv$/.test(f))) {

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "check": "node scripts/run_checks.mjs",
+    "test": "node scripts/checks.test.mjs",
     "fetch:catalog": "node scripts/fetch_catalog.mjs"
   }
 }

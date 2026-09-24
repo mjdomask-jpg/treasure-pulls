@@ -73,16 +73,6 @@ once they do.
    quietly replaced with the existing spelling. Everything else is flagged for
    maintainers and is invisible to the player. Detail is in `data-model.md` § 7.
 
-2. **Commit a test that proves each check still catches what it is for.**
-   Every rule in every `scripts/check_*.mjs` was proven once, by hand: plant a
-   deliberately bad row, watch the check fail, restore the file. Nothing
-   repeats that. If an edit later breaks a rule so that it never fires, CI
-   stays green and says nothing. The auction project guards against this with
-   a `*.test.mjs` per validator, which feeds each rule a bad row and asserts that
-   it fails. Doing the same here means each check reading its seed directory from
-   a path it can be pointed at, so the test can use a scratch copy and never
-   touch `data/seed/`.
-
 ## Waiting on outside events
 
 - **Origins 2027.** The company has not decided whether it will attend. If it
