@@ -142,6 +142,25 @@ groups need rows in `token_group_member.csv`, which today is two rows.
 lands in two groups, or a set size appears outside a chase set. See
 `data-model.md` § 4, *`resolution`*.
 
+`Mystery Treasure Chest Rare` is a 2027 placeholder, like the two Mystery chase
+sets. It stands for the year's treasure-chest-only Rares, which are unknown
+until after January (in 2026 they were Cloak and Gloves of the Order). At the
+reveal it is renamed in place, keeps its old name as an alias, and becomes a
+`listed` group.
+
+## `form_box.csv`
+
+The count boxes each form section shows before a player searches for anything,
+one row per box: `event_year`, `mix` (`standard`, `condensed` or
+`pack_substitute`), `position` (1 at the top) and `item`, which is a group or a
+trade good. The lists were chosen by measuring how often 2026 submissions under
+each treatment listed each item. The pack-substitute list is the owner's
+hypothesis, because 2026 recorded no pack substitutes. The measurements are in
+`data-model.md` § 4, *Which count boxes each section shows*.
+`scripts/check_form_boxes.mjs` fails if an item is not a group or trade good of
+that year, a mix is not offered that year, a section repeats an item or skips a
+position, or a section that an event can show has no boxes.
+
 ## `name_distinct.csv`
 
 Pairs of names that differ only in punctuation or a trailing plural, which a

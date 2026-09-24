@@ -69,7 +69,7 @@ Maintain a single, unified backlog file so that neither of us needs to hunt acro
 ## Status
 
 The data model is settled, and all the reference data the entry form needs is
-seeded in `data/seed/` and checked by five scripts in `scripts/`, which need no
+seeded in `data/seed/` and checked by six scripts in `scripts/`, which need no
 dependencies and no build. No `package.json`, CI, database or UI exists yet.
 
 **Start at `docs/handoff-2026-09-24.md`**, then `docs/data-model.md`, which is
