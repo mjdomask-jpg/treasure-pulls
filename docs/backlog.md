@@ -13,14 +13,7 @@ Last groomed **2026-09-24**.
 Nothing is being built until the owner says so. This is the order to build in
 once they do.
 
-1. **Make the Checks workflow required before merging into `main`.** Since
-   2026-09-24, `.github/workflows/checks.yml` runs every `scripts/check_*.mjs`
-   on each pull request (`npm run check`), but a red run does not yet stop the
-   merge button. Turning that on is a GitHub repository setting (branch
-   protection on `main`, requiring the `checks` status). That is what finally
-   turns the checks from a convention into a gate, as `stack.md` intends.
-
-2. **Design and build the entry form.** Each section opens with **a short
+1. **Design and build the entry form.** Each section opens with **a short
    list of count boxes that differs by section**, chosen by how often 2026
    submissions under that treatment listed each item (owner, 2026-09-24):
 
@@ -80,7 +73,7 @@ once they do.
    quietly replaced with the existing spelling. Everything else is flagged for
    maintainers and is invisible to the player. Detail is in `data-model.md` § 7.
 
-3. **Commit a test that proves each check still catches what it is for.**
+2. **Commit a test that proves each check still catches what it is for.**
    Every rule in every `scripts/check_*.mjs` was proven once, by hand: plant a
    deliberately bad row, watch the check fail, restore the file. Nothing
    repeats that. If an edit later breaks a rule so that it never fires, CI

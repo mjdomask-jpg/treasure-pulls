@@ -71,7 +71,8 @@ Maintain a single, unified backlog file so that neither of us needs to hunt acro
 The data model is settled, and all the reference data the entry form needs is
 seeded in `data/seed/` and checked by six scripts in `scripts/`, which need no
 dependencies and no build. `npm run check` runs them all, and GitHub Actions
-runs it on every pull request. No database or UI exists yet.
+runs it on every pull request; `main` is protected, so a PR cannot merge until
+that run passes. No database or UI exists yet.
 
 **Start at `docs/handoff-2026-09-24.md`**, then `docs/data-model.md`, which is
 current and is the authority. The earlier handoffs and the owner's review and
