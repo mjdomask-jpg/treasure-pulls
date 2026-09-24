@@ -60,7 +60,8 @@ once they do.
      A Muse for Madness (Feb 19), Miskatonic Gauntlet (Mar 12), Eldritch Ward
      Asunder (Apr 9), Agony in Elder Ink (May 14), The Grimoire Gambit (Jun 25),
      Dark Archive (Sep 18, Patron only), and an End of Year Adventure (Dec 3,
-     title to come).
+     title to come). Patron-only events are ordinary virtual events for this
+     purpose: players take standard or condensed treasure by preference.
    - **In person:** Gen Con (Aug 5), Gamehole Con (Oct 14). Origins is
      undecided for 2027.
    - **Mail:** "10x Pull redeemed by mail", the one synthetic event per year.
@@ -113,30 +114,18 @@ once they do.
    help text: items from redeeming a 10x Treasure Chip belong there, even if the
    chip came from a condensed pack. The chip itself is an ordinary item,
    entered wherever it was received; its ten pulls come later and are entered
-   under the event where it was redeemed, or under "10x Pull redeemed by mail". A name
+   under the event where it was redeemed, or under "10x Pull redeemed by mail".
+   The form also reminds players not to include the free Participation token
+   every virtual player receives. It comes packaged separately from the
+   treasure, and each one entered would count as a false Rare or Uncommon. A name
    that differs from an existing one only in capital letters or spacing is
    quietly replaced with the existing spelling. Everything else is flagged for
    maintainers and is invisible to the player. Detail is in `data-model.md` § 7.
 
-## Waiting on the owner
+## Waiting on outside events
 
-- **Participation tokens given as swag.** Every 2027 virtual event gives
-  all players a limited-edition Participation token as free swag. On
-  2026-09-23 the owner said Participation items *occasionally drop* in
-  treasure and count as an ordinary Rare or Uncommon. Swag is not treasure,
-  though. If players enter their swag token, it inflates the Rare and
-  Uncommon rates by one item per player per event. The question: should the
-  form say plainly "don't include your free Participation token", and is the
-  swag token ever the same token that drops in treasure?
-- **Patron-only events.** Dead Evil and Dark Archive are virtual but Patron
-  only. The 2026 Patron event (Scarlet Moon Masquerade) has 6 rows in the
-  workbook and none of them are condensed. Do Patron events offer condensed
-  packs and pack substitutes like other virtual events, or only standard
-  treasure? The answer decides which sections those two events show.
 - **Origins 2027.** The company has not decided whether it will attend. Add
   it as an in-person event if it is announced.
-
-## Waiting on outside events
 
 - **Re-fetch the 2027 token catalog after January 2027.** 2027's chase sets and
   treasure-only Rares are not published until then, so

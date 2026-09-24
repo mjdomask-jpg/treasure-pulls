@@ -309,6 +309,10 @@ Gen Con 2027 lists three or four adventures, but all of them draw from the same
 treasure pool, so the player picks `Gen Con` and never a game. Virtual events
 run one adventure each, so for them the distinction does not come up.
 
+**Patron-only events are `virtual`.** Players there take standard or condensed
+treasure, whichever they prefer (owner), exactly as at any other virtual event,
+so they show the same sections.
+
 The date belongs in a column because the workbook keeps putting the month in the
 name and then losing it. One 2026 event appears as `Mists of Madness (Feb)`,
 `Mists of Madness (February)` and `Mists of Madness` in three places in its own
@@ -452,9 +456,16 @@ unchanged. The rest, counted from `token_catalog_2026.csv` and `_2027.csv`:
 
 - **40 Golem chase pieces** → the `Golem Chaser (set of 40)` set count.
 - **6 Monster Trophies** (classification `Monster Trophy`) → `Monster Trophy`.
-- **4 `Participation` items** (Nil Crystal and three others) → they drop
-  occasionally and are counted as an ordinary Rare or Uncommon, not tracked on
-  their own.
+- **4 `Participation` items** (Nil Crystal and three others). The current
+  year's Participation tokens are not meant to drop in treasure (owner,
+  2026-09-24), but mistakes happen. One that turns up in treasure is counted as
+  an ordinary Rare or Uncommon, not tracked on its own.
+
+**The Participation token every virtual player gets as free swag is not
+treasure.** It comes packaged separately from the treasure, so the player can
+tell the two apart. The form carries a one-line reminder not to include it,
+because each swag token entered would add one false Rare or Uncommon per player
+per event.
 
 **Buckets for off-ladder values.** Buckets are still computed and never stored
 (§ 8), but the rule needs one entry the ladder cannot supply: **Paragon counts in
@@ -765,8 +776,12 @@ three forms, and none of them is a refusal:
 A check is shown to the player **only if it catches a mistake that only the
 player can fix, and that would otherwise distort the estimate.** V1 fails on 9 of
 107 condensed rows in the 2026 workbook, and only the player knows what was in
-the pack. Everything else goes to maintainers. (Separately from the checks, the
-Standard section carries static help text about 10x chip redemptions; see § 5.)
+the pack. Everything else goes to maintainers.
+
+Separately from the checks, the form carries two lines of **static help text**
+(both from the owner): the Standard section says that items from redeeming a 10x
+chip belong there (§ 5), and the form reminds players not to include their free
+Participation token, which comes packaged separately (§ 4, *`rarity`*).
 
 "ERROR" in the table below is a severity **for the repository's own checks**:
 seed data, catalogs and exports, run in CI. It never describes what the form does
