@@ -46,15 +46,16 @@ const RARITY = {
   'Transmuted-Relic (5 pt)': 'Relic', 'Transmuted-Legendary': 'Legendary',
   'Transmuted-Mythic': 'Mythic',
   'Transmuted-Arcanum Relic': 'Arcanum', 'Transmuted-Grand Arcanum': 'Arcanum',
-  Premium: 'Ultra Rare', // the 1k / 2k Bonus tier, which ties with Ultra Rare
   Reserve: '', // the GP bar family, not a rarity; the bar's rung is in trade_good.csv
   Special: '', // Golden Ticket and Treasure Chips -- no rarity
 };
 
 // The canonical ladder plus the tokens the td-domain skill puts outside it.
+// Premium ranks with Ultra Rare (it is the 1k / 2k Bonus tier) but is kept
+// distinct: players want its odds separately from standard-pack Ultra Rares.
 const CANONICAL = new Set([
-  'Common', 'Uncommon', 'Enhanced', 'Rare', 'Exalted', 'Ultra Rare', 'Relic',
-  'Arcanum', 'Legendary', 'Mythic',
+  'Common', 'Uncommon', 'Enhanced', 'Rare', 'Exalted', 'Ultra Rare', 'Premium',
+  'Relic', 'Arcanum', 'Legendary', 'Mythic',
   'Safehold', 'Patron', 'Paragon', 'Monster Trophy',
 ]);
 

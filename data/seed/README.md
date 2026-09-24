@@ -75,11 +75,10 @@ after January 2027. 2026 has 68 of them, which is the size of what is missing.
 |---|---|
 | `Transmuted-Enhanced (3 pt)`, `-Exalted (4 pt)`, `-Relic (5 pt)`, `-Legendary`, `-Mythic` | the rung without the prefix |
 | `Transmuted-Arcanum Relic`, `Transmuted-Grand Arcanum` | `Arcanum` |
-| `Premium` | `Ultra Rare` |
 | `Quest` with classification `Monster Trophy` | `Monster Trophy` |
 | `Quest` otherwise (chase pieces, and four 2026 mini-game tokens) | *empty* |
 | `Reserve` (the GP bar family), `Special` (Golden Ticket, Treasure Chips) | *empty* |
-| anything else | passed through, and must be on the canonical ladder or be `Safehold`, `Patron`, `Paragon` or `Monster Trophy` |
+| anything else | passed through, and must be on the canonical ladder or be `Premium`, `Safehold`, `Patron`, `Paragon` or `Monster Trophy` |
 
 **An empty `rarity` is deliberate**, not a gap. It marks a token that has no
 rarity: chase pieces are entered as a set count, the mini-game tokens are not
