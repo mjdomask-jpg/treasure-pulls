@@ -96,6 +96,7 @@ until 2026-09-23, which is why this check exists.
 | `gp_source.csv` | same |
 | `standard_set.csv` | `data-model-review.md` — "a fixed set of 40 rare, 40 uncommon, and 40 common tokens" |
 | `mix.csv`, `mix_year.csv` | owner answers of 2026-09-19, throughout |
+| `trade_good.csv` | the trade ladder in the `td-domain` skill. The 100,000 GP Mythic Ore Bar (Trade 5) was added 2026-09-24 from tokendb's classification `Trade 5`, confirmed by the owner. No treasure pull has ever reported one, but it must be possible to record it |
 | `bonus_tier.csv` | per row: the auction project's display names on origin/main (commit given in each row), confirmed by the owner 2026-09-24 |
 
 **Use the corrected 2027 table only.** An earlier version circulated with
@@ -136,7 +137,7 @@ future Common count against a Trade 2 good would have no rule to apply, which th
 loader should report rather than default to 1 point.
 
 **`gp_source.csv` names no bar.** The source side is here; which bar a given GP
-total yields comes from `token.gp_value` (1,000 / 5,000 / 25,000), so the two are
+total yields comes from `token.gp_value` (1,000 / 5,000 / 25,000 / 100,000), so the two are
 not transcribed twice.
 
 **`mix_year.venue` decides which form sections an event shows** (owner,
