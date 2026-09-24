@@ -34,13 +34,40 @@ const GOODS = {
 };
 const UNITS = { '1-unit': 1, '3-units': 3, '6-units': 6, '10-units': 10 };
 
+// tokendb's rarity field mixes rungs of the canonical ladder with labels for
+// families of tokens. Its label is kept verbatim as source_rarity; `rarity` is
+// the canonical value. Mapping decided by the owner 2026-09-23 -- see
+// docs/data-model.md section 4, *rarity*.
+//
 // tokendb prefixes transmuted rungs; the canonical ladder does not. See the
 // td-domain skill: Enhanced = 3pt = 3 Star, Exalted = 4pt = 4 Star.
 const RARITY = {
   'Transmuted-Enhanced (3 pt)': 'Enhanced', 'Transmuted-Exalted (4 pt)': 'Exalted',
   'Transmuted-Relic (5 pt)': 'Relic', 'Transmuted-Legendary': 'Legendary',
   'Transmuted-Mythic': 'Mythic',
+  'Transmuted-Arcanum Relic': 'Arcanum', 'Transmuted-Grand Arcanum': 'Arcanum',
+  Premium: 'Ultra Rare', // the 1k / 2k Bonus tier, which ties with Ultra Rare
+  Reserve: '', // the GP bar family, not a rarity; the bar's rung is in trade_good.csv
+  Special: '', // Golden Ticket and Treasure Chips -- no rarity
 };
+
+// The canonical ladder plus the tokens the td-domain skill puts outside it.
+const CANONICAL = new Set([
+  'Common', 'Uncommon', 'Enhanced', 'Rare', 'Exalted', 'Ultra Rare', 'Relic',
+  'Arcanum', 'Legendary', 'Mythic',
+  'Safehold', 'Patron', 'Paragon', 'Monster Trophy',
+]);
+
+// `Quest` is three unrelated populations: Monster Trophies, chase pieces, and
+// Participation items. Only the first has a canonical value; chase pieces are
+// entered as a set count and Participation items as an ordinary Rare/Uncommon,
+// so neither needs a rarity of its own.
+function canonicalRarity(t) {
+  if (t.rarity === 'Quest') {
+    return t.classification.split('|').includes('Monster Trophy') ? 'Monster Trophy' : '';
+  }
+  return t.rarity in RARITY ? RARITY[t.rarity] : t.rarity;
+}
 
 async function page(convertsTo, paged) {
   const body = {
@@ -103,14 +130,28 @@ const q = (v) => {
   return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 };
 
-const HEADER = 'name,external_slug,rarity,token_year,tokendb_source,in_standard_set,classification,slot,converts_to,convert_units';
+// A label tokendb starts using tomorrow must stop the run, not pass through as a
+// "rarity" -- two Arcanum labels did exactly that until 2026-09-23.
+const unmapped = [...tokens.values()].filter((t) => {
+  const r = canonicalRarity(t);
+  return r !== '' && !CANONICAL.has(r);
+});
+if (unmapped.length) {
+  const labels = [...new Set(unmapped.map((t) => t.rarity))];
+  console.error(`tokendb rarity label(s) with no mapping: ${labels.join(', ')}`);
+  for (const t of unmapped) console.error(`  ${t.rarity}  ${t.name}`);
+  console.error('Add them to RARITY or CANONICAL in this script, per docs/data-model.md section 4.');
+  process.exit(1);
+}
+
+const HEADER = 'name,external_slug,rarity,source_rarity,token_year,tokendb_source,in_standard_set,classification,slot,converts_to,convert_units';
 const rows = [...tokens.values()]
   .sort((a, b) => a.name.localeCompare(b.name, 'en'))
   .map((t) => {
-    const rarity = RARITY[t.rarity] || t.rarity;
+    const rarity = canonicalRarity(t);
     // The 40/40/40 blind-pack sets -- what condensing converts away.
     const inSet = t.source === 'Standard Pack' && ['Common', 'Uncommon', 'Rare'].includes(rarity) ? 1 : 0;
-    return [t.name, t.slug, rarity, YEAR, t.source, inSet, t.classification, t.slot,
+    return [t.name, t.slug, rarity, t.rarity, YEAR, t.source, inSet, t.classification, t.slot,
       convertsTo[t.slug] || '', units[t.slug] || ''].map(q).join(',');
   });
 
@@ -119,6 +160,7 @@ console.log(`${rows.length} tokens -> ${OUT}`);
 
 const by = (f) => [...tokens.values()].reduce((a, t) => (a[f(t)] = (a[f(t)] || 0) + 1, a), {});
 console.log('by source   ', by((t) => t.source));
-console.log('standard set', by((t) => (t.source === 'Standard Pack' ? RARITY[t.rarity] || t.rarity : null)).undefined === undefined
-  ? Object.fromEntries(Object.entries(by((t) => (t.source === 'Standard Pack' ? RARITY[t.rarity] || t.rarity : '-'))).filter(([k]) => k !== '-'))
-  : {});
+console.log('standard set', Object.fromEntries(Object.entries(
+  by((t) => (t.source === 'Standard Pack' ? canonicalRarity(t) || '(none)' : '-')),
+).filter(([k]) => k !== '-')));
+console.log('by rarity   ', by((t) => `${t.rarity} -> ${canonicalRarity(t) || '(none)'}`));

@@ -362,7 +362,7 @@ CREATE TABLE token (
   external_slug      TEXT    UNIQUE,            -- tokendb slug; the shared vocabulary key
   resolution         TEXT    NOT NULL CHECK (resolution IN ('specific','group')),
   group_id           INTEGER REFERENCES token(token_id),
-  rarity             TEXT,                      -- a canonical rung, or off-ladder Paragon/Safehold; see below
+  rarity             TEXT,                      -- a canonical rung, or off-ladder Safehold/Patron/Paragon/Monster Trophy; NULL for none
   source_rarity      TEXT,                      -- tokendb's label, verbatim, for provenance
   trade_rung         INTEGER CHECK (trade_rung BETWEEN 1 AND 5),
   gp_value           INTEGER,                   -- 1000 / 5000 / 25000 for bars
@@ -460,6 +460,11 @@ unchanged. The rest, counted from `token_catalog_2026.csv` and `_2027.csv`:
   year's Participation tokens are not meant to drop in treasure (owner,
   2026-09-24), but mistakes happen. One that turns up in treasure is counted as
   an ordinary Rare or Uncommon, not tracked on its own.
+
+In the catalog, chase pieces and Participation items carry **no `rarity`**, and
+neither do `Reserve` and `Special` tokens. The fetcher refuses any tokendb label
+it has no mapping for, so a new label cannot slip through as a "rarity" the way
+the two Arcanum labels did.
 
 **The Participation token every virtual player gets as free swag is not
 treasure.** It comes packaged separately from the treasure, so the player can

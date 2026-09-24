@@ -1,291 +1,291 @@
-name,external_slug,rarity,token_year,tokendb_source,in_standard_set,classification,slot,converts_to,convert_units
-+1 Dawn Battle Axe,1-dawn-battle-axe,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
-+1 Dawn Great Sword,1-dawn-great-sword,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
-+1 Herald's Light Mace,1-heralds-light-mace,Rare,2026,Treasure Chest Only,0,Equippable|Weapon,Mainhand,Aragonite,1
-+1 Herald's Sling,1-heralds-sling,Rare,2026,Treasure Chest Only,0,Equippable|Weapon,Mainhand,Aragonite,1
-+1 Hunter Crossbow,1-hunter-crossbow,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
-+1 Vampiric Hammer,1-vampiric-hammer,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
-+1 Vampiric Short Sword,1-vampiric-short-sword,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
-+2 Branding Mace,2-branding-mace,Ultra Rare,2026,Standard Pack,0,Equippable|Weapon,Mainhand,,
-+2 Darkbane Crossbow,2-darkbane-crossbow,Ultra Rare,2026,Standard Pack,0,Equippable|Weapon,Mainhand,,
-+3 Fellbane Crossbow,3-fellbane-crossbow,Relic,2026,Exchange,0,Equippable|Weapon,Mainhand,,
-100 GP Ritual Goblet,100-gp-ritual-goblet,Uncommon,2026,Standard Pack,1,GP Value,slotless,Reserve Bar,
-"100,000 GP Mythic Ore Bar",100000-gp-mythic-ore-bar,Reserve,2026,Exchange,0,GP Value|Timeless|Trade 5,slotless,Reserve Bar,
-10x Treasure Chips,10x-treasure-chips,Special,2026,Dungeon Only,0,none,slotless,,
-150 GP Ritual Chalice,150-gp-ritual-chalice,Uncommon,2026,Standard Pack,1,GP Value,slotless,Reserve Bar,
-3x Treasure Chips,3x-treasure-chips,Special,2026,Dungeon Only,0,none,slotless,,
-50 GP Sunrise Coin,50-gp-sunrise-coin,Common,2026,Standard Pack,1,Gear|GP Value,slotless,Reserve Bar,
-500 GP Ritual Bowl,500-gp-ritual-bowl,Rare,2026,Standard Pack,1,GP Value,slotless,Reserve Bar,
-500 GP Ritual Censer,500-gp-ritual-censer,Rare,2026,Standard Pack,1,GP Value,slotless,Reserve Bar,
-Amulet of Undeath,amulet-of-undeath,Rare,2026,Standard Pack,1,Equippable,Neck,Philosopher's Stone,6
-Artificer Mystic Staff,artificer-mystic-staff,Uncommon,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
-Artificer Radiant Charm,artificer-radiant-charm,Uncommon,2026,Standard Pack,1,Equippable,Charm,Darkwood Plank,3
-Artificer's Agility Pants,artificers-agility-pants,Rare,2026,Standard Pack,1,Equippable,Legs,Mystic Silk,6
-Artificer's Probability Robe,artificers-probability-robe,Rare,2026,Standard Pack,1,Equippable,Torso (armor),Aragonite,1
-Banshee Essence,banshee-essence,Quest,2026,Treasure Chest Only,0,Monster Trophy,slotless,Golden Fleece,1
-Baton of Focus,baton-of-focus,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
-Bead of Divine Choice,bead-of-divine-choice,Relic,2026,Exchange,0,Equippable,Bead,,
-Bead of Fanatic's Fate,bead-of-fanatics-fate,Uncommon,2026,Standard Pack,1,Equippable,Bead,Darkwood Plank,3
-Bead of Foretelling,bead-of-foretelling,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
-Bead of Fortune,bead-of-fortune,Rare,2026,Standard Pack,1,Equippable,Bead,Darkwood Plank,6
-Bead of the Artificer,bead-of-the-artificer,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
-Bead of the Bat,bead-of-the-bat,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
-Bead of the Buzzard,bead-of-the-buzzard,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
-Bead of the Golem,bead-of-the-golem,Rare,2026,Appreciation,0,Equippable,Bead,Darkwood Plank,6
-Bead of the Rat,bead-of-the-rat,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
-Bead of the Viper,bead-of-the-viper,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
-Bead of the Wolf,bead-of-the-wolf,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
-Belt of Biting,belt-of-biting,Rare,2026,Volunteer Recognition,0,Equippable,Waist,Mystic Silk,6
-Belt of Ogre Power,belt-of-ogre-power,Rare,2026,Standard Pack,1,Equippable,Waist,Mystic Silk,6
-Belt of the Accursed,belt-of-the-accursed,Ultra Rare,2026,Standard Pack,0,Equippable,Waist,,
-Boots of Grave's Reach,boots-of-graves-reach,Ultra Rare,2026,Standard Pack,0,Equippable,Feet,,
-Bracers of Boosting,bracers-of-boosting,Ultra Rare,2026,Standard Pack,0,Equippable,Wrist,,
-Censer of Divine Aid,censer-of-divine-aid,Exalted,2026,Exchange,0,Equippable,slotless,,
-Charm of Banewatch,charm-of-banewatch,Ultra Rare,2026,Volunteer Recognition,0,Equippable,Charm,,
-Charm of Deathward,charm-of-deathward,Exalted,2026,Exchange,0,Equippable,Charm,,
-Charm of Fickle Fate,charm-of-fickle-fate,Ultra Rare,2026,Standard Pack,0,Equippable,Charm,,
-Charm of Gravebane,charm-of-gravebane,Rare,2026,Standard Pack,1,Equippable,Charm,Darkwood Plank,6
-Charm of Undeath,charm-of-undeath,Rare,2026,Standard Pack,1,Equippable,Charm,Darkwood Plank,6
-Cloak of Hardy Luck,cloak-of-hardy-luck,Rare,2026,Standard Pack,1,Equippable,Back,Mystic Silk,6
-Cloak of Swift Sneak,cloak-of-swift-sneak,Uncommon,2026,Standard Pack,1,Equippable,Back,Mystic Silk,3
-Cloak of the Accursed,cloak-of-the-accursed,Ultra Rare,2026,Standard Pack,0,Equippable,Back,,
-Cloak of the Order,cloak-of-the-order,Rare,2026,Treasure Chest Only,0,Equippable,Back,Mystic Silk,6
-Craven Barbed Shirt,craven-barbed-shirt,Uncommon,2026,Standard Pack,1,Equippable,Shirt,Mystic Silk,3
-Craven Crossbow,craven-crossbow,Uncommon,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
-Craven Shield,craven-shield,Common,2026,Standard Pack,1,Equippable|Shield,Offhand,Minotaur Hide,1
-Craven Spike Suit,craven-spike-suit,Rare,2026,Standard Pack,1,Equippable,Torso (armor),Aragonite,1
-Craven Tyrant Armor,craven-tyrant-armor,Uncommon,2026,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
-Craven's Cursed Charm,cravens-cursed-charm,Rare,2026,Participation,0,Equippable,Charm,Darkwood Plank,6
-Craven's Vampire Ring,cravens-vampire-ring,Legendary,2026,Exchange,0,Equippable|Timeless,Finger,,
-Dawn Battle Axe,dawn-battle-axe,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Dawn Belt,dawn-belt,Common,2026,Standard Pack,1,Equippable,Waist,Mystic Silk,1
-Dawn Boots,dawn-boots,Common,2026,Standard Pack,1,Equippable,Feet,Mystic Silk,1
-Dawn Boots of Lore,dawn-boots-of-lore,Rare,2026,Standard Pack,1,Equippable,Feet,Mystic Silk,6
-Dawn Bow,dawn-bow,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Dawn Earcuff,dawn-earcuff,Common,2026,Standard Pack,1,Equippable,Ear,Philosopher's Stone,1
-Dawn Escort Armor,dawn-escort-armor,Uncommon,2026,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
-Dawn Gloves,dawn-gloves,Uncommon,2026,Standard Pack,1,Equippable,Hands,Mystic Silk,1
-Dawn Greaves,dawn-greaves,Uncommon,2026,Standard Pack,1,Equippable,Shins,Mystic Silk,3
-Dawn Guard Armor,dawn-guard-armor,Uncommon,2026,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
-Dawn Hammer,dawn-hammer,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Dawn Hardy Earcuff,dawn-hardy-earcuff,Rare,2026,Standard Pack,1,Equippable,Ear,Philosopher's Stone,6
-Dawn Helm,dawn-helm,Common,2026,Standard Pack,1,Equippable,Head,Minotaur Hide,1
-Dawn Initiate Gloves,dawn-initiate-gloves,Common,2026,Standard Pack,1,Equippable,Hands,Mystic Silk,1
-Dawn Leather Armor,dawn-leather-armor,Common,2026,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
-Dawn Long Sword,dawn-long-sword,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Dawn Mace,dawn-mace,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Dawn Order Pants,dawn-order-pants,Uncommon,2026,Standard Pack,1,Equippable,Legs,Mystic Silk,3
-Dawn Pilgrim Armor,dawn-pilgrim-armor,Common,2026,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
-Dawn Ritual Robe,dawn-ritual-robe,Common,2026,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
-Dawn Runestone,dawn-runestone,Uncommon,2026,Standard Pack,1,Equippable,Runestone,Darkwood Plank,3
-Dawn Shield,dawn-shield,Common,2026,Standard Pack,1,Equippable|Shield,Offhand,Minotaur Hide,1
-Dawn Shirt,dawn-shirt,Rare,2026,Standard Pack,1,Equippable,Shirt,Mystic Silk,6
-Dawn Short Sword,dawn-short-sword,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Dawn Staff of Focus,dawn-staff-of-focus,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
-Dawn Strike Sword,dawn-strike-sword,Uncommon,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
-Dawn Sturdy Leather,dawn-sturdy-leather,Common,2026,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
-Dawn War Club,dawn-war-club,Uncommon,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
-Deathward Greaves,deathward-greaves,Transmuted-Arcanum Relic,2026,Exchange,0,Equippable,Shins,,
-Dire Werewolf Fang,dire-werewolf-fang,Quest,2026,Treasure Chest Only,0,Monster Trophy,slotless,Golden Fleece,1
-Divine Water,divine-water,Enhanced,2026,Exchange,0,Liquid|Weapon,slotless,,
-Drake's Draught,drakes-draught,Rare,2026,Appreciation,0,Liquid,slotless,Alchemist's Ink,6
-Earcuff of Greater Glory,earcuff-of-greater-glory,Relic,2026,Exchange,0,Equippable,Ear,,
-Earcuff of the Accursed,earcuff-of-the-accursed,Ultra Rare,2026,Standard Pack,0,Equippable,Ear,,
-Figurine of Power: Deva,figurine-of-power-deva,Common,2026,Standard Pack,1,Equippable,Figurine,Darkwood Plank,1
-Figurine of Power: Herald,figurine-of-power-herald,Rare,2026,Treasure Chest Only,0,Equippable,Figurine,Darkwood Plank,6
-Figurine of Power: Pilgrim,figurine-of-power-pilgrim,Ultra Rare,2026,Standard Pack,0,Equippable,Figurine,,
-Figurine of Power: Varghoul,figurine-of-power-varghoul,Rare,2026,Standard Pack,1,Equippable,Figurine,Darkwood Plank,6
-Gargoyle Finger,gargoyle-finger,Quest,2026,Treasure Chest Only,0,Monster Trophy,slotless,Golden Fleece,1
-Gear Golem Totem,gear-golem-totem,Legendary,2026,Exchange,0,Equippable|Timeless,slotless,,
-Gloves of Infamy,gloves-of-infamy,Exalted,2026,Exchange,0,Equippable,Hands,,
-Gloves of the Order,gloves-of-the-order,Rare,2026,Treasure Chest Only,0,Equippable,Hands,Mystic Silk,6
-Gloves of Valor,gloves-of-valor,Rare,2026,Standard Pack,1,Equippable,Hands,Mystic Silk,6
-Goblet of Saintly Surge,goblet-of-saintly-surge,Ultra Rare,2026,Standard Pack,0,Equippable,slotless,,
-Golden Ticket,golden-ticket,Special,2026,Standard Pack,0,none,slotless,,
-Golem 1st Finger,golem-1st-finger,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem 1st Thumb,golem-1st-thumb,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem 2nd Finger,golem-2nd-finger,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem 2nd Thumb,golem-2nd-thumb,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem 3rd Finger,golem-3rd-finger,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem 4th Finger,golem-4th-finger,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem 5th Finger,golem-5th-finger,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem 6th Finger,golem-6th-finger,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem 7th Finger,golem-7th-finger,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem 8th Finger,golem-8th-finger,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Bolt (2026),golem-bolt-2026,Quest,2026,Treasure Chest Only,0,Monster Trophy,slotless,Golden Fleece,1
-Golem Brain,golem-brain,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Chest,golem-chest,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Heart,golem-heart,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Left Ankle,golem-left-ankle,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Left Arm,golem-left-arm,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Left Ear,golem-left-ear,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Left Eye,golem-left-eye,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Left Foot,golem-left-foot,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Left Knee,golem-left-knee,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Left Palm,golem-left-palm,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Left Shin,golem-left-shin,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Left Shoulder,golem-left-shoulder,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Left Thigh,golem-left-thigh,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Left Wrist,golem-left-wrist,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Mouth,golem-mouth,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Neck,golem-neck,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Nose,golem-nose,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Power Cell,golem-power-cell,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Right Ankle,golem-right-ankle,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Right Arm,golem-right-arm,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Right Ear,golem-right-ear,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Right Eye,golem-right-eye,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Right Foot,golem-right-foot,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Right Knee,golem-right-knee,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Right Palm,golem-right-palm,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Right Shin,golem-right-shin,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Right Shoulder,golem-right-shoulder,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Right Thigh,golem-right-thigh,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Right Wrist,golem-right-wrist,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Golem Thorax,golem-thorax,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
-Grave Fate Card,grave-fate-card,Common,2026,Standard Pack,1,Equippable,slotless,Darkwood Plank,1
-Greaves of Diffusion,greaves-of-diffusion,Ultra Rare,2026,Standard Pack,0,Equippable,Shins,,
-Greaves of the Growler,greaves-of-the-growler,Rare,2026,Standard Pack,1,Equippable,Shins,Mystic Silk,6
-Half-Plate of the Deft,half-plate-of-the-deft,Rare,2026,Standard Pack,1,Equippable,Torso (armor),Aragonite,1
-Hat of Critical Thinking,hat-of-critical-thinking,Ultra Rare,2026,Standard Pack,0,Equippable,Head,,
-Helm of the Wise,helm-of-the-wise,Rare,2026,Standard Pack,1,Equippable,Head,Aragonite,1
-Herald's Amulet,heralds-amulet,Rare,2026,Treasure Chest Only,0,Equippable,Neck,Philosopher's Stone,6
-Herald's Bead,heralds-bead,Rare,2026,Treasure Chest Only,0,Equippable,Bead,Darkwood Plank,6
-Herald's Belt,heralds-belt,Rare,2026,Treasure Chest Only,0,Equippable,Waist,Mystic Silk,6
-Herald's Boots,heralds-boots,Rare,2026,Treasure Chest Only,0,Equippable,Feet,Mystic Silk,6
-Herald's Bracers,heralds-bracers,Rare,2026,Treasure Chest Only,0,Equippable,Wrist,Mystic Silk,6
-Herald's Charm,heralds-charm,Rare,2026,Treasure Chest Only,0,Equippable,Charm,Darkwood Plank,6
-Herald's Cloak,heralds-cloak,Rare,2026,Treasure Chest Only,0,Equippable,Back,Mystic Silk,6
-Herald's Earcuff,heralds-earcuff,Rare,2026,Treasure Chest Only,0,Equippable,Ear,Philosopher's Stone,6
-Herald's Gloves,heralds-gloves,Rare,2026,Treasure Chest Only,0,Equippable,Hands,Mystic Silk,6
-Herald's Greaves,heralds-greaves,Rare,2026,Treasure Chest Only,0,Equippable,Shins,Mystic Silk,6
-Herald's Hat,heralds-hat,Rare,2026,Treasure Chest Only,0,Equippable,Head,Mystic Silk,6
-Herald's Horn,heralds-horn,Rare,2026,Treasure Chest Only,0,Equippable|No Party Card Effect,slotless,Darkwood Plank,6
-Herald's Kilt,heralds-kilt,Rare,2026,Treasure Chest Only,0,Equippable,Legs,Mystic Silk,6
-Herald's Ring,heralds-ring,Rare,2026,Treasure Chest Only,0,Equippable,Finger,Philosopher's Stone,6
-Herald's Ring of Focus,heralds-ring-of-focus,Relic,2026,Exchange,0,Equippable,Finger,,
-Herald's Ring of Wrath,heralds-ring-of-wrath,Relic,2026,Exchange,0,Equippable,Finger,,
-Herald's Spectacles,heralds-spectacles,Rare,2026,Treasure Chest Only,0,Equippable,Eyes,Darkwood Plank,6
-Herald's Vestments,heralds-vestments,Rare,2026,Treasure Chest Only,0,Equippable,Torso (armor),Aragonite,1
-Holy Water,holy-water,Common,2026,Standard Pack,1,Liquid|Weapon,slotless,Dwarven Steel,1
-Hunter Crossbow,hunter-crossbow,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Incense of Focus,incense-of-focus,Exalted,2026,Exchange,0,Equippable,slotless,,
-Incense of Might,incense-of-might,Exalted,2026,Exchange,0,Equippable,slotless,,
-Incense of Power,incense-of-power,Enhanced,2026,Exchange,0,Equippable,slotless,,
-Incense of the Magi,incense-of-the-magi,Enhanced,2026,Exchange,0,Equippable,slotless,,
-Ioun Stone Beryl Prism,ioun-stone-beryl-prism,Rare,2026,Standard Pack,1,Equippable,Ioun Stone,Darkwood Plank,6
-Ioun Stone Citrine Orb,ioun-stone-citrine-orb,Common,2026,Standard Pack,1,Equippable,Ioun Stone,Darkwood Plank,1
-Ioun Stone Herald's Orb,ioun-stone-heralds-orb,Rare,2026,Treasure Chest Only,0,Equippable,Ioun Stone,Darkwood Plank,6
-Ioun Stone Moonstone Orb,ioun-stone-moonstone-orb,Ultra Rare,2026,Standard Pack,0,Equippable,Ioun Stone,,
-Ioun Stone Obsidian Shard,ioun-stone-obsidian-shard,Exalted,2026,Exchange,0,Equippable,Ioun Stone,,
-Ioun Stone of Envy,ioun-stone-of-envy,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
-Ioun Stone of Mystic Heroism,ioun-stone-of-mystic-heroism,Relic,2026,Exchange,0,Equippable,Ioun Stone,,
-Ioun Stone of Pride,ioun-stone-of-pride,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
-Ioun Stone of the Champion,ioun-stone-of-the-champion,Ultra Rare,2026,Volunteer Recognition,0,Equippable,Ioun Stone,,
-Ioun Stone of the Dead,ioun-stone-of-the-dead,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
-Ioun Stone of the Grave,ioun-stone-of-the-grave,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
-Ioun Stone of the Hero,ioun-stone-of-the-hero,Rare,2026,Volunteer Recognition,0,Equippable,Ioun Stone,Darkwood Plank,6
-Ioun Stone of the Night,ioun-stone-of-the-night,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
-Ioun Stone of Wrath,ioun-stone-of-wrath,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
-Ioun Stone Rock Candy,ioun-stone-rock-candy,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
-Lady Ashley's Triad Shield,lady-ashleys-triad-shield,Ultra Rare,2026,Standard Pack,0,Equippable|Shield,Offhand,,
-Lenses of the Artificer,lenses-of-the-artificer,Rare,2026,Standard Pack,1,Equippable,Eyes,Darkwood Plank,6
-Lycan Mystic Staff,lycan-mystic-staff,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Lyre of Lore,lyre-of-lore,Rare,2026,Standard Pack,1,Musical Instrument,Mainhand,Darkwood Plank,6
-Mark of Enlightenment,mark-of-enlightenment,Paragon,2026,Exchange,0,Equippable,Mark,,
-Mark of the 1st Tenet,mark-of-the-1st-tenet,Ultra Rare,2026,Appreciation,0,Equippable,Mark,,
-Mark of the Tenets,mark-of-the-tenets,Relic,2026,Exchange,0,Equippable,Mark,,
-Melonbrant Concentrate,melonbrant-concentrate,Quest,2026,Participation,0,none,slotless,Golden Fleece,1
-Mirthwood Bliss Blossom,mirthwood-bliss-blossom,Quest,2026,Participation,0,none,slotless,Golden Fleece,1
-Mongo's Miracle Bead,mongos-miracle-bead,Ultra Rare,2026,Standard Pack,0,Equippable,Bead,,
-Moon Fate Card,moon-fate-card,Common,2026,Standard Pack,1,Equippable,slotless,Darkwood Plank,1
-Mythic Bead of Defiance,mythic-bead-of-defiance,Mythic,2026,Exchange,0,Equippable|Timeless,Bead,,
-Mythic Charm of Fate,mythic-charm-of-fate,Mythic,2026,Exchange,0,Equippable|Timeless,Charm,,
-Mythic Ettin Ring,mythic-ettin-ring,Mythic,2026,Exchange,0,Equippable|Timeless,Finger,,
-Mythic Ioun Stone of Judgment,mythic-ioun-stone-of-judgment,Mythic,2026,Exchange,0,Equippable|Timeless,Ioun Stone,,
-Mythic Transmuter,mythic-transmuter,Safehold,2026,Exchange,0,Timeless,slotless,,
-Nil Crystal,nil-crystal,Quest,2026,Participation,0,none,slotless,Golden Fleece,1
-Path to Enlightenment (Fragment 4),path-to-enlightenment-fragment-4,Paragon,2026,Appreciation,0,none,slotless,,
-Pemberton Pain Extract,pemberton-pain-extract,Quest,2026,Participation,0,none,slotless,Golden Fleece,1
-Pilgrim Fate Card,pilgrim-fate-card,Rare,2026,Appreciation,0,Equippable,slotless,Darkwood Plank,6
-Potion Angel Agility,potion-angel-agility,Rare,2026,Standard Pack,1,Liquid,slotless,Alchemist's Ink,6
-Potion Sacred Wine,potion-sacred-wine,Rare,2026,Standard Pack,1,Liquid,slotless,Alchemist's Ink,6
-Potion St. Gubb's Grog,potion-st-gubbs-grog,Uncommon,2026,Standard Pack,1,Liquid,slotless,Alchemist's Ink,3
-Potion St. Raya's Remedy,potion-st-rayas-remedy,Common,2026,Standard Pack,1,Liquid,slotless,Alchemist's Ink,1
-Potion St. Wilton's Wine,potion-st-wiltons-wine,Common,2026,Standard Pack,1,Liquid,slotless,Alchemist's Ink,1
-Red Ridder,red-ridder,Rare,2026,Participation,0,Equippable|Weapon,Mainhand,Aragonite,1
-Reveler Fate Card,reveler-fate-card,Uncommon,2026,Standard Pack,1,Equippable,slotless,Darkwood Plank,3
-Ring Con Thank You,ring-con-thank-you,Special,2026,Appreciation,0,none,slotless,,
-Ring of the 1st Circle,ring-of-the-1st-circle,Premium,2026,Appreciation,0,Equippable,Finger,,
-Ring of the Ioun,ring-of-the-ioun,Ultra Rare,2026,Exchange,0,Equippable,Finger,,
-Ring of the Order,ring-of-the-order,Rare,2026,Participation,0,Equippable,Finger,Philosopher's Stone,6
-Ring of the Sacred Circle,ring-of-the-sacred-circle,Transmuted-Grand Arcanum,2026,Exchange,0,Equippable,Finger,,
-Ring of the Ten Saints,ring-of-the-ten-saints,Ultra Rare,2026,Participation,0,Equippable,Finger,,
-Ring of the Vampire,ring-of-the-vampire,Ultra Rare,2026,Standard Pack,0,Equippable,Finger,,
-Ring of the Vampire Lord,ring-of-the-vampire-lord,Relic,2026,Exchange,0,Equippable,Finger,,
-Ring of Undeath,ring-of-undeath,Rare,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,6
-Sacred Reach Bracers,sacred-reach-bracers,Rare,2026,Standard Pack,1,Equippable,Wrist,Mystic Silk,6
-Saintly Runestone,saintly-runestone,Rare,2026,Standard Pack,1,Equippable,Runestone,Darkwood Plank,6
-Scroll Fire Knife,scroll-fire-knife,Uncommon,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,3
-Scroll Healing Radiance,scroll-healing-radiance,Rare,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,6
-Scroll Light Lance,scroll-light-lance,Rare,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,6
-Scroll St. Fokee's Fury,scroll-st-fokees-fury,Common,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,1
-Scroll St. Gubb's Ire,scroll-st-gubbs-ire,Common,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,1
-Scroll St. Hopp's Hope,scroll-st-hopps-hope,Common,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,1
-Scroll St. Stern's Blessing,scroll-st-sterns-blessing,Uncommon,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,3
-Scroll Storm Strike,scroll-storm-strike,Uncommon,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,3
-Scryer Fate Card,scryer-fate-card,Uncommon,2026,Standard Pack,1,Equippable,slotless,Darkwood Plank,3
-Shield of Grounding,shield-of-grounding,Uncommon,2026,Standard Pack,1,Equippable|Shield,Offhand,Oil of Enchantment,1
-Shield of Resolve,shield-of-resolve,Uncommon,2026,Standard Pack,1,Equippable|Shield,Offhand,Oil of Enchantment,1
-Shield of the Hardy,shield-of-the-hardy,Rare,2026,Standard Pack,1,Equippable|Shield,Offhand,Aragonite,1
-Shirt of the Lycan,shirt-of-the-lycan,Ultra Rare,2026,Standard Pack,0,Equippable,Shirt,,
-Signet of the Ten Saints,signet-of-the-ten-saints,Relic,2026,Exchange,0,Equippable,Finger,,
-Sir Andrew's Triad Armor,sir-andrews-triad-armor,Ultra Rare,2026,Standard Pack,0,Equippable,Torso (armor),,
-Sir Jason's Triad Helm,sir-jasons-triad-helm,Ultra Rare,2026,Standard Pack,0,Equippable,Head,,
-Spirit Spittle,spirit-spittle,Quest,2026,Treasure Chest Only,0,Monster Trophy,slotless,Golden Fleece,1
-St. Bullo's Bead,st-bullos-bead,Rare,2026,Standard Pack,1,Equippable,Bead,Darkwood Plank,6
-St. Bullo's Ring,st-bullos-ring,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
-St. Bullo's Signet,st-bullos-signet,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
-St. Fleck's Favorite Ring,st-flecks-favorite-ring,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
-St. Fleck's Fire Bolt,st-flecks-fire-bolt,Common,2026,Standard Pack,1,Ammunition,slotless,Enchanter's Munition,1
-St. Fleck's Inferno Bolt,st-flecks-inferno-bolt,Rare,2026,Standard Pack,1,Ammunition,slotless,Enchanter's Munition,6
-St. Fleck's Lycan Charm,st-flecks-lycan-charm,Common,2026,Standard Pack,1,Equippable,Charm,Darkwood Plank,1
-St. Fleck's Signet,st-flecks-signet,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
-St. Fokee's Fastidious Ring,st-fokees-fastidious-ring,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
-St. Fokee's Signet,st-fokees-signet,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
-St. Gubb's Gorget,st-gubbs-gorget,Ultra Rare,2026,Standard Pack,0,Equippable,Neck,,
-St. Gubb's Signet,st-gubbs-signet,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
-St. Gubb's Surging Ring,st-gubbs-surging-ring,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
-St. Hopp's Null Ring,st-hopps-null-ring,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
-St. Hopp's Signet,st-hopps-signet,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
-St. Lorca's Bracers,st-lorcas-bracers,Common,2026,Standard Pack,1,Equippable,Wrist,Mystic Silk,1
-St. Lorca's Dust,st-lorcas-dust,Common,2026,Standard Pack,1,Dust,slotless,Darkwood Plank,1
-St. Lorca's Signet,st-lorcas-signet,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
-St. Raya's Locket,st-rayas-locket,Common,2026,Standard Pack,1,Equippable,Neck,Philosopher's Stone,6
-St. Raya's Radiant Ring,st-rayas-radiant-ring,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
-St. Raya's Signet,st-rayas-signet,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
-St. Sola's Earcuff,st-solas-earcuff,Uncommon,2026,Standard Pack,1,Equippable,Ear,Philosopher's Stone,3
-St. Sola's Siren Ring,st-solas-siren-ring,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
-St. Stern's Amulet of Aid,st-sterns-amulet-of-aid,Uncommon,2026,Standard Pack,1,Equippable,Neck,Philosopher's Stone,3
-St. Stern's Righteous Ring,st-sterns-righteous-ring,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
-St. Stern's Signet,st-sterns-signet,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
-St. Stern's Spectacles,st-sterns-spectacles,Common,2026,Standard Pack,1,Equippable,Eyes,Darkwood Plank,3
-St. Valla's Boots,st-vallas-boots,Uncommon,2026,Standard Pack,1,Equippable,Feet,Mystic Silk,3
-St. Valla's Hearth Ring,st-vallas-hearth-ring,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
-St. Valla's Ring,st-vallas-ring,Common,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,1
-St. Valla's Signet,st-vallas-signet,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
-St. Wilton's Charm,st-wiltons-charm,Uncommon,2026,Standard Pack,1,Equippable,Charm,Darkwood Plank,3
-St. Wilton's Signet,st-wiltons-signet,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
-Sun Fate Card,sun-fate-card,Rare,2026,Appreciation,0,Equippable,slotless,Darkwood Plank,6
-Thunder Bolt,thunder-bolt,Uncommon,2026,Standard Pack,1,Ammunition,slotless,Enchanter's Munition,3
-Treasure Chip,treasure-chip,Special,2026,Dungeon Only,0,none,slotless,,
-Trinket of the Lycan,trinket-of-the-lycan,Rare,2026,Standard Pack,1,Equippable|No Party Card Effect,slotless,Darkwood Plank,6
-Underling Artificer,underling-artificer,Safehold,2026,Appreciation,0,Equippable,Underling,,
-Val's +4 Keen Fellbane Crossbow,vals-4-keen-fellbane-crossbow,Legendary,2026,Exchange,0,Equippable|Timeless|Weapon,Mainhand,,
-Vampire Dust,vampire-dust,Quest,2026,Treasure Chest Only,0,Monster Trophy,slotless,Golden Fleece,1
-Villager Pitchfork,villager-pitchfork,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Villager Scythe,villager-scythe,Uncommon,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
-Villager Torch,villager-torch,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Vonami Morning Star,vonami-morning-star,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Wolf Fate Card,wolf-fate-card,Rare,2026,Appreciation,0,Equippable,slotless,Darkwood Plank,6
-Wooden Stake,wooden-stake,Ultra Rare,2026,Appreciation,0,Equippable|Weapon,Mainhand,,
+name,external_slug,rarity,source_rarity,token_year,tokendb_source,in_standard_set,classification,slot,converts_to,convert_units
++1 Dawn Battle Axe,1-dawn-battle-axe,Rare,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
++1 Dawn Great Sword,1-dawn-great-sword,Rare,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
++1 Herald's Light Mace,1-heralds-light-mace,Rare,Rare,2026,Treasure Chest Only,0,Equippable|Weapon,Mainhand,Aragonite,1
++1 Herald's Sling,1-heralds-sling,Rare,Rare,2026,Treasure Chest Only,0,Equippable|Weapon,Mainhand,Aragonite,1
++1 Hunter Crossbow,1-hunter-crossbow,Rare,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
++1 Vampiric Hammer,1-vampiric-hammer,Rare,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
++1 Vampiric Short Sword,1-vampiric-short-sword,Rare,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
++2 Branding Mace,2-branding-mace,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable|Weapon,Mainhand,,
++2 Darkbane Crossbow,2-darkbane-crossbow,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable|Weapon,Mainhand,,
++3 Fellbane Crossbow,3-fellbane-crossbow,Relic,Transmuted-Relic (5 pt),2026,Exchange,0,Equippable|Weapon,Mainhand,,
+100 GP Ritual Goblet,100-gp-ritual-goblet,Uncommon,Uncommon,2026,Standard Pack,1,GP Value,slotless,Reserve Bar,
+"100,000 GP Mythic Ore Bar",100000-gp-mythic-ore-bar,,Reserve,2026,Exchange,0,GP Value|Timeless|Trade 5,slotless,Reserve Bar,
+10x Treasure Chips,10x-treasure-chips,,Special,2026,Dungeon Only,0,none,slotless,,
+150 GP Ritual Chalice,150-gp-ritual-chalice,Uncommon,Uncommon,2026,Standard Pack,1,GP Value,slotless,Reserve Bar,
+3x Treasure Chips,3x-treasure-chips,,Special,2026,Dungeon Only,0,none,slotless,,
+50 GP Sunrise Coin,50-gp-sunrise-coin,Common,Common,2026,Standard Pack,1,Gear|GP Value,slotless,Reserve Bar,
+500 GP Ritual Bowl,500-gp-ritual-bowl,Rare,Rare,2026,Standard Pack,1,GP Value,slotless,Reserve Bar,
+500 GP Ritual Censer,500-gp-ritual-censer,Rare,Rare,2026,Standard Pack,1,GP Value,slotless,Reserve Bar,
+Amulet of Undeath,amulet-of-undeath,Rare,Rare,2026,Standard Pack,1,Equippable,Neck,Philosopher's Stone,6
+Artificer Mystic Staff,artificer-mystic-staff,Uncommon,Uncommon,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
+Artificer Radiant Charm,artificer-radiant-charm,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Charm,Darkwood Plank,3
+Artificer's Agility Pants,artificers-agility-pants,Rare,Rare,2026,Standard Pack,1,Equippable,Legs,Mystic Silk,6
+Artificer's Probability Robe,artificers-probability-robe,Rare,Rare,2026,Standard Pack,1,Equippable,Torso (armor),Aragonite,1
+Banshee Essence,banshee-essence,Monster Trophy,Quest,2026,Treasure Chest Only,0,Monster Trophy,slotless,Golden Fleece,1
+Baton of Focus,baton-of-focus,Rare,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
+Bead of Divine Choice,bead-of-divine-choice,Relic,Transmuted-Relic (5 pt),2026,Exchange,0,Equippable,Bead,,
+Bead of Fanatic's Fate,bead-of-fanatics-fate,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Bead,Darkwood Plank,3
+Bead of Foretelling,bead-of-foretelling,Rare,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
+Bead of Fortune,bead-of-fortune,Rare,Rare,2026,Standard Pack,1,Equippable,Bead,Darkwood Plank,6
+Bead of the Artificer,bead-of-the-artificer,Rare,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
+Bead of the Bat,bead-of-the-bat,Rare,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
+Bead of the Buzzard,bead-of-the-buzzard,Rare,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
+Bead of the Golem,bead-of-the-golem,Rare,Rare,2026,Appreciation,0,Equippable,Bead,Darkwood Plank,6
+Bead of the Rat,bead-of-the-rat,Rare,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
+Bead of the Viper,bead-of-the-viper,Rare,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
+Bead of the Wolf,bead-of-the-wolf,Rare,Rare,2026,Participation,0,Equippable,Bead,Darkwood Plank,6
+Belt of Biting,belt-of-biting,Rare,Rare,2026,Volunteer Recognition,0,Equippable,Waist,Mystic Silk,6
+Belt of Ogre Power,belt-of-ogre-power,Rare,Rare,2026,Standard Pack,1,Equippable,Waist,Mystic Silk,6
+Belt of the Accursed,belt-of-the-accursed,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Waist,,
+Boots of Grave's Reach,boots-of-graves-reach,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Feet,,
+Bracers of Boosting,bracers-of-boosting,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Wrist,,
+Censer of Divine Aid,censer-of-divine-aid,Exalted,Transmuted-Exalted (4 pt),2026,Exchange,0,Equippable,slotless,,
+Charm of Banewatch,charm-of-banewatch,Ultra Rare,Ultra Rare,2026,Volunteer Recognition,0,Equippable,Charm,,
+Charm of Deathward,charm-of-deathward,Exalted,Transmuted-Exalted (4 pt),2026,Exchange,0,Equippable,Charm,,
+Charm of Fickle Fate,charm-of-fickle-fate,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Charm,,
+Charm of Gravebane,charm-of-gravebane,Rare,Rare,2026,Standard Pack,1,Equippable,Charm,Darkwood Plank,6
+Charm of Undeath,charm-of-undeath,Rare,Rare,2026,Standard Pack,1,Equippable,Charm,Darkwood Plank,6
+Cloak of Hardy Luck,cloak-of-hardy-luck,Rare,Rare,2026,Standard Pack,1,Equippable,Back,Mystic Silk,6
+Cloak of Swift Sneak,cloak-of-swift-sneak,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Back,Mystic Silk,3
+Cloak of the Accursed,cloak-of-the-accursed,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Back,,
+Cloak of the Order,cloak-of-the-order,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Back,Mystic Silk,6
+Craven Barbed Shirt,craven-barbed-shirt,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Shirt,Mystic Silk,3
+Craven Crossbow,craven-crossbow,Uncommon,Uncommon,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
+Craven Shield,craven-shield,Common,Common,2026,Standard Pack,1,Equippable|Shield,Offhand,Minotaur Hide,1
+Craven Spike Suit,craven-spike-suit,Rare,Rare,2026,Standard Pack,1,Equippable,Torso (armor),Aragonite,1
+Craven Tyrant Armor,craven-tyrant-armor,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
+Craven's Cursed Charm,cravens-cursed-charm,Rare,Rare,2026,Participation,0,Equippable,Charm,Darkwood Plank,6
+Craven's Vampire Ring,cravens-vampire-ring,Legendary,Transmuted-Legendary,2026,Exchange,0,Equippable|Timeless,Finger,,
+Dawn Battle Axe,dawn-battle-axe,Common,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Dawn Belt,dawn-belt,Common,Common,2026,Standard Pack,1,Equippable,Waist,Mystic Silk,1
+Dawn Boots,dawn-boots,Common,Common,2026,Standard Pack,1,Equippable,Feet,Mystic Silk,1
+Dawn Boots of Lore,dawn-boots-of-lore,Rare,Rare,2026,Standard Pack,1,Equippable,Feet,Mystic Silk,6
+Dawn Bow,dawn-bow,Common,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Dawn Earcuff,dawn-earcuff,Common,Common,2026,Standard Pack,1,Equippable,Ear,Philosopher's Stone,1
+Dawn Escort Armor,dawn-escort-armor,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
+Dawn Gloves,dawn-gloves,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Hands,Mystic Silk,1
+Dawn Greaves,dawn-greaves,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Shins,Mystic Silk,3
+Dawn Guard Armor,dawn-guard-armor,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
+Dawn Hammer,dawn-hammer,Common,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Dawn Hardy Earcuff,dawn-hardy-earcuff,Rare,Rare,2026,Standard Pack,1,Equippable,Ear,Philosopher's Stone,6
+Dawn Helm,dawn-helm,Common,Common,2026,Standard Pack,1,Equippable,Head,Minotaur Hide,1
+Dawn Initiate Gloves,dawn-initiate-gloves,Common,Common,2026,Standard Pack,1,Equippable,Hands,Mystic Silk,1
+Dawn Leather Armor,dawn-leather-armor,Common,Common,2026,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
+Dawn Long Sword,dawn-long-sword,Common,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Dawn Mace,dawn-mace,Common,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Dawn Order Pants,dawn-order-pants,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Legs,Mystic Silk,3
+Dawn Pilgrim Armor,dawn-pilgrim-armor,Common,Common,2026,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
+Dawn Ritual Robe,dawn-ritual-robe,Common,Common,2026,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
+Dawn Runestone,dawn-runestone,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Runestone,Darkwood Plank,3
+Dawn Shield,dawn-shield,Common,Common,2026,Standard Pack,1,Equippable|Shield,Offhand,Minotaur Hide,1
+Dawn Shirt,dawn-shirt,Rare,Rare,2026,Standard Pack,1,Equippable,Shirt,Mystic Silk,6
+Dawn Short Sword,dawn-short-sword,Common,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Dawn Staff of Focus,dawn-staff-of-focus,Rare,Rare,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
+Dawn Strike Sword,dawn-strike-sword,Uncommon,Uncommon,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
+Dawn Sturdy Leather,dawn-sturdy-leather,Common,Common,2026,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
+Dawn War Club,dawn-war-club,Uncommon,Uncommon,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
+Deathward Greaves,deathward-greaves,Arcanum,Transmuted-Arcanum Relic,2026,Exchange,0,Equippable,Shins,,
+Dire Werewolf Fang,dire-werewolf-fang,Monster Trophy,Quest,2026,Treasure Chest Only,0,Monster Trophy,slotless,Golden Fleece,1
+Divine Water,divine-water,Enhanced,Transmuted-Enhanced (3 pt),2026,Exchange,0,Liquid|Weapon,slotless,,
+Drake's Draught,drakes-draught,Rare,Rare,2026,Appreciation,0,Liquid,slotless,Alchemist's Ink,6
+Earcuff of Greater Glory,earcuff-of-greater-glory,Relic,Transmuted-Relic (5 pt),2026,Exchange,0,Equippable,Ear,,
+Earcuff of the Accursed,earcuff-of-the-accursed,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Ear,,
+Figurine of Power: Deva,figurine-of-power-deva,Common,Common,2026,Standard Pack,1,Equippable,Figurine,Darkwood Plank,1
+Figurine of Power: Herald,figurine-of-power-herald,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Figurine,Darkwood Plank,6
+Figurine of Power: Pilgrim,figurine-of-power-pilgrim,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Figurine,,
+Figurine of Power: Varghoul,figurine-of-power-varghoul,Rare,Rare,2026,Standard Pack,1,Equippable,Figurine,Darkwood Plank,6
+Gargoyle Finger,gargoyle-finger,Monster Trophy,Quest,2026,Treasure Chest Only,0,Monster Trophy,slotless,Golden Fleece,1
+Gear Golem Totem,gear-golem-totem,Legendary,Transmuted-Legendary,2026,Exchange,0,Equippable|Timeless,slotless,,
+Gloves of Infamy,gloves-of-infamy,Exalted,Transmuted-Exalted (4 pt),2026,Exchange,0,Equippable,Hands,,
+Gloves of the Order,gloves-of-the-order,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Hands,Mystic Silk,6
+Gloves of Valor,gloves-of-valor,Rare,Rare,2026,Standard Pack,1,Equippable,Hands,Mystic Silk,6
+Goblet of Saintly Surge,goblet-of-saintly-surge,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,slotless,,
+Golden Ticket,golden-ticket,,Special,2026,Standard Pack,0,none,slotless,,
+Golem 1st Finger,golem-1st-finger,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem 1st Thumb,golem-1st-thumb,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem 2nd Finger,golem-2nd-finger,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem 2nd Thumb,golem-2nd-thumb,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem 3rd Finger,golem-3rd-finger,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem 4th Finger,golem-4th-finger,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem 5th Finger,golem-5th-finger,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem 6th Finger,golem-6th-finger,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem 7th Finger,golem-7th-finger,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem 8th Finger,golem-8th-finger,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Bolt (2026),golem-bolt-2026,Monster Trophy,Quest,2026,Treasure Chest Only,0,Monster Trophy,slotless,Golden Fleece,1
+Golem Brain,golem-brain,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Chest,golem-chest,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Heart,golem-heart,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Left Ankle,golem-left-ankle,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Left Arm,golem-left-arm,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Left Ear,golem-left-ear,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Left Eye,golem-left-eye,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Left Foot,golem-left-foot,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Left Knee,golem-left-knee,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Left Palm,golem-left-palm,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Left Shin,golem-left-shin,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Left Shoulder,golem-left-shoulder,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Left Thigh,golem-left-thigh,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Left Wrist,golem-left-wrist,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Mouth,golem-mouth,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Neck,golem-neck,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Nose,golem-nose,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Power Cell,golem-power-cell,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Right Ankle,golem-right-ankle,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Right Arm,golem-right-arm,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Right Ear,golem-right-ear,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Right Eye,golem-right-eye,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Right Foot,golem-right-foot,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Right Knee,golem-right-knee,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Right Palm,golem-right-palm,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Right Shin,golem-right-shin,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Right Shoulder,golem-right-shoulder,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Right Thigh,golem-right-thigh,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Right Wrist,golem-right-wrist,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Golem Thorax,golem-thorax,,Quest,2026,Treasure Chest Only,0,none,slotless,Darkwood Plank,1
+Grave Fate Card,grave-fate-card,Common,Common,2026,Standard Pack,1,Equippable,slotless,Darkwood Plank,1
+Greaves of Diffusion,greaves-of-diffusion,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Shins,,
+Greaves of the Growler,greaves-of-the-growler,Rare,Rare,2026,Standard Pack,1,Equippable,Shins,Mystic Silk,6
+Half-Plate of the Deft,half-plate-of-the-deft,Rare,Rare,2026,Standard Pack,1,Equippable,Torso (armor),Aragonite,1
+Hat of Critical Thinking,hat-of-critical-thinking,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Head,,
+Helm of the Wise,helm-of-the-wise,Rare,Rare,2026,Standard Pack,1,Equippable,Head,Aragonite,1
+Herald's Amulet,heralds-amulet,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Neck,Philosopher's Stone,6
+Herald's Bead,heralds-bead,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Bead,Darkwood Plank,6
+Herald's Belt,heralds-belt,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Waist,Mystic Silk,6
+Herald's Boots,heralds-boots,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Feet,Mystic Silk,6
+Herald's Bracers,heralds-bracers,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Wrist,Mystic Silk,6
+Herald's Charm,heralds-charm,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Charm,Darkwood Plank,6
+Herald's Cloak,heralds-cloak,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Back,Mystic Silk,6
+Herald's Earcuff,heralds-earcuff,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Ear,Philosopher's Stone,6
+Herald's Gloves,heralds-gloves,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Hands,Mystic Silk,6
+Herald's Greaves,heralds-greaves,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Shins,Mystic Silk,6
+Herald's Hat,heralds-hat,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Head,Mystic Silk,6
+Herald's Horn,heralds-horn,Rare,Rare,2026,Treasure Chest Only,0,Equippable|No Party Card Effect,slotless,Darkwood Plank,6
+Herald's Kilt,heralds-kilt,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Legs,Mystic Silk,6
+Herald's Ring,heralds-ring,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Finger,Philosopher's Stone,6
+Herald's Ring of Focus,heralds-ring-of-focus,Relic,Transmuted-Relic (5 pt),2026,Exchange,0,Equippable,Finger,,
+Herald's Ring of Wrath,heralds-ring-of-wrath,Relic,Transmuted-Relic (5 pt),2026,Exchange,0,Equippable,Finger,,
+Herald's Spectacles,heralds-spectacles,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Eyes,Darkwood Plank,6
+Herald's Vestments,heralds-vestments,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Torso (armor),Aragonite,1
+Holy Water,holy-water,Common,Common,2026,Standard Pack,1,Liquid|Weapon,slotless,Dwarven Steel,1
+Hunter Crossbow,hunter-crossbow,Common,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Incense of Focus,incense-of-focus,Exalted,Transmuted-Exalted (4 pt),2026,Exchange,0,Equippable,slotless,,
+Incense of Might,incense-of-might,Exalted,Transmuted-Exalted (4 pt),2026,Exchange,0,Equippable,slotless,,
+Incense of Power,incense-of-power,Enhanced,Transmuted-Enhanced (3 pt),2026,Exchange,0,Equippable,slotless,,
+Incense of the Magi,incense-of-the-magi,Enhanced,Transmuted-Enhanced (3 pt),2026,Exchange,0,Equippable,slotless,,
+Ioun Stone Beryl Prism,ioun-stone-beryl-prism,Rare,Rare,2026,Standard Pack,1,Equippable,Ioun Stone,Darkwood Plank,6
+Ioun Stone Citrine Orb,ioun-stone-citrine-orb,Common,Common,2026,Standard Pack,1,Equippable,Ioun Stone,Darkwood Plank,1
+Ioun Stone Herald's Orb,ioun-stone-heralds-orb,Rare,Rare,2026,Treasure Chest Only,0,Equippable,Ioun Stone,Darkwood Plank,6
+Ioun Stone Moonstone Orb,ioun-stone-moonstone-orb,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Ioun Stone,,
+Ioun Stone Obsidian Shard,ioun-stone-obsidian-shard,Exalted,Transmuted-Exalted (4 pt),2026,Exchange,0,Equippable,Ioun Stone,,
+Ioun Stone of Envy,ioun-stone-of-envy,Rare,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
+Ioun Stone of Mystic Heroism,ioun-stone-of-mystic-heroism,Relic,Transmuted-Relic (5 pt),2026,Exchange,0,Equippable,Ioun Stone,,
+Ioun Stone of Pride,ioun-stone-of-pride,Rare,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
+Ioun Stone of the Champion,ioun-stone-of-the-champion,Ultra Rare,Ultra Rare,2026,Volunteer Recognition,0,Equippable,Ioun Stone,,
+Ioun Stone of the Dead,ioun-stone-of-the-dead,Rare,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
+Ioun Stone of the Grave,ioun-stone-of-the-grave,Rare,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
+Ioun Stone of the Hero,ioun-stone-of-the-hero,Rare,Rare,2026,Volunteer Recognition,0,Equippable,Ioun Stone,Darkwood Plank,6
+Ioun Stone of the Night,ioun-stone-of-the-night,Rare,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
+Ioun Stone of Wrath,ioun-stone-of-wrath,Rare,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
+Ioun Stone Rock Candy,ioun-stone-rock-candy,Rare,Rare,2026,Participation,0,Equippable,Ioun Stone,Darkwood Plank,6
+Lady Ashley's Triad Shield,lady-ashleys-triad-shield,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable|Shield,Offhand,,
+Lenses of the Artificer,lenses-of-the-artificer,Rare,Rare,2026,Standard Pack,1,Equippable,Eyes,Darkwood Plank,6
+Lycan Mystic Staff,lycan-mystic-staff,Common,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Lyre of Lore,lyre-of-lore,Rare,Rare,2026,Standard Pack,1,Musical Instrument,Mainhand,Darkwood Plank,6
+Mark of Enlightenment,mark-of-enlightenment,Paragon,Paragon,2026,Exchange,0,Equippable,Mark,,
+Mark of the 1st Tenet,mark-of-the-1st-tenet,Ultra Rare,Ultra Rare,2026,Appreciation,0,Equippable,Mark,,
+Mark of the Tenets,mark-of-the-tenets,Relic,Transmuted-Relic (5 pt),2026,Exchange,0,Equippable,Mark,,
+Melonbrant Concentrate,melonbrant-concentrate,,Quest,2026,Participation,0,none,slotless,Golden Fleece,1
+Mirthwood Bliss Blossom,mirthwood-bliss-blossom,,Quest,2026,Participation,0,none,slotless,Golden Fleece,1
+Mongo's Miracle Bead,mongos-miracle-bead,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Bead,,
+Moon Fate Card,moon-fate-card,Common,Common,2026,Standard Pack,1,Equippable,slotless,Darkwood Plank,1
+Mythic Bead of Defiance,mythic-bead-of-defiance,Mythic,Transmuted-Mythic,2026,Exchange,0,Equippable|Timeless,Bead,,
+Mythic Charm of Fate,mythic-charm-of-fate,Mythic,Transmuted-Mythic,2026,Exchange,0,Equippable|Timeless,Charm,,
+Mythic Ettin Ring,mythic-ettin-ring,Mythic,Transmuted-Mythic,2026,Exchange,0,Equippable|Timeless,Finger,,
+Mythic Ioun Stone of Judgment,mythic-ioun-stone-of-judgment,Mythic,Transmuted-Mythic,2026,Exchange,0,Equippable|Timeless,Ioun Stone,,
+Mythic Transmuter,mythic-transmuter,Safehold,Safehold,2026,Exchange,0,Timeless,slotless,,
+Nil Crystal,nil-crystal,,Quest,2026,Participation,0,none,slotless,Golden Fleece,1
+Path to Enlightenment (Fragment 4),path-to-enlightenment-fragment-4,Paragon,Paragon,2026,Appreciation,0,none,slotless,,
+Pemberton Pain Extract,pemberton-pain-extract,,Quest,2026,Participation,0,none,slotless,Golden Fleece,1
+Pilgrim Fate Card,pilgrim-fate-card,Rare,Rare,2026,Appreciation,0,Equippable,slotless,Darkwood Plank,6
+Potion Angel Agility,potion-angel-agility,Rare,Rare,2026,Standard Pack,1,Liquid,slotless,Alchemist's Ink,6
+Potion Sacred Wine,potion-sacred-wine,Rare,Rare,2026,Standard Pack,1,Liquid,slotless,Alchemist's Ink,6
+Potion St. Gubb's Grog,potion-st-gubbs-grog,Uncommon,Uncommon,2026,Standard Pack,1,Liquid,slotless,Alchemist's Ink,3
+Potion St. Raya's Remedy,potion-st-rayas-remedy,Common,Common,2026,Standard Pack,1,Liquid,slotless,Alchemist's Ink,1
+Potion St. Wilton's Wine,potion-st-wiltons-wine,Common,Common,2026,Standard Pack,1,Liquid,slotless,Alchemist's Ink,1
+Red Ridder,red-ridder,Rare,Rare,2026,Participation,0,Equippable|Weapon,Mainhand,Aragonite,1
+Reveler Fate Card,reveler-fate-card,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,slotless,Darkwood Plank,3
+Ring Con Thank You,ring-con-thank-you,,Special,2026,Appreciation,0,none,slotless,,
+Ring of the 1st Circle,ring-of-the-1st-circle,Ultra Rare,Premium,2026,Appreciation,0,Equippable,Finger,,
+Ring of the Ioun,ring-of-the-ioun,Ultra Rare,Ultra Rare,2026,Exchange,0,Equippable,Finger,,
+Ring of the Order,ring-of-the-order,Rare,Rare,2026,Participation,0,Equippable,Finger,Philosopher's Stone,6
+Ring of the Sacred Circle,ring-of-the-sacred-circle,Arcanum,Transmuted-Grand Arcanum,2026,Exchange,0,Equippable,Finger,,
+Ring of the Ten Saints,ring-of-the-ten-saints,Ultra Rare,Ultra Rare,2026,Participation,0,Equippable,Finger,,
+Ring of the Vampire,ring-of-the-vampire,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Finger,,
+Ring of the Vampire Lord,ring-of-the-vampire-lord,Relic,Transmuted-Relic (5 pt),2026,Exchange,0,Equippable,Finger,,
+Ring of Undeath,ring-of-undeath,Rare,Rare,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,6
+Sacred Reach Bracers,sacred-reach-bracers,Rare,Rare,2026,Standard Pack,1,Equippable,Wrist,Mystic Silk,6
+Saintly Runestone,saintly-runestone,Rare,Rare,2026,Standard Pack,1,Equippable,Runestone,Darkwood Plank,6
+Scroll Fire Knife,scroll-fire-knife,Uncommon,Uncommon,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,3
+Scroll Healing Radiance,scroll-healing-radiance,Rare,Rare,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,6
+Scroll Light Lance,scroll-light-lance,Rare,Rare,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,6
+Scroll St. Fokee's Fury,scroll-st-fokees-fury,Common,Common,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,1
+Scroll St. Gubb's Ire,scroll-st-gubbs-ire,Common,Common,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,1
+Scroll St. Hopp's Hope,scroll-st-hopps-hope,Common,Common,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,1
+Scroll St. Stern's Blessing,scroll-st-sterns-blessing,Uncommon,Uncommon,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,3
+Scroll Storm Strike,scroll-storm-strike,Uncommon,Uncommon,2026,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,3
+Scryer Fate Card,scryer-fate-card,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,slotless,Darkwood Plank,3
+Shield of Grounding,shield-of-grounding,Uncommon,Uncommon,2026,Standard Pack,1,Equippable|Shield,Offhand,Oil of Enchantment,1
+Shield of Resolve,shield-of-resolve,Uncommon,Uncommon,2026,Standard Pack,1,Equippable|Shield,Offhand,Oil of Enchantment,1
+Shield of the Hardy,shield-of-the-hardy,Rare,Rare,2026,Standard Pack,1,Equippable|Shield,Offhand,Aragonite,1
+Shirt of the Lycan,shirt-of-the-lycan,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Shirt,,
+Signet of the Ten Saints,signet-of-the-ten-saints,Relic,Transmuted-Relic (5 pt),2026,Exchange,0,Equippable,Finger,,
+Sir Andrew's Triad Armor,sir-andrews-triad-armor,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Torso (armor),,
+Sir Jason's Triad Helm,sir-jasons-triad-helm,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Head,,
+Spirit Spittle,spirit-spittle,Monster Trophy,Quest,2026,Treasure Chest Only,0,Monster Trophy,slotless,Golden Fleece,1
+St. Bullo's Bead,st-bullos-bead,Rare,Rare,2026,Standard Pack,1,Equippable,Bead,Darkwood Plank,6
+St. Bullo's Ring,st-bullos-ring,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
+St. Bullo's Signet,st-bullos-signet,Rare,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
+St. Fleck's Favorite Ring,st-flecks-favorite-ring,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
+St. Fleck's Fire Bolt,st-flecks-fire-bolt,Common,Common,2026,Standard Pack,1,Ammunition,slotless,Enchanter's Munition,1
+St. Fleck's Inferno Bolt,st-flecks-inferno-bolt,Rare,Rare,2026,Standard Pack,1,Ammunition,slotless,Enchanter's Munition,6
+St. Fleck's Lycan Charm,st-flecks-lycan-charm,Common,Common,2026,Standard Pack,1,Equippable,Charm,Darkwood Plank,1
+St. Fleck's Signet,st-flecks-signet,Rare,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
+St. Fokee's Fastidious Ring,st-fokees-fastidious-ring,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
+St. Fokee's Signet,st-fokees-signet,Rare,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
+St. Gubb's Gorget,st-gubbs-gorget,Ultra Rare,Ultra Rare,2026,Standard Pack,0,Equippable,Neck,,
+St. Gubb's Signet,st-gubbs-signet,Rare,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
+St. Gubb's Surging Ring,st-gubbs-surging-ring,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
+St. Hopp's Null Ring,st-hopps-null-ring,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
+St. Hopp's Signet,st-hopps-signet,Rare,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
+St. Lorca's Bracers,st-lorcas-bracers,Common,Common,2026,Standard Pack,1,Equippable,Wrist,Mystic Silk,1
+St. Lorca's Dust,st-lorcas-dust,Common,Common,2026,Standard Pack,1,Dust,slotless,Darkwood Plank,1
+St. Lorca's Signet,st-lorcas-signet,Rare,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
+St. Raya's Locket,st-rayas-locket,Common,Common,2026,Standard Pack,1,Equippable,Neck,Philosopher's Stone,6
+St. Raya's Radiant Ring,st-rayas-radiant-ring,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
+St. Raya's Signet,st-rayas-signet,Rare,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
+St. Sola's Earcuff,st-solas-earcuff,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Ear,Philosopher's Stone,3
+St. Sola's Siren Ring,st-solas-siren-ring,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
+St. Stern's Amulet of Aid,st-sterns-amulet-of-aid,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Neck,Philosopher's Stone,3
+St. Stern's Righteous Ring,st-sterns-righteous-ring,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
+St. Stern's Signet,st-sterns-signet,Rare,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
+St. Stern's Spectacles,st-sterns-spectacles,Common,Common,2026,Standard Pack,1,Equippable,Eyes,Darkwood Plank,3
+St. Valla's Boots,st-vallas-boots,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Feet,Mystic Silk,3
+St. Valla's Hearth Ring,st-vallas-hearth-ring,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
+St. Valla's Ring,st-vallas-ring,Common,Common,2026,Standard Pack,1,Equippable,Finger,Philosopher's Stone,1
+St. Valla's Signet,st-vallas-signet,Rare,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
+St. Wilton's Charm,st-wiltons-charm,Uncommon,Uncommon,2026,Standard Pack,1,Equippable,Charm,Darkwood Plank,3
+St. Wilton's Signet,st-wiltons-signet,Rare,Rare,2026,Appreciation,0,Equippable,Finger,Philosopher's Stone,6
+Sun Fate Card,sun-fate-card,Rare,Rare,2026,Appreciation,0,Equippable,slotless,Darkwood Plank,6
+Thunder Bolt,thunder-bolt,Uncommon,Uncommon,2026,Standard Pack,1,Ammunition,slotless,Enchanter's Munition,3
+Treasure Chip,treasure-chip,,Special,2026,Dungeon Only,0,none,slotless,,
+Trinket of the Lycan,trinket-of-the-lycan,Rare,Rare,2026,Standard Pack,1,Equippable|No Party Card Effect,slotless,Darkwood Plank,6
+Underling Artificer,underling-artificer,Safehold,Safehold,2026,Appreciation,0,Equippable,Underling,,
+Val's +4 Keen Fellbane Crossbow,vals-4-keen-fellbane-crossbow,Legendary,Transmuted-Legendary,2026,Exchange,0,Equippable|Timeless|Weapon,Mainhand,,
+Vampire Dust,vampire-dust,Monster Trophy,Quest,2026,Treasure Chest Only,0,Monster Trophy,slotless,Golden Fleece,1
+Villager Pitchfork,villager-pitchfork,Common,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Villager Scythe,villager-scythe,Uncommon,Uncommon,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
+Villager Torch,villager-torch,Common,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Vonami Morning Star,vonami-morning-star,Common,Common,2026,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Wolf Fate Card,wolf-fate-card,Rare,Rare,2026,Appreciation,0,Equippable,slotless,Darkwood Plank,6
+Wooden Stake,wooden-stake,Ultra Rare,Ultra Rare,2026,Appreciation,0,Equippable|Weapon,Mainhand,,

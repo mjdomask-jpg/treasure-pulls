@@ -59,6 +59,7 @@ node scripts/fetch_catalog.mjs 2027
 
 One row per token, from tokendb: name, slug (which is `token.external_slug`),
 rarity, source, classification, slot, `converts_to` and `convert_units`.
+`rarity` is canonical; `source_rarity` is tokendb's own label, verbatim.
 `in_standard_set` is computed as `Standard Pack` ∧ rarity ∈ {Common, Uncommon,
 Rare} — the 40/40/40, which is what condensing converts away.
 
@@ -67,10 +68,26 @@ because the season's chase sets and treasure-exclusive Rares are not public unti
 after January 2027. 2026 has 68 of them, which is the size of what is missing.
 **Re-run the fetcher then.**
 
-tokendb's transmuted rungs are normalised on the way in
-(`Transmuted-Exalted (4 pt)` → `Exalted`, and four siblings). `Quest`, `Special`,
-`Premium` and `Paragon` are passed through as-is pending a mapping decision — see
-`data-model.md` § 10.
+**tokendb's rarity labels are mapped on the way in**, per the owner's decision of
+2026-09-23 (`data-model.md` § 4, *`rarity`*):
+
+| tokendb `source_rarity` | canonical `rarity` |
+|---|---|
+| `Transmuted-Enhanced (3 pt)`, `-Exalted (4 pt)`, `-Relic (5 pt)`, `-Legendary`, `-Mythic` | the rung without the prefix |
+| `Transmuted-Arcanum Relic`, `Transmuted-Grand Arcanum` | `Arcanum` |
+| `Premium` | `Ultra Rare` |
+| `Quest` with classification `Monster Trophy` | `Monster Trophy` |
+| `Quest` otherwise (chase pieces, Participation items) | *empty* |
+| `Reserve` (the GP bar family), `Special` (Golden Ticket, Treasure Chips) | *empty* |
+| anything else | passed through, and must be on the canonical ladder or be `Safehold`, `Patron`, `Paragon` or `Monster Trophy` |
+
+**An empty `rarity` is deliberate**, not a gap. It marks a token that has no
+rarity: chase pieces are entered as a set count, Participation items as an
+ordinary Rare or Uncommon, GP bars by their trade rung.
+
+**A tokendb label the fetcher does not know stops the run** and names the
+tokens. It does not pass through. Two Arcanum labels slipped through silently
+until 2026-09-23, which is why this check exists.
 
 | File | Source |
 |---|---|
@@ -111,9 +128,10 @@ loader should report rather than default to 1 point.
 total yields comes from `token.gp_value` (1,000 / 5,000 / 25,000), so the two are
 not transcribed twice.
 
-**`mix_year.venue` is advisory.** Condensed and pack-substitute are virtual-only
-*today*, and the owner has said that could change. V8 reports a mismatch as a
-NOTE, never an ERROR — a rule change should not make the form reject true data.
+**`mix_year.venue` decides which form sections an event shows** (owner,
+2026-09-24): condensed and pack substitutes appear only at virtual events. It is
+data so that a rule change is a one-row edit here, not a code change. See
+`data-model.md` § 4, *`event_year` and the mixes*.
 
 ## Checking
 

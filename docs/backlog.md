@@ -13,23 +13,14 @@ Last groomed **2026-09-24**.
 Nothing is being built until the owner says so. This is the order to build in
 once they do.
 
-1. **Record the rarity mapping in the token catalogs.** tokendb labels some
-   tokens with values that are not rarities, such as `Quest` for chase pieces
-   and Monster Trophies, and `Reserve` for the 100,000 GP bar. The owner decided
-   on 2026-09-23 how each of these maps. The catalog fetcher should keep
-   tokendb's label in a `source_rarity` column and write the canonical rarity
-   beside it. It also has a gap: it does not yet map `Transmuted-Arcanum Relic`
-   or `Transmuted-Grand Arcanum` to `Arcanum`. The full mapping table is in
-   `data-model.md` § 4, under *`rarity`*.
-
-2. **Add the 100,000 GP Mythic Ore Bar to the trade-good seed.** It belongs in
+1. **Add the 100,000 GP Mythic Ore Bar to the trade-good seed.** It belongs in
    `data/seed/trade_good.csv` at Trade 5 with a GP value of 100,000. tokendb
    classifies it Trade 5, and the `td-domain` skill was updated to match on
    2026-09-23. No one has ever reported pulling one, but it must be possible to
    record it if it happens. The conversion check (`check_conversion.mjs`) must
    still pass afterwards.
 
-3. **Seed the token aliases.** Old spellings and names from other sources need
+2. **Seed the token aliases.** Old spellings and names from other sources need
    to point at the canonical token, because a spelling normaliser cannot link
    two completely different names. The known mappings are:
    - `10x Pull` → `10x Treasure Chips`, and `3x Pull` → `3x Treasure Chips` (the
@@ -42,7 +33,7 @@ once they do.
 
    Detail is in `data-model.md` § 4, under *`token_alias`*.
 
-4. **Seed the groups players pick from.** "Rare (2027)" and "Uncommon (2027)"
+3. **Seed the groups players pick from.** "Rare (2027)" and "Uncommon (2027)"
    stand for the 40 standard-set tokens of each rarity, so nobody has to pick
    from 40 names. "Cloak or Gloves of the Order" is a group of two. Chase sets
    are groups too, but they are entered as a count of sets and need only a set
@@ -51,7 +42,7 @@ once they do.
    `Mystery Chase Set (20)` (see *Waiting on outside events* below). Detail is in
    `data-model.md` § 4, under *`resolution`*.
 
-5. **Seed the 2027 event list.** The events are published at
+4. **Seed the 2027 event list.** The events are published at
    truedungeon.com/2027-events-info (read 2026-09-24). Each one needs a name,
    a start date and a venue. **An in-person convention is one event however
    many games it runs**, because every game at a convention shares one
@@ -72,18 +63,18 @@ once they do.
    line. Use the headings, and add the other spellings as aliases. The End of
    Year Adventure gets renamed in place once it has a title.
 
-6. **Build the name-hygiene validator.** This is a check that catches two
+5. **Build the name-hygiene validator.** This is a check that catches two
    spellings of the same player, event or token, such as `Hacky` and `hacky`,
    before they become two records. It needs no user interface and no database,
    and it has real data to run against. Detail is in `inherited-practices.md`
    § 1 and in check V6 of `data-model.md` § 7.
 
-7. **Add `package.json` and continuous integration.** At the moment the
+6. **Add `package.json` and continuous integration.** At the moment the
    conversion check only runs when a person remembers to run it. `stack.md`
    commits to running the `.mjs` validators automatically on every change. That
    automation is what turns the check from a convention into a gate.
 
-8. **Design and build the entry form.** Every enterable token is either a
+7. **Design and build the entry form.** Every enterable token is either a
    **dedicated field** (Rare, Uncommon, the chase sets, Monster Trophy, 10x
    Treasure Chips, Cloak or Gloves, the trade goods, the named Ultra Rare-or-better
    items) or **enterable from a searchable list, with no dedicated field**

@@ -1,178 +1,178 @@
-name,external_slug,rarity,token_year,tokendb_source,in_standard_set,classification,slot,converts_to,convert_units
-+1 Hammer of Mind Slaying,1-hammer-of-mind-slaying,Rare,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
-+1 Mystic Staff of Spark,1-mystic-staff-of-spark,Rare,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
-+1 Throwing Hammer,1-throwing-hammer,Rare,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
-+1 Voidbane Cannon,1-voidbane-cannon,Ultra Rare,2027,Standard Pack,0,Equippable|Weapon,Mainhand,,
-+1 Voidbane Pistol,1-voidbane-pistol,Rare,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
-+1 Voidbane Rifle,1-voidbane-rifle,Rare,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
-+1 Warden Halberd,1-warden-halberd,Rare,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
-+2 Cosmic Hammer,2-cosmic-hammer,Ultra Rare,2027,Standard Pack,0,Equippable|Weapon,Mainhand,,
-100 GP Ritual Ring,100-gp-ritual-ring,Uncommon,2027,Standard Pack,1,GP Value,slotless,Reserve Bar,
-10x Treasure Chips,10x-treasure-chips,Special,2027,Dungeon Only,0,none,slotless,,
-150 GP Ritual Idol,150-gp-ritual-idol,Uncommon,2027,Standard Pack,1,GP Value,slotless,Reserve Bar,
-1st Codex of the Familiar,1st-codex-of-the-familiar,Paragon,2027,Appreciation,0,Equippable,slotless,,
-3x Treasure Chips,3x-treasure-chips,Special,2027,Dungeon Only,0,none,slotless,,
-50 GP Dream Alarm,50-gp-dream-alarm,Common,2027,Standard Pack,1,Gear|GP Value,slotless,Reserve Bar,
-500 GP Elder Bell,500-gp-elder-bell,Rare,2027,Standard Pack,1,GP Value,slotless,Reserve Bar,
-500 GP Elder Statue,500-gp-elder-statue,Rare,2027,Standard Pack,1,GP Value,slotless,Reserve Bar,
-Amulet of Clarity,amulet-of-clarity,Common,2027,Standard Pack,1,Equippable,Neck,Philosopher's Stone,1
-Armor of the Elders,armor-of-the-elders,Uncommon,2027,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
-Aron's Arcane Necklace of Baubles,arons-arcane-necklace-of-baubles,Legendary,2027,Exchange,0,Equippable|Timeless,Neck,,
-Bead of Need,bead-of-need,Ultra Rare,2027,Standard Pack,0,Equippable,Bead,,
-Bead of the Horse,bead-of-the-horse,Rare,2027,Standard Pack,1,Equippable,Bead,Darkwood Plank,6
-Bead of the Mystics,bead-of-the-mystics,Common,2027,Standard Pack,1,Equippable,Bead,Darkwood Plank,1
-Bearskin Cloak,bearskin-cloak,Uncommon,2027,Standard Pack,1,Equippable,Back,Mystic Silk,3
-Belt of Iron Hands,belt-of-iron-hands,Rare,2027,Standard Pack,1,Equippable,Waist,Mystic Silk,6
-Blood Cult Mark,blood-cult-mark,Ultra Rare,2027,Standard Pack,0,Equippable,Mark,,
-Blood Cultist Bead,blood-cultist-bead,Uncommon,2027,Standard Pack,1,Equippable,Bead,Darkwood Plank,3
-Blood Cultist Boots,blood-cultist-boots,Rare,2027,Standard Pack,1,Equippable,Feet,Mystic Silk,6
-Blood Cultist Bracelets,blood-cultist-bracelets,Rare,2027,Participation,0,Equippable,Wrist,Philosopher's Stone,6
-Blood Cultist Plate,blood-cultist-plate,Rare,2027,Standard Pack,1,Equippable,Torso (armor),Aragonite,1
-Boots of Grounding,boots-of-grounding,Enhanced,2027,Exchange,0,Equippable,Feet,,
-Bracelets of Mending,bracelets-of-mending,Common,2027,Standard Pack,1,Equippable,Wrist,Philosopher's Stone,1
-Burning Voidbane Pellet,burning-voidbane-pellet,Uncommon,2027,Standard Pack,1,Ammunition,slotless,Enchanter's Munition,3
-Carter's Tome of Insight,carters-tome-of-insight,Ultra Rare,2027,Standard Pack,0,Equippable,slotless,,
-Charm of Calm Mind,charm-of-calm-mind,Uncommon,2027,Standard Pack,1,Equippable,Charm,Darkwood Plank,3
-Charm of Chatter,charm-of-chatter,Rare,2027,Standard Pack,1,Equippable,Charm,Darkwood Plank,6
-Charm of Coordination,charm-of-coordination,Ultra Rare,2027,Standard Pack,0,Equippable,Charm,,
-Charm of Unity,charm-of-unity,Relic,2027,Exchange,0,Equippable,Charm,,
-Cosmic Armor,cosmic-armor,Ultra Rare,2027,Standard Pack,0,Equippable,Torso (armor),,
-Cosmic Warden Charm,cosmic-warden-charm,Relic,2027,Exchange,0,Equippable,Charm,,
-Crazed Evoker's Lenses,crazed-evokers-lenses,Rare,2027,Standard Pack,1,Equippable,Eyes,Darkwood Plank,6
-Crypt Cloak,crypt-cloak,Ultra Rare,2027,Standard Pack,0,Equippable,Back,,
-Cultist Belt,cultist-belt,Common,2027,Standard Pack,1,Equippable,Waist,Mystic Silk,1
-Cultist Charm,cultist-charm,Common,2027,Standard Pack,1,Equippable,Charm,Darkwood Plank,1
-Cultist Cudgel,cultist-cudgel,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Cultist Dirk,cultist-dirk,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Cultist Earcuff,cultist-earcuff,Common,2027,Standard Pack,1,Equippable,Ear,Philosopher's Stone,1
-Cultist Ring,cultist-ring,Common,2027,Standard Pack,1,Equippable,Finger,Philosopher's Stone,1
-Cultist Shield,cultist-shield,Common,2027,Standard Pack,1,Equippable|Shield,Offhand,Minotaur Hide,1
-Cultist Shoes,cultist-shoes,Common,2027,Standard Pack,1,Equippable,Feet,Mystic Silk,1
-Cultist Small Axe,cultist-small-axe,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Decay Cult Mark,decay-cult-mark,Rare,2027,Participation,0,Equippable,Mark,Alchemist's Ink,6
-Decay Cultist Amulet,decay-cultist-amulet,Rare,2027,Standard Pack,1,Equippable,Neck,Philosopher's Stone,6
-Decay Cultist Charm,decay-cultist-charm,Uncommon,2027,Standard Pack,1,Equippable,Charm,Darkwood Plank,3
-Decay Cultist Earcuff,decay-cultist-earcuff,Rare,2027,Standard Pack,1,Equippable,Ear,Philosopher's Stone,6
-Discord Cult Mark,discord-cult-mark,Rare,2027,Participation,0,Equippable,Mark,Alchemist's Ink,6
-Discord Cultist Crown,discord-cultist-crown,Rare,2027,Standard Pack,1,Equippable,Head,Philosopher's Stone,6
-Discord Cultist Robes,discord-cultist-robes,Rare,2027,Standard Pack,1,Equippable,Torso (armor),Aragonite,1
-Drake's Elixir,drakes-elixir,Rare,2027,Appreciation,0,Liquid,slotless,Alchemist's Ink,6
-Dreamward Pendant,dreamward-pendant,Rare,2027,Standard Pack,1,Equippable,Neck,Philosopher's Stone,6
-Earcuff of Murmurs,earcuff-of-murmurs,Ultra Rare,2027,Standard Pack,0,Equippable,Ear,,
-Earcuff of Tactics,earcuff-of-tactics,Uncommon,2027,Standard Pack,1,Equippable,Ear,Philosopher's Stone,3
-Embers Mystic Staff,embers-mystic-staff,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Figurine of Power: Celestial,figurine-of-power-celestial,Relic,2027,Exchange,0,Equippable,Figurine,,
-Figurine of Power: Mule,figurine-of-power-mule,Common,2027,Standard Pack,1,Equippable,Figurine,Darkwood Plank,1
-Figurine of Power: War Horse,figurine-of-power-war-horse,Rare,2027,Standard Pack,1,Equippable,Figurine,Darkwood Plank,6
-Footman Cap,footman-cap,Uncommon,2027,Standard Pack,1,Equippable,Head,Oil of Enchantment,1
-Footman Mail,footman-mail,Uncommon,2027,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
-Footman Shield,footman-shield,Uncommon,2027,Standard Pack,1,Equippable|Shield,Offhand,Oil of Enchantment,1
-Freezing Voidbane Pellet,freezing-voidbane-pellet,Rare,2027,Standard Pack,1,Ammunition,slotless,Enchanter's Munition,6
-Gloves of Elder Horror,gloves-of-elder-horror,Ultra Rare,2027,Standard Pack,0,Equippable,Hands,,
-Gloves of Spirit Handling,gloves-of-spirit-handling,Exalted,2027,Exchange,0,Equippable,Hands,,
-Goggles of the Sharpshooter,goggles-of-the-sharpshooter,Uncommon,2027,Standard Pack,1,Equippable,Eyes,Darkwood Plank,3
-Golden Ticket,golden-ticket,Special,2027,Standard Pack,0,none,slotless,,
-Grand Warden Bead,grand-warden-bead,Rare,2027,Participation,0,Equippable,Bead,Darkwood Plank,6
-Grand Warden Bracers,grand-warden-bracers,Rare,2027,Participation,0,Equippable,Wrist,Mystic Silk,6
-Grand Warden Charm,grand-warden-charm,Rare,2027,Participation,0,Equippable,Charm,Darkwood Plank,6
-Grand Warden Circlet,grand-warden-circlet,Rare,2027,Participation,0,Equippable,Head,Philosopher's Stone,6
-Grand Warden Cloak,grand-warden-cloak,Rare,2027,Participation,0,Equippable,Back,Mystic Silk,6
-Grand Warden Kilt,grand-warden-kilt,Rare,2027,Participation,0,Equippable,Legs,Mystic Silk,6
-Grand Warden Robes,grand-warden-robes,Uncommon,2027,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
-Grand Warden Shirt,grand-warden-shirt,Rare,2027,Participation,0,Equippable,Shirt,Mystic Silk,6
-Grave Cultist Gloves,grave-cultist-gloves,Rare,2027,Participation,0,Equippable,Hands,Mystic Silk,6
-Grave Cultist Hood,grave-cultist-hood,Rare,2027,Standard Pack,1,Equippable,Head,Mystic Silk,6
-Grave Cultist Ring,grave-cultist-ring,Uncommon,2027,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
-Grave Cultist Shirt,grave-cultist-shirt,Rare,2027,Standard Pack,1,Equippable,Shirt,Mystic Silk,6
-Greater Arcane Necklace of Baubles,greater-arcane-necklace-of-baubles,Relic,2027,Exchange,0,Equippable,Neck,,
-Greaves of Iron Mind,greaves-of-iron-mind,Uncommon,2027,Standard Pack,1,Equippable,Shins,Mystic Silk,3
-Ioun Stone Amethyst Sphere,ioun-stone-amethyst-sphere,Ultra Rare,2027,Standard Pack,0,Equippable,Ioun Stone,,
-Ioun Stone Aquamarine Prism,ioun-stone-aquamarine-prism,Enhanced,2027,Exchange,0,Equippable,Ioun Stone,,
-Ioun Stone Cinnabar Sphere,ioun-stone-cinnabar-sphere,Rare,2027,Standard Pack,1,Equippable,Ioun Stone,Darkwood Plank,6
-Ioun Stone Elder Madness,ioun-stone-elder-madness,Relic,2027,Exchange,0,Equippable,Ioun Stone,,
-Ioun Stone Emerald Orb,ioun-stone-emerald-orb,Uncommon,2027,Standard Pack,1,Equippable,Ioun Stone,Darkwood Plank,3
-Ioun Stone Lodestone Cube,ioun-stone-lodestone-cube,Common,2027,Standard Pack,1,Equippable,Ioun Stone,Darkwood Plank,1
-Ioun Stone Malachite Cube,ioun-stone-malachite-cube,Uncommon,2027,Standard Pack,1,Equippable,Ioun Stone,Darkwood Plank,3
-Ioun Stone Warden Wrath,ioun-stone-warden-wrath,Premium,2027,Appreciation,0,Equippable,Ioun Stone,,
-Kilt of Kthala,kilt-of-kthala,Ultra Rare,2027,Standard Pack,0,Equippable,Legs,,
-Lenses of Timestep,lenses-of-timestep,Ultra Rare,2027,Standard Pack,0,Equippable,Eyes,,
-Lyre of Echoes,lyre-of-echoes,Rare,2027,Standard Pack,1,Musical Instrument,Mainhand,Darkwood Plank,6
-Magnificent Bard's Instrument,magnificent-bards-instrument,Uncommon,2027,Standard Pack,1,Musical Instrument,Mainhand,Darkwood Plank,3
-Mask of Careless Magic,mask-of-careless-magic,Enhanced,2027,Exchange,0,Equippable,Face,,
-Mask of Clumsy Brawn,mask-of-clumsy-brawn,Rare,2027,Standard Pack,1,Equippable,Face,Philosopher's Stone,6
-Mask of Foggy Health,mask-of-foggy-health,Ultra Rare,2027,Standard Pack,0,Equippable,Face,,
-Mask of Foggy Skill,mask-of-foggy-skill,Exalted,2027,Exchange,0,Equippable,Face,,
-Mask of Unlucky Heroism,mask-of-unlucky-heroism,Ultra Rare,2027,Standard Pack,0,Equippable,Face,,
-Monk's Bracer,monks-bracer,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Wrist,Elven Bismuth,3
-Mystic Staff of Ice,mystic-staff-of-ice,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
-Mythic Coin of Wealth,mythic-coin-of-wealth,Mythic,2027,Exchange,0,Equippable|Timeless,slotless,,
-Natasha's Nightcap,natashas-nightcap,Ultra Rare,2027,Standard Pack,0,Equippable,slotless,,
-Necklace of Baubles,necklace-of-baubles,Ultra Rare,2027,Standard Pack,0,Equippable,Neck,,
-Pantaloons of Deep Pockets,pantaloons-of-deep-pockets,Rare,2027,Standard Pack,1,Equippable,Legs,Mystic Silk,6
-Pants of the Tavern,pants-of-the-tavern,Common,2027,Standard Pack,1,Equippable,Legs,Mystic Silk,1
-Pendant of Shadows,pendant-of-shadows,Uncommon,2027,Standard Pack,1,Equippable,Neck,Philosopher's Stone,3
-Perfected Voidbane Pellet,perfected-voidbane-pellet,Common,2027,Standard Pack,1,Ammunition,slotless,Enchanter's Munition,1
-Plague Cult Mark,plague-cult-mark,Rare,2027,Standard Pack,1,Equippable,Mark,Alchemist's Ink,6
-Plague Cultist Greaves,plague-cultist-greaves,Rare,2027,Participation,0,Equippable,Shins,Mystic Silk,6
-Plague Cultist Ring,plague-cultist-ring,Rare,2027,Standard Pack,1,Equippable,Finger,Philosopher's Stone,6
-Potion Cosmic Nectar,potion-cosmic-nectar,Exalted,2027,Exchange,0,Liquid,slotless,,
-Potion Din'tok Extract,potion-dintok-extract,Uncommon,2027,Standard Pack,1,Liquid,slotless,Alchemist's Ink,3
-Potion Elder Ichor,potion-elder-ichor,Rare,2027,Standard Pack,1,Liquid,slotless,Alchemist's Ink,6
-Potion Warden Water,potion-warden-water,Common,2027,Standard Pack,1,Liquid,slotless,Alchemist's Ink,1
-Potion Warden Whiskey,potion-warden-whiskey,Rare,2027,Standard Pack,1,Liquid,slotless,Alchemist's Ink,6
-Potion Warden Wine,potion-warden-wine,Uncommon,2027,Standard Pack,1,Liquid,slotless,Alchemist's Ink,3
-Pouch of Elder Gift,pouch-of-elder-gift,Rare,2027,Volunteer Recognition,0,Equippable,slotless,Darkwood Plank,6
-Ring of Kthala,ring-of-kthala,Ultra Rare,2027,Standard Pack,0,Equippable,Finger,,
-Rot Runestone,rot-runestone,Rare,2027,Standard Pack,1,Equippable,Runestone,Darkwood Plank,6
-Scroll Bless,scroll-bless,Uncommon,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,3
-Scroll Dream Break,scroll-dream-break,Common,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,1
-Scroll Elder Ire,scroll-elder-ire,Common,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,1
-Scroll Kon'oid's Shriek,scroll-konoids-shriek,Uncommon,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,3
-Scroll Kthala's Wrath,scroll-kthalas-wrath,Rare,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,6
-Scroll Restore Mind,scroll-restore-mind,Rare,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,6
-Scroll Sun Strike,scroll-sun-strike,Uncommon,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,3
-Scroll Voidbane Blast,scroll-voidbane-blast,Common,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,1
-Shield of Diversion,shield-of-diversion,Rare,2027,Standard Pack,1,Equippable|Shield,Offhand,Aragonite,1
-Shield of Frostward,shield-of-frostward,Uncommon,2027,Standard Pack,1,Equippable|Shield,Offhand,Oil of Enchantment,1
-Shirt of Cat's Gift,shirt-of-cats-gift,Ultra Rare,2027,Appreciation,0,Equippable|No Party Card Effect,Shirt,,
-Shirt of Vested Awe,shirt-of-vested-awe,Uncommon,2027,Standard Pack,1,Equippable,Shirt,Mystic Silk,3
-Shuriken of Fire,shuriken-of-fire,Rare,2027,Standard Pack,1,Weapon,Mainhand,Aragonite,1
-Smith's Charm of Unified Synergy,smiths-charm-of-unified-synergy,Legendary,2027,Exchange,0,Equippable|Timeless,Charm,,
-Spirit Pet Owl,spirit-pet-owl,Ultra Rare,2027,Standard Pack,0,Weapon,Spirit Pet,,
-Throwing Gloves,throwing-gloves,Uncommon,2027,Standard Pack,1,Equippable,Hands,Mystic Silk,3
-Throwing Hammer,throwing-hammer,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
-Tobin's Cosmic Ring,tobins-cosmic-ring,Ultra Rare,2027,Standard Pack,0,Equippable,Finger,,
-Tome of Elder Lore,tome-of-elder-lore,Ultra Rare,2027,Volunteer Recognition,0,,slotless,,
-Treasure Chip,treasure-chip,Special,2027,Dungeon Only,0,none,slotless,,
-Trinket of Void Beast,trinket-of-void-beast,Rare,2027,Standard Pack,1,Equippable|No Party Card Effect,slotless,Darkwood Plank,6
-Very Basic Cloak,very-basic-cloak,Rare,2027,Standard Pack,1,Equippable,Back,Mystic Silk,6
-Void Cultist Amulet,void-cultist-amulet,Rare,2027,Participation,0,Equippable,Neck,Philosopher's Stone,6
-Void Hunter Gloves,void-hunter-gloves,Uncommon,2027,Standard Pack,1,Equippable,Hands,Mystic Silk,3
-Voidbane Pistol,voidbane-pistol,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
-Voidbane Rifle,voidbane-rifle,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
-Voidbane Seed,voidbane-seed,Common,2027,Standard Pack,1,Weapon,slotless,Dwarven Steel,1
-Voidbane Shooter,voidbane-shooter,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Voidbane Sidearm,voidbane-sidearm,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Voidbane Slayer Gloves,voidbane-slayer-gloves,Rare,2027,Standard Pack,1,Equippable,Hands,Mystic Silk,6
-Warden Battle Axe,warden-battle-axe,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Warden Cinder Coat,warden-cinder-coat,Common,2027,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
-Warden Cloak,warden-cloak,Common,2027,Standard Pack,1,Equippable,Back,Mystic Silk,1
-Warden Club,warden-club,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Warden Coif,warden-coif,Common,2027,Standard Pack,1,Equippable,Head,Minotaur Hide,1
-Warden Gloves,warden-gloves,Common,2027,Standard Pack,1,Equippable,Hands,Mystic Silk,1
-Warden Halberd,warden-halberd,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
-Warden Holy Symbol,warden-holy-symbol,Uncommon,2027,Standard Pack,1,Holy Symbol,slotless,Darkwood Plank,3
-Warden Leather Armor,warden-leather-armor,Common,2027,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
-Warden Long Sword,warden-long-sword,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Warden Lucid Coat,warden-lucid-coat,Common,2027,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
-Warden Pants,warden-pants,Uncommon,2027,Standard Pack,1,Equippable,Legs,Mystic Silk,3
-Warden Plate Armor,warden-plate-armor,Uncommon,2027,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
-Warden Robes,warden-robes,Common,2027,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
-Warden Shield,warden-shield,Common,2027,Standard Pack,1,Equippable|Shield,Offhand,Minotaur Hide,1
-Warden Shirt,warden-shirt,Common,2027,Standard Pack,1,Equippable,Shirt,Mystic Silk,1
-Warden Short Sword,warden-short-sword,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Warden Spectacles,warden-spectacles,Common,2027,Standard Pack,1,Equippable,Eyes,Darkwood Plank,1
-Warden War Club,warden-war-club,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
-Warden War Girdle,warden-war-girdle,Uncommon,2027,Standard Pack,1,Equippable,Waist,Mystic Silk,1
-Warden War Hammer,warden-war-hammer,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
-Warden Watch Armor,warden-watch-armor,Rare,2027,Standard Pack,1,Equippable,Torso (armor),Aragonite,1
+name,external_slug,rarity,source_rarity,token_year,tokendb_source,in_standard_set,classification,slot,converts_to,convert_units
++1 Hammer of Mind Slaying,1-hammer-of-mind-slaying,Rare,Rare,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
++1 Mystic Staff of Spark,1-mystic-staff-of-spark,Rare,Rare,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
++1 Throwing Hammer,1-throwing-hammer,Rare,Rare,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
++1 Voidbane Cannon,1-voidbane-cannon,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable|Weapon,Mainhand,,
++1 Voidbane Pistol,1-voidbane-pistol,Rare,Rare,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
++1 Voidbane Rifle,1-voidbane-rifle,Rare,Rare,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
++1 Warden Halberd,1-warden-halberd,Rare,Rare,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Aragonite,1
++2 Cosmic Hammer,2-cosmic-hammer,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable|Weapon,Mainhand,,
+100 GP Ritual Ring,100-gp-ritual-ring,Uncommon,Uncommon,2027,Standard Pack,1,GP Value,slotless,Reserve Bar,
+10x Treasure Chips,10x-treasure-chips,,Special,2027,Dungeon Only,0,none,slotless,,
+150 GP Ritual Idol,150-gp-ritual-idol,Uncommon,Uncommon,2027,Standard Pack,1,GP Value,slotless,Reserve Bar,
+1st Codex of the Familiar,1st-codex-of-the-familiar,Paragon,Paragon,2027,Appreciation,0,Equippable,slotless,,
+3x Treasure Chips,3x-treasure-chips,,Special,2027,Dungeon Only,0,none,slotless,,
+50 GP Dream Alarm,50-gp-dream-alarm,Common,Common,2027,Standard Pack,1,Gear|GP Value,slotless,Reserve Bar,
+500 GP Elder Bell,500-gp-elder-bell,Rare,Rare,2027,Standard Pack,1,GP Value,slotless,Reserve Bar,
+500 GP Elder Statue,500-gp-elder-statue,Rare,Rare,2027,Standard Pack,1,GP Value,slotless,Reserve Bar,
+Amulet of Clarity,amulet-of-clarity,Common,Common,2027,Standard Pack,1,Equippable,Neck,Philosopher's Stone,1
+Armor of the Elders,armor-of-the-elders,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
+Aron's Arcane Necklace of Baubles,arons-arcane-necklace-of-baubles,Legendary,Transmuted-Legendary,2027,Exchange,0,Equippable|Timeless,Neck,,
+Bead of Need,bead-of-need,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Bead,,
+Bead of the Horse,bead-of-the-horse,Rare,Rare,2027,Standard Pack,1,Equippable,Bead,Darkwood Plank,6
+Bead of the Mystics,bead-of-the-mystics,Common,Common,2027,Standard Pack,1,Equippable,Bead,Darkwood Plank,1
+Bearskin Cloak,bearskin-cloak,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Back,Mystic Silk,3
+Belt of Iron Hands,belt-of-iron-hands,Rare,Rare,2027,Standard Pack,1,Equippable,Waist,Mystic Silk,6
+Blood Cult Mark,blood-cult-mark,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Mark,,
+Blood Cultist Bead,blood-cultist-bead,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Bead,Darkwood Plank,3
+Blood Cultist Boots,blood-cultist-boots,Rare,Rare,2027,Standard Pack,1,Equippable,Feet,Mystic Silk,6
+Blood Cultist Bracelets,blood-cultist-bracelets,Rare,Rare,2027,Participation,0,Equippable,Wrist,Philosopher's Stone,6
+Blood Cultist Plate,blood-cultist-plate,Rare,Rare,2027,Standard Pack,1,Equippable,Torso (armor),Aragonite,1
+Boots of Grounding,boots-of-grounding,Enhanced,Transmuted-Enhanced (3 pt),2027,Exchange,0,Equippable,Feet,,
+Bracelets of Mending,bracelets-of-mending,Common,Common,2027,Standard Pack,1,Equippable,Wrist,Philosopher's Stone,1
+Burning Voidbane Pellet,burning-voidbane-pellet,Uncommon,Uncommon,2027,Standard Pack,1,Ammunition,slotless,Enchanter's Munition,3
+Carter's Tome of Insight,carters-tome-of-insight,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,slotless,,
+Charm of Calm Mind,charm-of-calm-mind,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Charm,Darkwood Plank,3
+Charm of Chatter,charm-of-chatter,Rare,Rare,2027,Standard Pack,1,Equippable,Charm,Darkwood Plank,6
+Charm of Coordination,charm-of-coordination,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Charm,,
+Charm of Unity,charm-of-unity,Relic,Transmuted-Relic (5 pt),2027,Exchange,0,Equippable,Charm,,
+Cosmic Armor,cosmic-armor,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Torso (armor),,
+Cosmic Warden Charm,cosmic-warden-charm,Relic,Transmuted-Relic (5 pt),2027,Exchange,0,Equippable,Charm,,
+Crazed Evoker's Lenses,crazed-evokers-lenses,Rare,Rare,2027,Standard Pack,1,Equippable,Eyes,Darkwood Plank,6
+Crypt Cloak,crypt-cloak,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Back,,
+Cultist Belt,cultist-belt,Common,Common,2027,Standard Pack,1,Equippable,Waist,Mystic Silk,1
+Cultist Charm,cultist-charm,Common,Common,2027,Standard Pack,1,Equippable,Charm,Darkwood Plank,1
+Cultist Cudgel,cultist-cudgel,Common,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Cultist Dirk,cultist-dirk,Common,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Cultist Earcuff,cultist-earcuff,Common,Common,2027,Standard Pack,1,Equippable,Ear,Philosopher's Stone,1
+Cultist Ring,cultist-ring,Common,Common,2027,Standard Pack,1,Equippable,Finger,Philosopher's Stone,1
+Cultist Shield,cultist-shield,Common,Common,2027,Standard Pack,1,Equippable|Shield,Offhand,Minotaur Hide,1
+Cultist Shoes,cultist-shoes,Common,Common,2027,Standard Pack,1,Equippable,Feet,Mystic Silk,1
+Cultist Small Axe,cultist-small-axe,Common,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Decay Cult Mark,decay-cult-mark,Rare,Rare,2027,Participation,0,Equippable,Mark,Alchemist's Ink,6
+Decay Cultist Amulet,decay-cultist-amulet,Rare,Rare,2027,Standard Pack,1,Equippable,Neck,Philosopher's Stone,6
+Decay Cultist Charm,decay-cultist-charm,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Charm,Darkwood Plank,3
+Decay Cultist Earcuff,decay-cultist-earcuff,Rare,Rare,2027,Standard Pack,1,Equippable,Ear,Philosopher's Stone,6
+Discord Cult Mark,discord-cult-mark,Rare,Rare,2027,Participation,0,Equippable,Mark,Alchemist's Ink,6
+Discord Cultist Crown,discord-cultist-crown,Rare,Rare,2027,Standard Pack,1,Equippable,Head,Philosopher's Stone,6
+Discord Cultist Robes,discord-cultist-robes,Rare,Rare,2027,Standard Pack,1,Equippable,Torso (armor),Aragonite,1
+Drake's Elixir,drakes-elixir,Rare,Rare,2027,Appreciation,0,Liquid,slotless,Alchemist's Ink,6
+Dreamward Pendant,dreamward-pendant,Rare,Rare,2027,Standard Pack,1,Equippable,Neck,Philosopher's Stone,6
+Earcuff of Murmurs,earcuff-of-murmurs,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Ear,,
+Earcuff of Tactics,earcuff-of-tactics,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Ear,Philosopher's Stone,3
+Embers Mystic Staff,embers-mystic-staff,Common,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Figurine of Power: Celestial,figurine-of-power-celestial,Relic,Transmuted-Relic (5 pt),2027,Exchange,0,Equippable,Figurine,,
+Figurine of Power: Mule,figurine-of-power-mule,Common,Common,2027,Standard Pack,1,Equippable,Figurine,Darkwood Plank,1
+Figurine of Power: War Horse,figurine-of-power-war-horse,Rare,Rare,2027,Standard Pack,1,Equippable,Figurine,Darkwood Plank,6
+Footman Cap,footman-cap,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Head,Oil of Enchantment,1
+Footman Mail,footman-mail,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
+Footman Shield,footman-shield,Uncommon,Uncommon,2027,Standard Pack,1,Equippable|Shield,Offhand,Oil of Enchantment,1
+Freezing Voidbane Pellet,freezing-voidbane-pellet,Rare,Rare,2027,Standard Pack,1,Ammunition,slotless,Enchanter's Munition,6
+Gloves of Elder Horror,gloves-of-elder-horror,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Hands,,
+Gloves of Spirit Handling,gloves-of-spirit-handling,Exalted,Transmuted-Exalted (4 pt),2027,Exchange,0,Equippable,Hands,,
+Goggles of the Sharpshooter,goggles-of-the-sharpshooter,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Eyes,Darkwood Plank,3
+Golden Ticket,golden-ticket,,Special,2027,Standard Pack,0,none,slotless,,
+Grand Warden Bead,grand-warden-bead,Rare,Rare,2027,Participation,0,Equippable,Bead,Darkwood Plank,6
+Grand Warden Bracers,grand-warden-bracers,Rare,Rare,2027,Participation,0,Equippable,Wrist,Mystic Silk,6
+Grand Warden Charm,grand-warden-charm,Rare,Rare,2027,Participation,0,Equippable,Charm,Darkwood Plank,6
+Grand Warden Circlet,grand-warden-circlet,Rare,Rare,2027,Participation,0,Equippable,Head,Philosopher's Stone,6
+Grand Warden Cloak,grand-warden-cloak,Rare,Rare,2027,Participation,0,Equippable,Back,Mystic Silk,6
+Grand Warden Kilt,grand-warden-kilt,Rare,Rare,2027,Participation,0,Equippable,Legs,Mystic Silk,6
+Grand Warden Robes,grand-warden-robes,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
+Grand Warden Shirt,grand-warden-shirt,Rare,Rare,2027,Participation,0,Equippable,Shirt,Mystic Silk,6
+Grave Cultist Gloves,grave-cultist-gloves,Rare,Rare,2027,Participation,0,Equippable,Hands,Mystic Silk,6
+Grave Cultist Hood,grave-cultist-hood,Rare,Rare,2027,Standard Pack,1,Equippable,Head,Mystic Silk,6
+Grave Cultist Ring,grave-cultist-ring,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Finger,Philosopher's Stone,3
+Grave Cultist Shirt,grave-cultist-shirt,Rare,Rare,2027,Standard Pack,1,Equippable,Shirt,Mystic Silk,6
+Greater Arcane Necklace of Baubles,greater-arcane-necklace-of-baubles,Relic,Transmuted-Relic (5 pt),2027,Exchange,0,Equippable,Neck,,
+Greaves of Iron Mind,greaves-of-iron-mind,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Shins,Mystic Silk,3
+Ioun Stone Amethyst Sphere,ioun-stone-amethyst-sphere,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Ioun Stone,,
+Ioun Stone Aquamarine Prism,ioun-stone-aquamarine-prism,Enhanced,Transmuted-Enhanced (3 pt),2027,Exchange,0,Equippable,Ioun Stone,,
+Ioun Stone Cinnabar Sphere,ioun-stone-cinnabar-sphere,Rare,Rare,2027,Standard Pack,1,Equippable,Ioun Stone,Darkwood Plank,6
+Ioun Stone Elder Madness,ioun-stone-elder-madness,Relic,Transmuted-Relic (5 pt),2027,Exchange,0,Equippable,Ioun Stone,,
+Ioun Stone Emerald Orb,ioun-stone-emerald-orb,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Ioun Stone,Darkwood Plank,3
+Ioun Stone Lodestone Cube,ioun-stone-lodestone-cube,Common,Common,2027,Standard Pack,1,Equippable,Ioun Stone,Darkwood Plank,1
+Ioun Stone Malachite Cube,ioun-stone-malachite-cube,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Ioun Stone,Darkwood Plank,3
+Ioun Stone Warden Wrath,ioun-stone-warden-wrath,Ultra Rare,Premium,2027,Appreciation,0,Equippable,Ioun Stone,,
+Kilt of Kthala,kilt-of-kthala,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Legs,,
+Lenses of Timestep,lenses-of-timestep,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Eyes,,
+Lyre of Echoes,lyre-of-echoes,Rare,Rare,2027,Standard Pack,1,Musical Instrument,Mainhand,Darkwood Plank,6
+Magnificent Bard's Instrument,magnificent-bards-instrument,Uncommon,Uncommon,2027,Standard Pack,1,Musical Instrument,Mainhand,Darkwood Plank,3
+Mask of Careless Magic,mask-of-careless-magic,Enhanced,Transmuted-Enhanced (3 pt),2027,Exchange,0,Equippable,Face,,
+Mask of Clumsy Brawn,mask-of-clumsy-brawn,Rare,Rare,2027,Standard Pack,1,Equippable,Face,Philosopher's Stone,6
+Mask of Foggy Health,mask-of-foggy-health,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Face,,
+Mask of Foggy Skill,mask-of-foggy-skill,Exalted,Transmuted-Exalted (4 pt),2027,Exchange,0,Equippable,Face,,
+Mask of Unlucky Heroism,mask-of-unlucky-heroism,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Face,,
+Monk's Bracer,monks-bracer,Uncommon,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Wrist,Elven Bismuth,3
+Mystic Staff of Ice,mystic-staff-of-ice,Uncommon,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
+Mythic Coin of Wealth,mythic-coin-of-wealth,Mythic,Transmuted-Mythic,2027,Exchange,0,Equippable|Timeless,slotless,,
+Natasha's Nightcap,natashas-nightcap,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,slotless,,
+Necklace of Baubles,necklace-of-baubles,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Neck,,
+Pantaloons of Deep Pockets,pantaloons-of-deep-pockets,Rare,Rare,2027,Standard Pack,1,Equippable,Legs,Mystic Silk,6
+Pants of the Tavern,pants-of-the-tavern,Common,Common,2027,Standard Pack,1,Equippable,Legs,Mystic Silk,1
+Pendant of Shadows,pendant-of-shadows,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Neck,Philosopher's Stone,3
+Perfected Voidbane Pellet,perfected-voidbane-pellet,Common,Common,2027,Standard Pack,1,Ammunition,slotless,Enchanter's Munition,1
+Plague Cult Mark,plague-cult-mark,Rare,Rare,2027,Standard Pack,1,Equippable,Mark,Alchemist's Ink,6
+Plague Cultist Greaves,plague-cultist-greaves,Rare,Rare,2027,Participation,0,Equippable,Shins,Mystic Silk,6
+Plague Cultist Ring,plague-cultist-ring,Rare,Rare,2027,Standard Pack,1,Equippable,Finger,Philosopher's Stone,6
+Potion Cosmic Nectar,potion-cosmic-nectar,Exalted,Transmuted-Exalted (4 pt),2027,Exchange,0,Liquid,slotless,,
+Potion Din'tok Extract,potion-dintok-extract,Uncommon,Uncommon,2027,Standard Pack,1,Liquid,slotless,Alchemist's Ink,3
+Potion Elder Ichor,potion-elder-ichor,Rare,Rare,2027,Standard Pack,1,Liquid,slotless,Alchemist's Ink,6
+Potion Warden Water,potion-warden-water,Common,Common,2027,Standard Pack,1,Liquid,slotless,Alchemist's Ink,1
+Potion Warden Whiskey,potion-warden-whiskey,Rare,Rare,2027,Standard Pack,1,Liquid,slotless,Alchemist's Ink,6
+Potion Warden Wine,potion-warden-wine,Uncommon,Uncommon,2027,Standard Pack,1,Liquid,slotless,Alchemist's Ink,3
+Pouch of Elder Gift,pouch-of-elder-gift,Rare,Rare,2027,Volunteer Recognition,0,Equippable,slotless,Darkwood Plank,6
+Ring of Kthala,ring-of-kthala,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Finger,,
+Rot Runestone,rot-runestone,Rare,Rare,2027,Standard Pack,1,Equippable,Runestone,Darkwood Plank,6
+Scroll Bless,scroll-bless,Uncommon,Uncommon,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,3
+Scroll Dream Break,scroll-dream-break,Common,Common,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,1
+Scroll Elder Ire,scroll-elder-ire,Common,Common,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,1
+Scroll Kon'oid's Shriek,scroll-konoids-shriek,Uncommon,Uncommon,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,3
+Scroll Kthala's Wrath,scroll-kthalas-wrath,Rare,Rare,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,6
+Scroll Restore Mind,scroll-restore-mind,Rare,Rare,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,6
+Scroll Sun Strike,scroll-sun-strike,Uncommon,Uncommon,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,3
+Scroll Voidbane Blast,scroll-voidbane-blast,Common,Common,2027,Standard Pack,1,Scroll,slotless,Alchemist's Parchment,1
+Shield of Diversion,shield-of-diversion,Rare,Rare,2027,Standard Pack,1,Equippable|Shield,Offhand,Aragonite,1
+Shield of Frostward,shield-of-frostward,Uncommon,Uncommon,2027,Standard Pack,1,Equippable|Shield,Offhand,Oil of Enchantment,1
+Shirt of Cat's Gift,shirt-of-cats-gift,Ultra Rare,Ultra Rare,2027,Appreciation,0,Equippable|No Party Card Effect,Shirt,,
+Shirt of Vested Awe,shirt-of-vested-awe,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Shirt,Mystic Silk,3
+Shuriken of Fire,shuriken-of-fire,Rare,Rare,2027,Standard Pack,1,Weapon,Mainhand,Aragonite,1
+Smith's Charm of Unified Synergy,smiths-charm-of-unified-synergy,Legendary,Transmuted-Legendary,2027,Exchange,0,Equippable|Timeless,Charm,,
+Spirit Pet Owl,spirit-pet-owl,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Weapon,Spirit Pet,,
+Throwing Gloves,throwing-gloves,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Hands,Mystic Silk,3
+Throwing Hammer,throwing-hammer,Uncommon,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
+Tobin's Cosmic Ring,tobins-cosmic-ring,Ultra Rare,Ultra Rare,2027,Standard Pack,0,Equippable,Finger,,
+Tome of Elder Lore,tome-of-elder-lore,Ultra Rare,Ultra Rare,2027,Volunteer Recognition,0,,slotless,,
+Treasure Chip,treasure-chip,,Special,2027,Dungeon Only,0,none,slotless,,
+Trinket of Void Beast,trinket-of-void-beast,Rare,Rare,2027,Standard Pack,1,Equippable|No Party Card Effect,slotless,Darkwood Plank,6
+Very Basic Cloak,very-basic-cloak,Rare,Rare,2027,Standard Pack,1,Equippable,Back,Mystic Silk,6
+Void Cultist Amulet,void-cultist-amulet,Rare,Rare,2027,Participation,0,Equippable,Neck,Philosopher's Stone,6
+Void Hunter Gloves,void-hunter-gloves,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Hands,Mystic Silk,3
+Voidbane Pistol,voidbane-pistol,Uncommon,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
+Voidbane Rifle,voidbane-rifle,Uncommon,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
+Voidbane Seed,voidbane-seed,Common,Common,2027,Standard Pack,1,Weapon,slotless,Dwarven Steel,1
+Voidbane Shooter,voidbane-shooter,Common,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Voidbane Sidearm,voidbane-sidearm,Common,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Voidbane Slayer Gloves,voidbane-slayer-gloves,Rare,Rare,2027,Standard Pack,1,Equippable,Hands,Mystic Silk,6
+Warden Battle Axe,warden-battle-axe,Common,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Warden Cinder Coat,warden-cinder-coat,Common,Common,2027,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
+Warden Cloak,warden-cloak,Common,Common,2027,Standard Pack,1,Equippable,Back,Mystic Silk,1
+Warden Club,warden-club,Common,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Warden Coif,warden-coif,Common,Common,2027,Standard Pack,1,Equippable,Head,Minotaur Hide,1
+Warden Gloves,warden-gloves,Common,Common,2027,Standard Pack,1,Equippable,Hands,Mystic Silk,1
+Warden Halberd,warden-halberd,Uncommon,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
+Warden Holy Symbol,warden-holy-symbol,Uncommon,Uncommon,2027,Standard Pack,1,Holy Symbol,slotless,Darkwood Plank,3
+Warden Leather Armor,warden-leather-armor,Common,Common,2027,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
+Warden Long Sword,warden-long-sword,Common,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Warden Lucid Coat,warden-lucid-coat,Common,Common,2027,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
+Warden Pants,warden-pants,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Legs,Mystic Silk,3
+Warden Plate Armor,warden-plate-armor,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Torso (armor),Oil of Enchantment,1
+Warden Robes,warden-robes,Common,Common,2027,Standard Pack,1,Equippable,Torso (armor),Minotaur Hide,1
+Warden Shield,warden-shield,Common,Common,2027,Standard Pack,1,Equippable|Shield,Offhand,Minotaur Hide,1
+Warden Shirt,warden-shirt,Common,Common,2027,Standard Pack,1,Equippable,Shirt,Mystic Silk,1
+Warden Short Sword,warden-short-sword,Common,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Warden Spectacles,warden-spectacles,Common,Common,2027,Standard Pack,1,Equippable,Eyes,Darkwood Plank,1
+Warden War Club,warden-war-club,Common,Common,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Dwarven Steel,1
+Warden War Girdle,warden-war-girdle,Uncommon,Uncommon,2027,Standard Pack,1,Equippable,Waist,Mystic Silk,1
+Warden War Hammer,warden-war-hammer,Uncommon,Uncommon,2027,Standard Pack,1,Equippable|Weapon,Mainhand,Elven Bismuth,1
+Warden Watch Armor,warden-watch-armor,Rare,Rare,2027,Standard Pack,1,Equippable,Torso (armor),Aragonite,1
