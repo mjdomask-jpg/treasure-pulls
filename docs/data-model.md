@@ -365,7 +365,7 @@ CREATE TABLE token (
   rarity             TEXT,                      -- a canonical rung, Premium, or off-ladder Safehold/Patron/Paragon/Monster Trophy; NULL for none
   source_rarity      TEXT,                      -- tokendb's label, verbatim, for provenance
   trade_rung         INTEGER CHECK (trade_rung BETWEEN 1 AND 5),
-  gp_value           INTEGER,                   -- 1000 / 5000 / 25000 for bars
+  gp_value           INTEGER,                   -- 1000 / 5000 / 25000 / 100000 for bars
   token_year         INTEGER,                   -- the token's OWN vintage
   in_standard_set    INTEGER NOT NULL DEFAULT 0,
   bundle_of_token_id INTEGER REFERENCES token(token_id),
