@@ -445,7 +445,7 @@ unchanged. The rest, counted from `token_catalog_2026.csv` and `_2027.csv`:
 | tokendb label | 2026 | 2027 | Canonical `rarity` | In the form |
 |---|---|---|---|---|
 | `Transmuted-Arcanum Relic`, `Transmuted-Grand Arcanum` | 1 + 1 | 0 | `Arcanum` | Not in 2027. Arcanum appears every 3–4 years and is next expected around 2029–30. The 2026 workbook's `Arcanum Sets` column was one of these two tokens and had 5 drops across three events. |
-| `Premium` | 1 | 1 | `Premium`, kept separate from `Ultra Rare` (owner, 2026-09-24) | Yes |
+| `Premium` | 1 | 1 | `Premium`, kept separate from `Ultra Rare` (owner, 2026-09-24). This is the 1k Bonus token. | Yes |
 | `Paragon` | 2 | 1 | `Paragon` (off-ladder) | Can be entered but gets no dedicated field. It drops sporadically. |
 | `Reserve` | 1 | 0 | none. This is the GP bar family, not a rarity. The 100,000 GP Mythic Ore Bar is **Trade 5**, `gp_value` 100000. | Can be entered but gets no dedicated field. No one has ever reported one. |
 | `Special` | 5 | 4 | none | Only `10x Treasure Chips`. The Golden Ticket, Ring Con Thank You, the single Treasure Chip and `3x Treasure Chips` do not drop. |
@@ -495,6 +495,29 @@ token separately from the odds of a standard-pack Ultra Rare. Folding the two
 together was a habit carried over from the old sheet, and it would have made
 that rate impossible to compute. Kept apart, both rates can be computed, and so
 can their combined total.
+
+**`Premium` covers both the 1k Bonus and the 2k Bonus token** (owner,
+2026-09-24), matching the auction site, which files 1k, 2k and 8k Bonus items
+under one "Premium" category. Each year has exactly one token per tier:
+
+| Tier | 2026 | 2027 | tokendb labels it | Our `rarity` |
+|---|---|---|---|---|
+| 1k Bonus | Ring of the 1st Circle | Ioun Stone Warden Wrath | `Premium` | `Premium` |
+| 2k Bonus | Mark of the 1st Tenet | Shirt of Cat's Gift | `Ultra Rare` | `Premium` |
+| 8k Bonus | Path to Enlightenment (Fragment 4) | 1st Codex of the Familiar | `Paragon` | `Paragon` |
+
+**The tiers are hand-authored in `data/seed/bonus_tier.csv`**, not derived,
+because tokendb's labels cannot find the 2k Bonus token. It calls that token an
+`Ultra Rare` from source `Appreciation`. That combination picks out the right
+token in 2027, but in 2026 it also catches **Wooden Stake**: a special token that
+every attendee of a special event received, which does not drop in treasure
+(owner). Wooden Stake stays an ordinary `Ultra Rare` in the catalog and is not
+offered in the form.
+
+The catalog carries the tier in a `bonus_tier` column, so the 1k and 2k odds can
+still be reported separately within `Premium`. The fetcher refuses a
+`bonus_tier.csv` row that names no token, so a typo or a rename cannot silently
+leave a tier's token mislabelled.
 
 "Not offered" means only that no dedicated entry exists for the token. A surprise
 drop is still captured as `status='proposed'` and is never rejected.

@@ -75,6 +75,7 @@ after January 2027. 2026 has 68 of them, which is the size of what is missing.
 |---|---|
 | `Transmuted-Enhanced (3 pt)`, `-Exalted (4 pt)`, `-Relic (5 pt)`, `-Legendary`, `-Mythic` | the rung without the prefix |
 | `Transmuted-Arcanum Relic`, `Transmuted-Grand Arcanum` | `Arcanum` |
+| any tokendb label, when `bonus_tier.csv` lists the token as 1k or 2k Bonus | `Premium` |
 | `Quest` with classification `Monster Trophy` | `Monster Trophy` |
 | `Quest` otherwise (chase pieces, and four 2026 mini-game tokens) | *empty* |
 | `Reserve` (the GP bar family), `Special` (Golden Ticket, Treasure Chips) | *empty* |
@@ -95,11 +96,22 @@ until 2026-09-23, which is why this check exists.
 | `gp_source.csv` | same |
 | `standard_set.csv` | `data-model-review.md` — "a fixed set of 40 rare, 40 uncommon, and 40 common tokens" |
 | `mix.csv`, `mix_year.csv` | owner answers of 2026-09-19, throughout |
+| `bonus_tier.csv` | per row: the auction project's display names on origin/main (commit given in each row), confirmed by the owner 2026-09-24 |
 
 **Use the corrected 2027 table only.** An earlier version circulated with
 Oil of Enchantment at 0 Uncommon and Philosopher's Stone at 6, which made the
 Uncommon column sum to 34 instead of 38. The version here sums correctly and is
 the one that reproduces the measurement.
+
+## `bonus_tier.csv`
+
+The 1k, 2k and 8k Bonus token for each year, one row per tier. It is
+hand-authored because tokendb cannot identify the 2k Bonus token. See
+`data-model.md` § 4, *`rarity`*. The fetcher reads it to set `rarity =
+Premium` on the 1k and 2k tokens, and copies the tier into the catalog's
+`bonus_tier` column. **Add the new year's three rows before fetching that
+year**; the auction project's display names are the source. A row naming a
+token tokendb does not have stops the fetch.
 
 ## Conventions that look wrong and are not
 

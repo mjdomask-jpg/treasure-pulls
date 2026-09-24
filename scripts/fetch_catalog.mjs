@@ -12,9 +12,11 @@
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { parseCsv } from './csv.mjs';
 
 const YEAR = process.argv[2] || '2027';
-const OUT = join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'seed', `token_catalog_${YEAR}.csv`);
+const SEED = join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'seed');
+const OUT = join(SEED, `token_catalog_${YEAR}.csv`);
 const ENDPOINT = 'https://tokendb.com/wp-json/facetwp/v1/refresh';
 
 const FACETS = {
@@ -63,7 +65,17 @@ const CANONICAL = new Set([
 // (2026 only) mini-game participation tokens. Only the first has a canonical
 // value; chase pieces are entered as a set count and the mini-game tokens are
 // not treasure, so neither needs a rarity of its own.
+// The 1k / 2k / 8k Bonus tokens are hand-authored in bonus_tier.csv, because
+// tokendb's labels cannot find them all: it calls the 2k Bonus an `Ultra Rare`
+// from source `Appreciation`, and in 2026 so is Wooden Stake, an attendee
+// giveaway. 1k and 2k are Premium (owner, 2026-09-24); 8k keeps its own rarity.
+const BONUS = new Map(parseCsv(join(SEED, 'bonus_tier.csv'))
+  .filter((r) => r.token_year === YEAR)
+  .map((r) => [r.name, r.bonus_tier]));
+const PREMIUM_TIERS = new Set(['1k Bonus', '2k Bonus']);
+
 function canonicalRarity(t) {
+  if (PREMIUM_TIERS.has(BONUS.get(t.name))) return 'Premium';
   if (t.rarity === 'Quest') {
     return t.classification.split('|').includes('Monster Trophy') ? 'Monster Trophy' : '';
   }
@@ -145,7 +157,16 @@ if (unmapped.length) {
   process.exit(1);
 }
 
-const HEADER = 'name,external_slug,rarity,source_rarity,token_year,tokendb_source,in_standard_set,classification,slot,converts_to,convert_units';
+// A bonus_tier row that names no token is a typo or a rename, and would
+// silently leave that tier's token mislabelled.
+const names = new Set([...tokens.values()].map((t) => t.name));
+const orphans = [...BONUS.keys()].filter((n) => !names.has(n));
+if (orphans.length) {
+  console.error(`bonus_tier.csv names token(s) absent from tokendb ${YEAR}: ${orphans.join(', ')}`);
+  process.exit(1);
+}
+
+const HEADER = 'name,external_slug,rarity,source_rarity,token_year,tokendb_source,in_standard_set,classification,slot,converts_to,convert_units,bonus_tier';
 const rows = [...tokens.values()]
   .sort((a, b) => a.name.localeCompare(b.name, 'en'))
   .map((t) => {
@@ -153,7 +174,7 @@ const rows = [...tokens.values()]
     // The 40/40/40 blind-pack sets -- what condensing converts away.
     const inSet = t.source === 'Standard Pack' && ['Common', 'Uncommon', 'Rare'].includes(rarity) ? 1 : 0;
     return [t.name, t.slug, rarity, t.rarity, YEAR, t.source, inSet, t.classification, t.slot,
-      convertsTo[t.slug] || '', units[t.slug] || ''].map(q).join(',');
+      convertsTo[t.slug] || '', units[t.slug] || '', BONUS.get(t.name) || ''].map(q).join(',');
   });
 
 writeFileSync(OUT, `${HEADER}\n${rows.join('\n')}\n`, 'utf8');

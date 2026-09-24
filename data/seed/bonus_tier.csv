@@ -1,0 +1,7 @@
+token_year,name,bonus_tier,source
+2026,Ring of the 1st Circle,1k Bonus,auction project origin/main 917b0e7 public/data/prices.csv Display Name
+2026,Mark of the 1st Tenet,2k Bonus,auction project origin/main 917b0e7 public/data/prices.csv Display Name
+2026,Path to Enlightenment (Fragment 4),8k Bonus,auction project origin/main 917b0e7 public/data/prices.csv Display Name
+2027,Ioun Stone Warden Wrath,1k Bonus,auction project origin/main 917b0e7 fixtures/alesiev/manifest.json
+2027,Shirt of Cat's Gift,2k Bonus,auction project origin/main 917b0e7 fixtures/alesiev/manifest.json; owner 2026-09-24
+2027,1st Codex of the Familiar,8k Bonus,auction project origin/main 917b0e7 fixtures/alesiev/manifest.json
