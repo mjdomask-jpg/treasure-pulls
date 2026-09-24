@@ -59,6 +59,7 @@ node scripts/fetch_catalog.mjs 2027
 
 One row per token, from tokendb: name, slug (which is `token.external_slug`),
 rarity, source, classification, slot, `converts_to` and `convert_units`.
+`rarity` is canonical; `source_rarity` is tokendb's own label, verbatim.
 `in_standard_set` is computed as `Standard Pack` ∧ rarity ∈ {Common, Uncommon,
 Rare} — the 40/40/40, which is what condensing converts away.
 
@@ -67,10 +68,26 @@ because the season's chase sets and treasure-exclusive Rares are not public unti
 after January 2027. 2026 has 68 of them, which is the size of what is missing.
 **Re-run the fetcher then.**
 
-tokendb's transmuted rungs are normalised on the way in
-(`Transmuted-Exalted (4 pt)` → `Exalted`, and four siblings). `Quest`, `Special`,
-`Premium` and `Paragon` are passed through as-is pending a mapping decision — see
-`data-model.md` § 10.
+**tokendb's rarity labels are mapped on the way in**, per the owner's decision of
+2026-09-23 (`data-model.md` § 4, *`rarity`*):
+
+| tokendb `source_rarity` | canonical `rarity` |
+|---|---|
+| `Transmuted-Enhanced (3 pt)`, `-Exalted (4 pt)`, `-Relic (5 pt)`, `-Legendary`, `-Mythic` | the rung without the prefix |
+| `Transmuted-Arcanum Relic`, `Transmuted-Grand Arcanum` | `Arcanum` |
+| any tokendb label, when `bonus_tier.csv` lists the token as 1k or 2k Bonus | `Premium` |
+| `Quest` with classification `Monster Trophy` | `Monster Trophy` |
+| `Quest` otherwise (chase pieces, and four 2026 mini-game tokens) | *empty* |
+| `Reserve` (the GP bar family), `Special` (Golden Ticket, Treasure Chips) | *empty* |
+| anything else | passed through, and must be on the canonical ladder or be `Premium`, `Safehold`, `Patron`, `Paragon` or `Monster Trophy` |
+
+**An empty `rarity` is deliberate**, not a gap. It marks a token that has no
+rarity: chase pieces are entered as a set count, the mini-game tokens are not
+treasure at all, and GP bars are known by their trade rung.
+
+**A tokendb label the fetcher does not know stops the run** and names the
+tokens. It does not pass through. Two Arcanum labels slipped through silently
+until 2026-09-23, which is why this check exists.
 
 | File | Source |
 |---|---|
@@ -79,11 +96,22 @@ tokendb's transmuted rungs are normalised on the way in
 | `gp_source.csv` | same |
 | `standard_set.csv` | `data-model-review.md` — "a fixed set of 40 rare, 40 uncommon, and 40 common tokens" |
 | `mix.csv`, `mix_year.csv` | owner answers of 2026-09-19, throughout |
+| `bonus_tier.csv` | per row: the auction project's display names on origin/main (commit given in each row), confirmed by the owner 2026-09-24 |
 
 **Use the corrected 2027 table only.** An earlier version circulated with
 Oil of Enchantment at 0 Uncommon and Philosopher's Stone at 6, which made the
 Uncommon column sum to 34 instead of 38. The version here sums correctly and is
 the one that reproduces the measurement.
+
+## `bonus_tier.csv`
+
+The 1k, 2k and 8k Bonus token for each year, one row per tier. It is
+hand-authored because tokendb cannot identify the 2k Bonus token. See
+`data-model.md` § 4, *`rarity`*. The fetcher reads it to set `rarity =
+Premium` on the 1k and 2k tokens, and copies the tier into the catalog's
+`bonus_tier` column. **Add the new year's three rows before fetching that
+year**; the auction project's display names are the source. A row naming a
+token tokendb does not have stops the fetch.
 
 ## Conventions that look wrong and are not
 
@@ -111,9 +139,10 @@ loader should report rather than default to 1 point.
 total yields comes from `token.gp_value` (1,000 / 5,000 / 25,000), so the two are
 not transcribed twice.
 
-**`mix_year.venue` is advisory.** Condensed and pack-substitute are virtual-only
-*today*, and the owner has said that could change. V8 reports a mismatch as a
-NOTE, never an ERROR — a rule change should not make the form reject true data.
+**`mix_year.venue` decides which form sections an event shows** (owner,
+2026-09-24): condensed and pack substitutes appear only at virtual events. It is
+data so that a rule change is a one-row edit here, not a code change. See
+`data-model.md` § 4, *`event_year` and the mixes*.
 
 ## Checking
 

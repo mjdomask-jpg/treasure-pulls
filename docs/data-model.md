@@ -362,7 +362,7 @@ CREATE TABLE token (
   external_slug      TEXT    UNIQUE,            -- tokendb slug; the shared vocabulary key
   resolution         TEXT    NOT NULL CHECK (resolution IN ('specific','group')),
   group_id           INTEGER REFERENCES token(token_id),
-  rarity             TEXT,                      -- a canonical rung, or off-ladder Paragon/Safehold; see below
+  rarity             TEXT,                      -- a canonical rung, Premium, or off-ladder Safehold/Patron/Paragon/Monster Trophy; NULL for none
   source_rarity      TEXT,                      -- tokendb's label, verbatim, for provenance
   trade_rung         INTEGER CHECK (trade_rung BETWEEN 1 AND 5),
   gp_value           INTEGER,                   -- 1000 / 5000 / 25000 for bars
@@ -445,7 +445,7 @@ unchanged. The rest, counted from `token_catalog_2026.csv` and `_2027.csv`:
 | tokendb label | 2026 | 2027 | Canonical `rarity` | In the form |
 |---|---|---|---|---|
 | `Transmuted-Arcanum Relic`, `Transmuted-Grand Arcanum` | 1 + 1 | 0 | `Arcanum` | Not in 2027. Arcanum appears every 3–4 years and is next expected around 2029–30. The 2026 workbook's `Arcanum Sets` column was one of these two tokens and had 5 drops across three events. |
-| `Premium` | 1 | 1 | `Ultra Rare` (≡ 1k / 2k Bonus, as the auction site maps it) | Yes |
+| `Premium` | 1 | 1 | `Premium`, kept separate from `Ultra Rare` (owner, 2026-09-24). This is the 1k Bonus token. | Yes |
 | `Paragon` | 2 | 1 | `Paragon` (off-ladder) | Can be entered but gets no dedicated field. It drops sporadically. |
 | `Reserve` | 1 | 0 | none. This is the GP bar family, not a rarity. The 100,000 GP Mythic Ore Bar is **Trade 5**, `gp_value` 100000. | Can be entered but gets no dedicated field. No one has ever reported one. |
 | `Special` | 5 | 4 | none | Only `10x Treasure Chips`. The Golden Ticket, Ring Con Thank You, the single Treasure Chip and `3x Treasure Chips` do not drop. |
@@ -456,21 +456,68 @@ unchanged. The rest, counted from `token_catalog_2026.csv` and `_2027.csv`:
 
 - **40 Golem chase pieces** → the `Golem Chaser (set of 40)` set count.
 - **6 Monster Trophies** (classification `Monster Trophy`) → `Monster Trophy`.
-- **4 `Participation` items** (Nil Crystal and three others). The current
-  year's Participation tokens are not meant to drop in treasure (owner,
-  2026-09-24), but mistakes happen. One that turns up in treasure is counted as
-  an ordinary Rare or Uncommon, not tracked on its own.
+- **4 mini-game tokens** (Melonbrant Concentrate, Mirthwood Bliss Blossom, Nil
+  Crystal, Pemberton Pain Extract). These are participation rewards from a series
+  of mini-games at one special 2026 event (owner, 2026-09-24). They are not
+  treasure and will not recur in 2027, so **the form ignores them**. If one ever
+  turns up in treasure anyway, it is captured like any surprise token
+  (`status='proposed'`), never rejected.
+
+  *(An earlier version of this section, from 2026-09-23, said these "drop
+  occasionally and count as an ordinary Rare or Uncommon". That answer was about
+  the per-event swag tokens below, and it was attached to these four by mistake.)*
+
+In the catalog, chase pieces and the mini-game tokens carry **no `rarity`**, and
+neither do `Reserve` and `Special` tokens. The fetcher refuses any tokendb label
+it has no mapping for, so a new label cannot slip through as a "rarity" the way
+the two Arcanum labels did.
 
 **The Participation token every virtual player gets as free swag is not
-treasure.** It comes packaged separately from the treasure, so the player can
-tell the two apart. The form carries a one-line reminder not to include it,
-because each swag token entered would add one false Rare or Uncommon per player
-per event.
+treasure.** tokendb lists these under the source `Participation`: 22 in 2026 and
+13 in 2027, nearly all of them Rare. They come packaged separately from the
+treasure, so the player can tell the two apart. The form carries a one-line
+reminder not to include them, because each one entered would add a false Rare
+per player per event. The current year's swag tokens are not meant to drop in
+treasure (owner, 2026-09-24), but mistakes happen. One that does turn up is
+counted as the ordinary Rare it already is in the catalog, not tracked on its
+own.
 
 **Buckets for off-ladder values.** Buckets are still computed and never stored
-(§ 8), but the rule needs one entry the ladder cannot supply: **Paragon counts in
-"Ultra Rare or Better"** (owner). `Arcanum` sits above Relic on the ladder, so it
-lands there anyway.
+(§ 8), but the rule needs entries the ladder cannot supply: **Paragon and
+Premium count in "Ultra Rare or Better"** (owner). `Arcanum` sits above Relic on
+the ladder, so it lands there anyway.
+
+**`Premium` is its own value, not folded into `Ultra Rare`** (owner, 2026-09-24,
+reversing the 2026-09-23 mapping). Premium tokens rank with Ultra Rare — they are
+the 1k / 2k Bonus tier, and the auction site treats them as that tier — but in
+treasure they are a distinct kind of drop. Players want the odds of a premium
+token separately from the odds of a standard-pack Ultra Rare. Folding the two
+together was a habit carried over from the old sheet, and it would have made
+that rate impossible to compute. Kept apart, both rates can be computed, and so
+can their combined total.
+
+**`Premium` covers both the 1k Bonus and the 2k Bonus token** (owner,
+2026-09-24), matching the auction site, which files 1k, 2k and 8k Bonus items
+under one "Premium" category. Each year has exactly one token per tier:
+
+| Tier | 2026 | 2027 | tokendb labels it | Our `rarity` |
+|---|---|---|---|---|
+| 1k Bonus | Ring of the 1st Circle | Ioun Stone Warden Wrath | `Premium` | `Premium` |
+| 2k Bonus | Mark of the 1st Tenet | Shirt of Cat's Gift | `Ultra Rare` | `Premium` |
+| 8k Bonus | Path to Enlightenment (Fragment 4) | 1st Codex of the Familiar | `Paragon` | `Paragon` |
+
+**The tiers are hand-authored in `data/seed/bonus_tier.csv`**, not derived,
+because tokendb's labels cannot find the 2k Bonus token. It calls that token an
+`Ultra Rare` from source `Appreciation`. That combination picks out the right
+token in 2027, but in 2026 it also catches **Wooden Stake**: a special token that
+every attendee of a special event received, which does not drop in treasure
+(owner). Wooden Stake stays an ordinary `Ultra Rare` in the catalog and is not
+offered in the form.
+
+The catalog carries the tier in a `bonus_tier` column, so the 1k and 2k odds can
+still be reported separately within `Premium`. The fetcher refuses a
+`bonus_tier.csv` row that names no token, so a typo or a rename cannot silently
+leave a tier's token mislabelled.
 
 "Not offered" means only that no dedicated entry exists for the token. A surprise
 drop is still captured as `status='proposed'` and is never rejected.

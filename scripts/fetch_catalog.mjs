@@ -12,9 +12,11 @@
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { parseCsv } from './csv.mjs';
 
 const YEAR = process.argv[2] || '2027';
-const OUT = join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'seed', `token_catalog_${YEAR}.csv`);
+const SEED = join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'seed');
+const OUT = join(SEED, `token_catalog_${YEAR}.csv`);
 const ENDPOINT = 'https://tokendb.com/wp-json/facetwp/v1/refresh';
 
 const FACETS = {
@@ -34,13 +36,51 @@ const GOODS = {
 };
 const UNITS = { '1-unit': 1, '3-units': 3, '6-units': 6, '10-units': 10 };
 
+// tokendb's rarity field mixes rungs of the canonical ladder with labels for
+// families of tokens. Its label is kept verbatim as source_rarity; `rarity` is
+// the canonical value. Mapping decided by the owner 2026-09-23 -- see
+// docs/data-model.md section 4, *rarity*.
+//
 // tokendb prefixes transmuted rungs; the canonical ladder does not. See the
 // td-domain skill: Enhanced = 3pt = 3 Star, Exalted = 4pt = 4 Star.
 const RARITY = {
   'Transmuted-Enhanced (3 pt)': 'Enhanced', 'Transmuted-Exalted (4 pt)': 'Exalted',
   'Transmuted-Relic (5 pt)': 'Relic', 'Transmuted-Legendary': 'Legendary',
   'Transmuted-Mythic': 'Mythic',
+  'Transmuted-Arcanum Relic': 'Arcanum', 'Transmuted-Grand Arcanum': 'Arcanum',
+  Reserve: '', // the GP bar family, not a rarity; the bar's rung is in trade_good.csv
+  Special: '', // Golden Ticket and Treasure Chips -- no rarity
 };
+
+// The canonical ladder plus the tokens the td-domain skill puts outside it.
+// Premium ranks with Ultra Rare (it is the 1k / 2k Bonus tier) but is kept
+// distinct: players want its odds separately from standard-pack Ultra Rares.
+const CANONICAL = new Set([
+  'Common', 'Uncommon', 'Enhanced', 'Rare', 'Exalted', 'Ultra Rare', 'Premium',
+  'Relic', 'Arcanum', 'Legendary', 'Mythic',
+  'Safehold', 'Patron', 'Paragon', 'Monster Trophy',
+]);
+
+// `Quest` is three unrelated populations: Monster Trophies, chase pieces, and
+// (2026 only) mini-game participation tokens. Only the first has a canonical
+// value; chase pieces are entered as a set count and the mini-game tokens are
+// not treasure, so neither needs a rarity of its own.
+// The 1k / 2k / 8k Bonus tokens are hand-authored in bonus_tier.csv, because
+// tokendb's labels cannot find them all: it calls the 2k Bonus an `Ultra Rare`
+// from source `Appreciation`, and in 2026 so is Wooden Stake, an attendee
+// giveaway. 1k and 2k are Premium (owner, 2026-09-24); 8k keeps its own rarity.
+const BONUS = new Map(parseCsv(join(SEED, 'bonus_tier.csv'))
+  .filter((r) => r.token_year === YEAR)
+  .map((r) => [r.name, r.bonus_tier]));
+const PREMIUM_TIERS = new Set(['1k Bonus', '2k Bonus']);
+
+function canonicalRarity(t) {
+  if (PREMIUM_TIERS.has(BONUS.get(t.name))) return 'Premium';
+  if (t.rarity === 'Quest') {
+    return t.classification.split('|').includes('Monster Trophy') ? 'Monster Trophy' : '';
+  }
+  return t.rarity in RARITY ? RARITY[t.rarity] : t.rarity;
+}
 
 async function page(convertsTo, paged) {
   const body = {
@@ -103,15 +143,38 @@ const q = (v) => {
   return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 };
 
-const HEADER = 'name,external_slug,rarity,token_year,tokendb_source,in_standard_set,classification,slot,converts_to,convert_units';
+// A label tokendb starts using tomorrow must stop the run, not pass through as a
+// "rarity" -- two Arcanum labels did exactly that until 2026-09-23.
+const unmapped = [...tokens.values()].filter((t) => {
+  const r = canonicalRarity(t);
+  return r !== '' && !CANONICAL.has(r);
+});
+if (unmapped.length) {
+  const labels = [...new Set(unmapped.map((t) => t.rarity))];
+  console.error(`tokendb rarity label(s) with no mapping: ${labels.join(', ')}`);
+  for (const t of unmapped) console.error(`  ${t.rarity}  ${t.name}`);
+  console.error('Add them to RARITY or CANONICAL in this script, per docs/data-model.md section 4.');
+  process.exit(1);
+}
+
+// A bonus_tier row that names no token is a typo or a rename, and would
+// silently leave that tier's token mislabelled.
+const names = new Set([...tokens.values()].map((t) => t.name));
+const orphans = [...BONUS.keys()].filter((n) => !names.has(n));
+if (orphans.length) {
+  console.error(`bonus_tier.csv names token(s) absent from tokendb ${YEAR}: ${orphans.join(', ')}`);
+  process.exit(1);
+}
+
+const HEADER = 'name,external_slug,rarity,source_rarity,token_year,tokendb_source,in_standard_set,classification,slot,converts_to,convert_units,bonus_tier';
 const rows = [...tokens.values()]
   .sort((a, b) => a.name.localeCompare(b.name, 'en'))
   .map((t) => {
-    const rarity = RARITY[t.rarity] || t.rarity;
+    const rarity = canonicalRarity(t);
     // The 40/40/40 blind-pack sets -- what condensing converts away.
     const inSet = t.source === 'Standard Pack' && ['Common', 'Uncommon', 'Rare'].includes(rarity) ? 1 : 0;
-    return [t.name, t.slug, rarity, YEAR, t.source, inSet, t.classification, t.slot,
-      convertsTo[t.slug] || '', units[t.slug] || ''].map(q).join(',');
+    return [t.name, t.slug, rarity, t.rarity, YEAR, t.source, inSet, t.classification, t.slot,
+      convertsTo[t.slug] || '', units[t.slug] || '', BONUS.get(t.name) || ''].map(q).join(',');
   });
 
 writeFileSync(OUT, `${HEADER}\n${rows.join('\n')}\n`, 'utf8');
@@ -119,6 +182,7 @@ console.log(`${rows.length} tokens -> ${OUT}`);
 
 const by = (f) => [...tokens.values()].reduce((a, t) => (a[f(t)] = (a[f(t)] || 0) + 1, a), {});
 console.log('by source   ', by((t) => t.source));
-console.log('standard set', by((t) => (t.source === 'Standard Pack' ? RARITY[t.rarity] || t.rarity : null)).undefined === undefined
-  ? Object.fromEntries(Object.entries(by((t) => (t.source === 'Standard Pack' ? RARITY[t.rarity] || t.rarity : '-'))).filter(([k]) => k !== '-'))
-  : {});
+console.log('standard set', Object.fromEntries(Object.entries(
+  by((t) => (t.source === 'Standard Pack' ? canonicalRarity(t) || '(none)' : '-')),
+).filter(([k]) => k !== '-')));
+console.log('by rarity   ', by((t) => `${t.rarity} -> ${canonicalRarity(t) || '(none)'}`));
